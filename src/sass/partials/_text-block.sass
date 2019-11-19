@@ -1,0 +1,43 @@
+.text-block
+  $this: &
+  +flex(flex-start, normal, row, wrap)
+  +notlast
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__left, &__right
+    width: 50%
+    +flex(center, normal, column)
+    +sm
+      width: 100%
+  &__left
+    +sm
+      margin-bottom: 15px
+  &__content
+    padding-left: 45px
+    padding-right: 45px
+    text-align: justify
+    +lg
+      padding-left: 15px
+      padding-right: 15px
+    +sm
+      padding-left: 0
+      padding-right: 0
+    p
+      +notlast
+        margin-bottom: 30px
+        +md
+          margin-bottom: 15px
+  &__img
+    +cover
+    padding-top: 50%
+
+  &--reverse
+    #{$this}__left
+      order: 1
+      +sm
+        order: 0
+    #{$this}__right
+      order: 0
+      +sm
+        order: 1

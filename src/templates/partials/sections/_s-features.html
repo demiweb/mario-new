@@ -1,0 +1,62 @@
+{%set
+features = [
+  {
+    icon: 'placeholder',
+    text: 'We have our own warehouse in Berlin 
+which makes the delivery of goods to our 
+European partners more comfortable;'
+  },
+  {
+    icon: 'list',
+    text: 'Wide range of towel warmers and design
+radiators, both electric and water heated;'
+  },
+  {
+    icon: 'sketch',
+    text: 'We can make any model
+by your design;'
+  },
+  {
+    icon: 'pipe',
+    text: 'Stainless steel pipes for our products
+are produced in  Finland and  Spain;'
+  },
+  {
+    icon: 'tools-and-utensils',
+    text: 'Different types of surface treatment 
+(polished, brushed, Orange, golden,
+copper, bronze colors).'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section">
+  <div class="container container--sm">
+    <div class="section__title">
+      <h2 class="title title--lg">
+        <small>Our main</small>
+        advantages
+      </h2>
+    </div>
+
+    <!-- begin features -->
+    <div class="features">
+      {% for i in features %}
+      <div class="features__item">
+        <!-- begin feature -->
+        <div class="feature">
+          <div class="feature__icon">
+            {{ mixins.icon(i.icon) }}
+          </div>
+
+          <div class="feature__text text--gray-100 text--light">{{ i.text | safe }}</div>
+        </div>
+        <!-- end feature -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end features -->
+  </div>
+</section>
+<!-- end section -->

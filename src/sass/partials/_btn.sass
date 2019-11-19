@@ -1,0 +1,29 @@
+.btn
+  display: inline-block
+  color: $white
+  background-color: $accent
+  border: 1px solid  $accent
+  text-align: center
+  text-transform: uppercase
+  min-width: 180px
+  padding: .7em 1em .5em
+  +tr(background-color .3s, color .3s, border-color .3s)
+  +hover
+    background-color: $white
+    color: $accent
+  +xs
+    min-width: 0
+    width: 100%
+
+  &--transp-gray
+    color: #474747
+    background-color: transparent
+    border-color: $gray-light
+    +hover
+      background-color: transparent
+      color: $accent
+      border-color: $accent
+  &--no-hover
+    +hover
+      color: $white
+      background-color: $accent

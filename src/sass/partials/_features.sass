@@ -1,0 +1,70 @@
+.features-sm
+  +flex(flex-start, normal, row, wrap)
+  .feature-sm
+    width: 25%
+    +md
+      width: 50%
+
+.feature-sm
+  text-align: center
+  background-color: $gray-lightest
+  padding: 10% 15px
+  +notlast
+    border-right: 1px solid #eeeeee
+  +md
+    border-bottom: 1px solid  #eee
+  &__icon
+    color: $accent
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+    .icon
+      font-size: em(65)
+
+.features
+  +flex(center, normal, row, wrap)
+  margin-left: -25px
+  margin-right: -25px
+  +xl
+    margin-left: -15px
+    margin-right: -15px
+  &__item
+    padding-left: 25px
+    padding-right: 25px
+    width: 33.33333%
+    +xl
+      padding-left: 15px
+      padding-right: 15px
+    +md
+      width: 50%
+    +sm
+      width: 100%
+
+.feature
+  +flex(flex-start, center)
+  margin-bottom: 60px
+  +xl
+    margin-bottom: 50px
+  +lg
+    margin-bottom: 40px
+  +md
+    margin-bottom: 25px
+  +sm
+    margin-bottom: 15px
+  &__icon
+    flex: 0 0 82px
+    width: 82px
+    height: 82px
+    border-radius: 50%
+    background-color: $gray-lightest
+    +flex(center, center)
+    color: $accent
+    margin-right: 20px
+    +md
+      margin-right: 10px
+      flex: 0 0 70px
+      width: 70px
+      height: 70px
+    .icon
+      font-size: 35px
+  &__text

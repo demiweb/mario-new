@@ -1,0 +1,106 @@
+.header
+  $this: &
+  position: relative
+  z-index: 1
+  background-color: $white
+  box-shadow: 0px 0px 12px 0px rgba(1, 0, 0, 0.17)
+  &.is-white
+    background-color: $white
+    box-shadow: 0px 0px 12px 0px rgba(1, 0, 0, 0.17)
+    color: $c-text
+  &__inner
+    height: $header-height
+    +flex(space-between, center)
+    padding-top: 10px
+    padding-bottom: 10px
+  &__nav
+    text-align: right
+  &__burger
+    margin-left: 15px
+    display: none
+    +md
+      display: block
+  &__close
+    display: none
+    +md
+      display: block
+
+  &--transp
+    background-color: transparent
+    box-shadow: none
+    #{$this}__inner
+      height: $header-transp-height
+      +lg
+        height: $header-transp-height-lg
+  &--fixed
+    position: fixed
+    z-index: 10
+    left: 0
+    right: 0
+    top: 0
+    #{$this}__nav
+      +md
+        position: fixed
+        z-index: 10
+        padding: 15px
+        overflow: auto
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        background-color: $white
+        +vertical
+        color: $c-text
+        +ready
+          +tr(visibility .3s, opacity .3s)
+        +hidden
+        &.is-active
+          +visible
+    #{$this}__nav-in
+      +md
+        display: inline-block
+        vertical-align: middle
+        width: 100%
+        font-size: $fz
+      +sm
+        font-size: $fz-sm-px
+          
+  &--content
+    #{$this}__inner
+      +md
+        display: block
+        text-align: center
+        height: auto
+    #{$this}__logo
+      +md
+        margin-bottom: 15px
+    #{$this}__nav
+      +md
+        text-align: center
+
+
+
+.burger 
+  display: block
+  width: 28px
+  height: 28px
+  // margin-top: -24px
+  position: relative
+  span:after, span:before 
+    content: ""
+    position: absolute
+    left: 0
+  span:after
+    top: 5px
+  span:before
+    bottom: 5px
+  span 
+    // position: relative
+    display: block
+  span, span:after, span:before
+    width: 100%
+    height: 2px
+    background-color: currentColor
+    backface-visibility: hidden
+    border-radius: 2px
+

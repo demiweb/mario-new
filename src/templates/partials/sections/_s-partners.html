@@ -1,0 +1,39 @@
+{%set
+blocks = [
+  {
+    img: '16028.jpg',
+    text: '
+      <p>Good day, dear Colleagues!</p>
+      <p>Have you thought to sell stainless steel towel warmers on your market? If yes, we will be happy to provide all information about our products and explain why you should stop your choice on our company. MARIO company started its own history more than 16 years ago and during all this period we improve our quality - that means our stability and competitiveness of our products, and gives us the right to be considered the best Ukrainian producer.</p>
+    '
+  },
+  {
+    mod: 'text-block--reverse',
+    img: '16056.jpg',
+    text: '
+      <p>We’re producing wide range of towel warmers and design radiators, both electric and water heated, made of AISI 304 Stainless Steel, starting from economy  up to premium models. You will get the lowest prices and the best quality  on our products because there are no middlemen - WE ARE MANUFACTURER.</p>
+      <p>We do have what to propose you!</p>
+    '
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section">
+  <div class="container">
+    {% for i in blocks %}
+    <!-- begin text-block -->
+    <div class="text-block{% if i.mod %} {{ i.mod }}{% endif %}">
+      <div class="text-block__left">
+        <div class="text-block__img js-lazy" data-background-image="./img/partners/{{ i.img }}"></div>
+      </div>
+
+      <div class="text-block__right">
+        <div class="text-block__content">{{ i.text | safe }}</div>
+      </div>
+    </div>
+    <!-- end text-block -->
+    {% endfor %}
+  </div>
+</section>
+<!-- end section -->

@@ -1,0 +1,104 @@
+.products
+  +clr
+  margin-left: -3px
+  margin-right: -3px
+  
+  &__item
+    float: left
+    width: 25%
+    padding-left: 3px
+    padding-right: 3px
+    margin-bottom: 6px
+    font-size: 0
+  &__item-lg
+    width: 50%
+
+
+.product
+  $this: &
+  $img-height: 550px
+  display: inline-block
+  width: 100%
+  background-color: $gray-lightest
+  position: relative
+  font-size: $fz
+  +sm
+    font-size: $fz-sm-px
+  +before
+    border-top: 2px solid  $accent
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    +hidden
+    +tr(opacity .3s, visibility .3s)
+  &:hover
+    +before
+      +visible
+    #{$this}__title
+      color: $white
+    #{$this}__img
+      img
+        +hidden
+    #{$this}__img-img
+      +visible
+  &__title-block
+    display: block
+    position: absolute
+    z-index: 1
+    top: 30px
+    left: 30px
+  &__img
+    display: block
+    // padding-top: calc(#{$img-height} + 43px)
+    padding-top: $img-height + 43px
+    position: relative
+    img
+      +vcenter
+      max-height: 70%
+      +tr(opacity .3s, visibility .3s)
+  &__img-img
+    display: block
+    +cover
+    +coverdiv
+    z-index: 0
+    +tr(opacity .3s, visibility .3s)
+    +hidden
+    +before
+      +coverdiv
+      background-color: rgba($black, .5)
+  &__bottom
+    display: block
+    background-color: $gray-light
+    text-align: center
+    padding-top: 8px
+    padding-bottom: 8px
+  &__title
+    display: block
+    text-transform: uppercase
+    font-weight: 600
+    +tr(color .3s)
+  &__title-lg
+    margin-bottom: 10px
+    display: block
+  &__price
+    color: $gray-100
+  &__content
+    color: $white
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%)
+    z-index: 1
+    left: 0
+    padding-left: 45px
+    padding-right: 45px
+
+  &--sm
+    #{$this}__img
+      padding-top: $img-height / 2
+  &--lg
+    #{$this}__img-img
+     +visible
+    #{$this}__img
+      padding-top: $img-height + 80px
+    

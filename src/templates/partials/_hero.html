@@ -1,0 +1,81 @@
+{%set
+header = {
+  transparent: true,
+  mod: 'header--transp header--content',
+  burger: { hidden: true }
+}
+%}
+{% if hero.slider %}
+{%set
+header = {
+  transparent: true,
+  mod: 'header--fixed header--transp js-header'
+}
+%}
+{% endif %}
+
+<!-- begin hero -->
+<section class="hero{% if hero.bg %} js-lazy{% endif %}" {% if hero.bg %}data-background-image="./img/hero/{{ hero.bg }}"{% endif %}>
+  {% include "partials/_header.html" %}
+
+  {% if hero.slider %}
+    <div class="hero__slider">
+      <!-- begin slider -->
+      <div class="slider__wrap slider--hero__wrap">
+        <div class="slider slider--hero js-slider" data-slider="hero">
+          {% for i in range(0, 4) %}
+          <!-- begin slide -->
+          <div class="slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
+            <div class="container">
+              <div class="hero-slide__inner">
+                <div class="hero-slide__content">
+                  <div class="hero-slide__title">
+                    <h1 class="title">Classic designs</h1>
+                  </div>
+
+                  <div class="hero-slide__subttl">
+                    <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
+                  </div>
+
+                  <div class="hero-slide__btn">
+                    {{ mixins.btn(
+                      title = 'view products',
+                      mod = ''
+                    ) }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end slide -->
+          {% endfor %}
+        </div>
+      </div>
+      <!-- end slider -->
+    </div>
+
+  {% else %}
+
+    <div class="container">
+      <div class="hero__inner">
+        {% if hero.title %}
+        <div class="hero__title">
+          <h1 class="title">{{ hero.title | safe }}</h1>
+        </div>
+        {% endif %}
+
+        {% if hero.breadcrumbs %}
+        <div class="hero__breadcrumbs">
+          {{ mixins.list(
+            name = 'breadcrumbs',
+            modifications = { wrap: hero.breadcrumbs.mod, item: '', link: '' },
+            list = hero.breadcrumbs.list
+          ) }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  {% endif %}  
+</section>
+<!-- end hero -->

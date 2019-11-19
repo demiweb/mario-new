@@ -1,0 +1,53 @@
+{%set
+terms = [
+  {
+    title: 'Our <strong>Warranty:</strong>',
+    list: [
+      {
+        text: 'We give good warranty conditions to all our products;'
+      },
+      {
+        text: 'All our products have EN and CE  certificates.'
+      }
+    ]
+  },
+  {
+    title: 'Our <strong>Terms:</strong>',
+    list: [
+      {
+        text: 'It will take short period of time  to produce towel warmers according
+to your design (depends upon the quantity); '
+      },
+      {
+        text: 'As for the models from our standard range - they are always available in our stock;'
+      }
+    ]
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--gray-lightest">
+  <div class="container container--sm">
+    <!-- begin terms -->
+    <div class="terms">
+      {% for i in terms %}
+      <div class="terms__block">
+        <div class="terms__content">
+          <div class="terms__title">
+            <h3 class="title title--h3 title--light">{{ i.title | safe }}</h3>
+          </div>
+
+          <div class="terms__list">
+            {% for j in i.list %}
+            <div class="terms__item text--light text--gray-100">{{ j.text | safe }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end terms -->
+  </div>
+</section>
+<!-- end section -->

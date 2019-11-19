@@ -1,0 +1,25 @@
+---
+title: partners
+page: partners
+hero: {
+  bg: 'bg-hero-partners.jpg',
+  title: 'For partners',
+  breadcrumbs: {
+    list: [
+      { link: 'Home' },
+      { item: '/' },
+      { link: 'For partners', modLink: 'is-active' }
+    ]
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-features-sm.html" %}
+  {% include "partials/sections/_s-partners.html" %}
+  {% include "partials/sections/_s-features.html" %}
+  {% include "partials/sections/_s-terms.html" %}
+  {% include "partials/sections/_s-contact.html" %}
+{% endblock %}

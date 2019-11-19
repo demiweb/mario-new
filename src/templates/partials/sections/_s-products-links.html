@@ -1,0 +1,41 @@
+<!-- begin section -->
+<section class="section pb-0">
+  <div class="container">
+    <div class="section__title">
+      <h2 class="title">
+        Manufacturer.  Modern design.
+        <small>Enjoy the beauty of design radiators</small>
+      </h2>
+    </div>
+
+    <!-- begin product-links -->
+    <div class="product-links">
+      {% for i in range(0, 2) %}
+      <div class="product-links__item">
+        <!-- begin product-link -->
+        <a href="#" class="product-link js-lazy" data-background-image="./img/home/0{{ i + 1 }}.jpg">
+          <span class="product-link__content">
+            <span class="product-link__title">
+              <span class="title title--light title--ttu">water <br> towel rails</span>
+            </span>
+
+            <span class="product-link__subttl">from 112£</span>
+
+            <span class="product-link__btn">
+              {{ mixins.btn(
+                title = 'view products',
+                mod = 'btn--no-hover',
+                href = false,
+                isInline = true
+              ) }}
+            </span>
+          </span>
+        </a>
+        <!-- end product-link -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end product-links -->
+  </div>
+</section>
+<!-- end section -->

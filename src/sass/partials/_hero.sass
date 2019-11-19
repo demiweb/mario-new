@@ -1,0 +1,35 @@
+.hero
+  color: $white
+  +cover
+  &__inner
+    padding-top: 10%
+    padding-bottom: 11%
+    text-align: center
+  &__title
+    margin-bottom: 10px
+    +md
+      margin-bottom: 5px
+
+.hero-slide
+  position: relative
+  +cover 
+  +before
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 30%
+    z-index: 0
+    background-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgb(0,0,0) 100%)
+  &__inner
+    position: relative
+    z-index: 1
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    +flex(center, normal, column)
+  &__content
+    max-width: 495px
+  &__title
+    // margin-bottom: 10px
+  &__subttl
+    margin-bottom: 15px

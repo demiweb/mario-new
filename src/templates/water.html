@@ -1,0 +1,22 @@
+---
+title: water
+page: water
+hero: {
+  bg: 'bg-hero-water.jpg',
+  title: 'Water rails',
+  breadcrumbs: {
+    list: [
+      { link: 'Home' },
+      { item: '/' },
+      { link: 'water', modLink: 'is-active' }
+    ]
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-products.html" %}
+  {% include "partials/sections/_s-article.html" %}
+{% endblock %}

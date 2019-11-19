@@ -1,0 +1,17 @@
+---
+title: home
+page: home
+outClass: 'pt-0'
+header: {
+  hidden: true
+}
+hero: {
+  slider: true
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-products-links.html" %}
+{% endblock %}

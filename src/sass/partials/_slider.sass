@@ -1,0 +1,26 @@
+.slider
+  &__wrap
+    position: relative
+
+  &--hero
+    &__wrap
+      button[data-action="stop"]
+        display: none
+      .tns-nav
+        @extend .container
+        position: absolute
+        z-index: 1
+        bottom: 50px
+        left: 0
+        width: 100%
+        text-align: right
+        button
+          width: 55px
+          height: 25px
+          color: $white
+          border-bottom: 5px solid currentColor
+          margin-right: 7px
+          margin-left: 7px
+          display: inline-block
+          &.tns-nav-active
+            color: $accent

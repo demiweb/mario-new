@@ -1,0 +1,30 @@
+.article
+  h2
+    @extend .title
+    @extend .title--h3
+    @extend .title--semi
+  h3
+    @extend .title
+    @extend .title--h4
+    @extend .title--semi
+
+  a
+    color: #1c60a5
+    text-decoration: underline
+  ul, ol, p
+    +notlast
+      margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+
+  ul
+    li
+      +list-bullet
+      &::before
+        color: $accent
+        margin-right: .3em
+  ol
+    +counter('text', ')')
+    li
+      &::before
+        margin-right: .3em

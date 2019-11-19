@@ -1,0 +1,27 @@
+<!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <div class="footer__copy">© mario radiators 2020</div>
+        {{ mixins.list(
+          name = 'social',
+          modifications = { wrap: '', item: '', link: '' },
+          list = [
+            { link: mixins.icon('facebook-logo') },
+            { link: mixins.icon('instagram-symbol') },
+            { link: mixins.icon('youtube') }
+          ]
+        ) }}
+      </div>
+
+      <div class="footer__right">
+        {{ mixins.btn(
+          title = 'have a questions?',
+          mod = 'btn--transp-gray'
+        ) }}
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

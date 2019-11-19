@@ -1,0 +1,40 @@
+{%set
+features = [
+  {
+    icon: 'hand',
+    title: 'Fair price'
+  },
+  {
+    icon: 'diamond',
+    title: 'Exclusivity'
+  },
+  {
+    icon: 'inventory',
+    title: 'You’re buying directly
+from the producer
+'
+  },
+  {
+    icon: 'quality-2',
+    title: 'High quality 
+products
+'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="features-sm">
+  {% for i in features %}
+  <div class="feature-sm">
+    <div class="feature-sm__icon">
+      {{ mixins.icon(i.icon) }}
+    </div>
+
+    <div class="feature-sm__title">
+      <h3 class="title title--h3 title--reg">{{ i.title | safe }}</h3>
+    </div>
+  </div>
+  {% endfor %}  
+</section>
+<!-- end section -->

@@ -1,0 +1,46 @@
+{% if header.burger.hidden %}
+{%set navMod = 'nav--content' %}
+{% endif %}
+
+<!-- begin header -->
+<header class="header{% if header.mod %} {{ header.mod }}{% else %} header--fixed js-header{% endif %}">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="/" class="logo">
+          {% if header.transparent %}
+          <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png"/>
+          {% else %}
+          <img class="js-lazy" alt="" src="" data-src="./img/logo.png"/>
+          {% endif %}
+        </a>
+      </div>
+
+      <div class="header__nav{% if not header.burger.hidden %} js-menu{% endif %}">
+        {% if not header.burger.hidden %}
+        <button class="header__close close js-menu-close"></button>
+        {% endif %}
+        <div class="header__nav-in">
+          {{ mixins.list(
+            name = 'nav',
+            modifications = { wrap: navMod, item: '', link: '' },
+            list = [
+              { link: 'Water', modLink: 'is-active' },
+              { link: 'Electric' },
+              { link: 'why mario?' },
+              { link: 'Technical' },
+              { link: 'get Contact' }
+            ]
+          ) }}
+        </div>
+      </div>
+
+      {% if not header.burger.hidden %}
+      <div class="header__burger">
+        <button class="burger js-burger"><span></span></button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</header>
+<!-- end header -->

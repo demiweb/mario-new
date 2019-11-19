@@ -1,0 +1,38 @@
+small
+  font-size: inherit
+
+// h1, h2, h3, h4, h5, h6
+//   font-weight: 400
+
+.title
+  +css-lock(24, 36, 320, 1399, font-size)
+  line-height: 1.2
+  display: block
+  font-weight: 700
+  small
+    font-weight: 300
+    font-size: em(30, 36)
+    display: block
+  &--h3
+    +css-lock(18, 24, 320, 1399, font-size)
+  &--h4
+    +css-lock(16, 18, 320, 1399, font-size)
+  &--light
+    font-weight: 300
+  &--reg
+    font-weight: 400
+  &--semi
+    font-weight: 600
+  &--ttu
+    text-transform: uppercase
+  &--lg
+    +css-lock(36, 80, 320, 1399, font-size)
+    line-height: 1
+    small
+      font-size: 1em
+
+.text
+  &--light
+    font-weight: 300
+  &--gray-100
+    color: $gray-100
