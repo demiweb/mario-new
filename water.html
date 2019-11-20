@@ -13,12 +13,12 @@
     <!-- BEGIN content -->
     <div class="out">
       <!-- begin header -->
-      <header class="header header--fixed js-header">
+      <header class="header js-header">
         <div class="container">
           <div class="header__inner">
             <div class="header__logo">
               <a href="/" class="logo">
-                <img class="js-lazy" alt="" src="" data-src="./img/logo.png" />
+                <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png" />
               </a>
             </div>
             <div class="header__nav js-menu">
@@ -48,34 +48,6 @@
       <main class="main">
         <!-- begin hero -->
         <section class="hero js-lazy" data-background-image="./img/hero/bg-hero-water.jpg">
-          <!-- begin header -->
-          <header class="header header--transp header--content">
-            <div class="container">
-              <div class="header__inner">
-                <div class="header__logo">
-                  <a href="/" class="logo">
-                    <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png" />
-                  </a>
-                </div>
-                <div class="header__nav">
-                  <div class="header__nav-in">
-                    <!-- begin nav -->
-                    <nav class="nav nav--content">
-                      <ul>
-                        <li><a href="#" class=" is-active">Water</a></li>
-                        <li><a href="#">Electric</a></li>
-                        <li><a href="#">why mario?</a></li>
-                        <li><a href="#">Technical</a></li>
-                        <li><a href="#">get Contact</a></li>
-                      </ul>
-                    </nav>
-                    <!-- end nav -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </header>
-          <!-- end header -->
           <div class="container">
             <div class="hero__inner">
               <div class="hero__title">
@@ -103,112 +75,122 @@
             <div class="products js-grid">
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product product--sm">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product product--sm">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product product--sm">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product product--sm">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item products__item-lg">
                 <!-- begin product -->
-                <a href="#" class="product product--lg">
+                <div class="product product--lg">
                   <span class="product__content">
                     <span class="product__title-lg">
                       <span class="title title--semi">Select your towel rail</span>
@@ -218,96 +200,104 @@
                   <span class="product__img">
                     <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
                   </span>
-                </a>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product product--sm">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product product--sm">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item products__item-lg">
                 <!-- begin product -->
-                <a href="#" class="product product--lg">
+                <div class="product product--lg">
                   <span class="product__content">
                     <span class="product__title-lg">
                       <span class="title title--semi">Select your towel rail</span>
@@ -317,133 +307,145 @@
                   <span class="product__img">
                     <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
                   </span>
-                </a>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product product--sm">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product product--sm">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product product--sm">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product product--sm">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
               <div class="products__item js-grid-item">
                 <!-- begin product -->
-                <a href="#" class="product product--sm">
-                  <span class="product__title-block">
-                    <span class="product__title">Euro snake</span>
-                    <span class="product__price">from <span class="accent">112£</span></span>
-                  </span>
-                  <span class="product__img">
-                    <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
-                    <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
-                  </span>
-                  <span class="product__bottom">
+                <div class="product product--sm">
+                  <a href="#" class="product__link">
+                    <span class="product__title-block">
+                      <span class="product__title">Euro snake</span>
+                      <span class="product__price">from <span class="accent">112£</span></span>
+                    </span>
+                    <span class="product__img">
+                      <span class="product__img-img js-lazy" data-background-image="./img/products/01.jpg"></span>
+                      <img class="js-lazy" alt="" src="" data-src="./img/products/01.png" />
+                    </span>
+                  </a>
+                  <button class="product__bottom js-popup-open" data-popup-target="item-card" data-url="./partials/popup-item-card.html">
                     <!-- begin icon-copy -->
                     <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-copy">
                       <path d="M406 467a7.5 7.5 0 00-7.5 7.5V497h-345V75H76a7.5 7.5 0 000-15H46a7.5 7.5 0 00-7.5 7.5v437A7.5 7.5 0 0046 512h360a7.5 7.5 0 007.5-7.5v-30a7.5 7.5 0 00-7.5-7.5z" />
                       <path d="M458.657 150.972c-.166-.205-135.923-135.962-136.128-136.128C313.071 5.667 300.188 0 286 0H106a7.5 7.5 0 00-7.5 7.5v437a7.5 7.5 0 007.5 7.5h360a7.5 7.5 0 007.5-7.5v-257c0-14.188-5.666-27.07-14.843-36.528zM338.486 51.953l83.061 83.061c-.183-.002-.364-.014-.547-.014h-82.5V52.5c0-.183-.012-.364-.014-.547zM458.5 437h-345V15H286c20.678 0 37.5 16.822 37.5 37.5v90a7.5 7.5 0 007.5 7.5h90c20.678 0 37.5 16.822 37.5 37.5z" />
                     </svg>
-                    <!-- end icon-copy --> Product sizes (8)</span>
-                </a>
+                    <!-- end icon-copy --> Product sizes (8)</button>
+                </div>
                 <!-- end product -->
               </div>
             </div>
@@ -527,6 +529,15 @@
       <!-- end footer -->
     </div>
     <!-- END content -->
+    <!-- begin popup -->
+    <div class="popup popup--item-card js-popup" data-popup="item-card">
+      <div class="popup__inner">
+        <button class="popup__close close js-popup-close"></button>
+        <div class="popup__item-card js-popup-inner">
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
