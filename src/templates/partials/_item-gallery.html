@@ -1,0 +1,43 @@
+<!-- begin gallery -->
+<div class="gallery{% if gallery.mod %} {{ gallery.mod }}{% endif %}">
+  <div class="gallery__thumbs">
+    <!-- begin slider -->
+    <div class="slider__wrap slider--thumbs__wrap">
+      <div class="swiper-container js-slider" data-slider="thumbs">
+        <div class="swiper-wrapper slider slider--thumbs">
+          {% for i in range(0, 3) %}
+          <button class="swiper-slide slide gallery__thumb js-lazy" data-background-image="./img/items/01-thumb.png"></button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="slider__controls">
+        <button class="slider__prev prev-vert js-slider-prev"></button>
+        <button class="slider__next next-vert js-slider-next"></button>
+      </div>
+    </div>
+    <!-- end slider -->
+  </div>
+
+  <div class="gallery__slider">
+    <!-- begin slider -->
+    <div class="slider__wrap slider--gallery__wrap">
+      <div class="swiper-container js-slider" data-slider="gallery">
+        <div class="swiper-wrapper slider slider--gallery js-lightgallery">
+          {% for i in range(0, 3) %}
+          <a
+            href="./img/items/01-lg.jpg"
+            class="swiper-slide slide gallery__img js-lazy"
+            data-background-image="./img/items/01-lg.jpg">
+              
+          </a>
+          {% endfor %}
+        </div>
+      </div>      
+    </div>
+    <!-- end slider -->
+
+    <span class="gallery__img-icon">{{ mixins.icon('zoom-in') }}</span>
+  </div>  
+</div>
+<!-- end gallery -->

@@ -1,0 +1,60 @@
+.tech-items
+  +flex(flex-start, normal, row, wrap)
+  margin-bottom: -60px
+  +xl
+    margin-bottom: -50px
+  +lg
+    margin-bottom: -40px
+  +md
+    margin-bottom: -30px
+  +sm
+    margin-bottom: -20px
+  &__item
+    width: 50%
+    padding-right: 15px
+    margin-bottom: 60px
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+      padding-right: 10px
+      // width: 100%
+    +sm
+      margin-bottom: 20px
+      width: 100%
+    
+
+.tech-item
+  +flex
+  +xs
+    display: block
+  &__img
+    font-size: 0
+    +xs
+      margin-bottom: 15px
+  &__content
+    padding-left: 25px
+    max-width: 320px
+    +md
+      padding-left: 10px
+    +xs
+      padding-left: 0
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__text
+    margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+  &__link
+    +inline-flex(flex-start, center)
+    color: #126eaf
+    font-weight: 300
+    .icon
+      font-size: em(30)
+      margin-right: .65em
+    span
+      text-decoration: underline

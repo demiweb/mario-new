@@ -1,0 +1,48 @@
+.gallery
+  +flex(flex-start, normal, row, wrap)
+  height: 100%
+  +md
+    height: auto
+  &__thumbs
+    width: percentage(256/670)
+    position: relative
+    +md
+      padding-right: 15px
+    +sm
+      width: 25%
+  &__slider
+    width: percentage((670 - 256) / 670)
+    position: relative
+    overflow: hidden
+    .slider__wrap, .swiper-container, .slider
+      height: 100%
+    +sm
+      width: 75%
+  &__img
+    padding-top: 70%
+    height: 100%
+    +cover
+    position: relative
+    display: block
+  &__img-icon
+    position: absolute
+    z-index: 1
+    width: 35px
+    height: 35px
+    +flex(center, center)
+    background-color: $white
+    bottom: 10px
+    right: 10px
+    pointer-events: none
+    .icon
+      font-size: em(20)
+    +sm
+      width: 20px
+      height: 20px
+      .icon
+        font-size: 1em
+  &__thumb
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: 50% 50%
+    background-color: $gray-lightest

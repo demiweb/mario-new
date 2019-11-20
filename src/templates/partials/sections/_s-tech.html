@@ -1,0 +1,46 @@
+{%set
+items = [
+  { title: 'Electric towel warmers' },
+  { title: 'Water towel rails' },
+  { title: 'Mario catalogue 2019' },
+  { title: 'Mario certificate' }
+]
+%}
+
+<!-- begin section -->
+<section class="section">
+  <div class="container">
+    <!-- begin tech-items -->
+    <div class="tech-items">
+      {% for i in items %}
+      <div class="tech-items__item">
+        <!-- begin tech-item -->
+        <div class="tech-item">
+          <div class="tech-item__img">
+            <img class="js-lazy" alt="" src="" data-src="./img/tech/01.jpg"/>
+          </div>
+
+          <div class="tech-item__content">
+            <div class="tech-item__title">
+              <h3 class="title title--h3">{{ i.title | safe }}</h3>
+            </div>
+
+            <div class="tech-item__text text--light text--gray-100">Enter your e-mail. You will receive a letter 
+              with instructions and a link for download 
+            the Mario certificate</div>
+
+            <a href="#" download="" class="tech-item__link">
+              {{ mixins.icon('download') }}
+              <span>Download electric towel warmers
+              catalogue here (PDF 12 MB)</span> 
+            </a>
+          </div>
+        </div>
+        <!-- end tech-item -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end tech-items -->
+  </div>
+</section>
+<!-- end section -->

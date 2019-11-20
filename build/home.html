@@ -11,123 +11,130 @@
   </head>
   <body>
     <!-- BEGIN content -->
-    <div class="out pt-0">
+    <div class="out">
+      <!-- begin header -->
+      <header class="header js-header">
+        <div class="container">
+          <div class="header__inner">
+            <div class="header__logo">
+              <a href="/" class="logo">
+                <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png" />
+              </a>
+            </div>
+            <div class="header__nav js-menu">
+              <button class="header__close close js-menu-close"></button>
+              <div class="header__nav-in">
+                <!-- begin nav -->
+                <nav class="nav">
+                  <ul>
+                    <li><a href="#" class=" is-active">Water</a></li>
+                    <li><a href="#">Electric</a></li>
+                    <li><a href="#">why mario?</a></li>
+                    <li><a href="#">Technical</a></li>
+                    <li><a href="#">get Contact</a></li>
+                  </ul>
+                </nav>
+                <!-- end nav -->
+              </div>
+            </div>
+            <div class="header__burger">
+              <button class="burger js-burger"><span></span></button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
       <!-- begin main -->
       <main class="main">
         <!-- begin hero -->
         <section class="hero">
-          <!-- begin header -->
-          <header class="header header--fixed header--transp js-header">
-            <div class="container">
-              <div class="header__inner">
-                <div class="header__logo">
-                  <a href="/" class="logo">
-                    <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png" />
-                  </a>
-                </div>
-                <div class="header__nav js-menu">
-                  <button class="header__close close js-menu-close"></button>
-                  <div class="header__nav-in">
-                    <!-- begin nav -->
-                    <nav class="nav">
-                      <ul>
-                        <li><a href="#" class=" is-active">Water</a></li>
-                        <li><a href="#">Electric</a></li>
-                        <li><a href="#">why mario?</a></li>
-                        <li><a href="#">Technical</a></li>
-                        <li><a href="#">get Contact</a></li>
-                      </ul>
-                    </nav>
-                    <!-- end nav -->
-                  </div>
-                </div>
-                <div class="header__burger">
-                  <button class="burger js-burger"><span></span></button>
-                </div>
-              </div>
-            </div>
-          </header>
-          <!-- end header -->
           <div class="hero__slider">
             <!-- begin slider -->
             <div class="slider__wrap slider--hero__wrap">
-              <div class="slider slider--hero js-slider" data-slider="hero">
-                <!-- begin slide -->
-                <div class="slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
-                  <div class="container">
-                    <div class="hero-slide__inner">
-                      <div class="hero-slide__content">
-                        <div class="hero-slide__title">
-                          <h1 class="title">Classic designs</h1>
-                        </div>
-                        <div class="hero-slide__subttl">
-                          <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
-                        </div>
-                        <div class="hero-slide__btn">
-                          <a href="#" class="btn">view products</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end slide -->
-                <!-- begin slide -->
-                <div class="slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
-                  <div class="container">
-                    <div class="hero-slide__inner">
-                      <div class="hero-slide__content">
-                        <div class="hero-slide__title">
-                          <h1 class="title">Classic designs</h1>
-                        </div>
-                        <div class="hero-slide__subttl">
-                          <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
-                        </div>
-                        <div class="hero-slide__btn">
-                          <a href="#" class="btn">view products</a>
+              <div class="swiper-container js-slider" data-slider="hero">
+                <div class="swiper-wrapper slider slider--hero">
+                  <!-- begin slide -->
+                  <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
+                    <div class="container">
+                      <div class="hero-slide__inner">
+                        <div class="hero-slide__content">
+                          <div class="hero-slide__title">
+                            <h1 class="title">Classic designs</h1>
+                          </div>
+                          <div class="hero-slide__subttl">
+                            <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
+                          </div>
+                          <div class="hero-slide__btn">
+                            <a href="#" class="btn">view products</a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- end slide -->
-                <!-- begin slide -->
-                <div class="slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
-                  <div class="container">
-                    <div class="hero-slide__inner">
-                      <div class="hero-slide__content">
-                        <div class="hero-slide__title">
-                          <h1 class="title">Classic designs</h1>
-                        </div>
-                        <div class="hero-slide__subttl">
-                          <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
-                        </div>
-                        <div class="hero-slide__btn">
-                          <a href="#" class="btn">view products</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end slide -->
-                <!-- begin slide -->
-                <div class="slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
-                  <div class="container">
-                    <div class="hero-slide__inner">
-                      <div class="hero-slide__content">
-                        <div class="hero-slide__title">
-                          <h1 class="title">Classic designs</h1>
-                        </div>
-                        <div class="hero-slide__subttl">
-                          <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
-                        </div>
-                        <div class="hero-slide__btn">
-                          <a href="#" class="btn">view products</a>
+                  <!-- end slide -->
+                  <!-- begin slide -->
+                  <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
+                    <div class="container">
+                      <div class="hero-slide__inner">
+                        <div class="hero-slide__content">
+                          <div class="hero-slide__title">
+                            <h1 class="title">Classic designs</h1>
+                          </div>
+                          <div class="hero-slide__subttl">
+                            <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
+                          </div>
+                          <div class="hero-slide__btn">
+                            <a href="#" class="btn">view products</a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- end slide -->
+                  <!-- begin slide -->
+                  <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
+                    <div class="container">
+                      <div class="hero-slide__inner">
+                        <div class="hero-slide__content">
+                          <div class="hero-slide__title">
+                            <h1 class="title">Classic designs</h1>
+                          </div>
+                          <div class="hero-slide__subttl">
+                            <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
+                          </div>
+                          <div class="hero-slide__btn">
+                            <a href="#" class="btn">view products</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end slide -->
+                  <!-- begin slide -->
+                  <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
+                    <div class="container">
+                      <div class="hero-slide__inner">
+                        <div class="hero-slide__content">
+                          <div class="hero-slide__title">
+                            <h1 class="title">Classic designs</h1>
+                          </div>
+                          <div class="hero-slide__subttl">
+                            <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
+                          </div>
+                          <div class="hero-slide__btn">
+                            <a href="#" class="btn">view products</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end slide -->
                 </div>
-                <!-- end slide -->
+              </div>
+              <div class="slider__pagination js-slider-pagination"></div>
+              <div class="slider__controls">
+                <button class="slider__prev prev js-slider-prev"></button>
+                <button class="slider__next next js-slider-next"></button>
               </div>
             </div>
             <!-- end slider -->
@@ -223,6 +230,15 @@
       <!-- end footer -->
     </div>
     <!-- END content -->
+    <!-- begin popup -->
+    <div class="popup popup--item-card js-popup" data-popup="item-card">
+      <div class="popup__inner">
+        <button class="popup__close close js-popup-close"></button>
+        <div class="popup__item-card js-popup-inner">
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->

@@ -4,3 +4,6 @@ PageList:
 - file: home.html
 - file: partners.html
 - file: water.html
+- file: item-card.html
+- file: technical.html
+- file: contacts.html

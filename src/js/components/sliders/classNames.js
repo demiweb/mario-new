@@ -3,11 +3,13 @@ const classNames = {
     wrap: 'slider__wrap',
     prev: 'js-slider-prev',
     next: 'js-slider-next',
-    slide: 'slide',
+    pagination: 'js-slider-pagination',
+    slide: 'swiper-slide',
   },
   plugin: {
-    container: 'tns-slider',
-    activeSlide: 'tns-slide-active',
+    container: 'swiper-container',
+    initialized: 'swiper-container-initialized',
+    activeSlide: 'swiper-slide-active',
   },
 };
 

@@ -1,0 +1,73 @@
+{%set
+contacts = [
+  {
+    title: 'adress',
+    text: '<p>London, N7 6PA</p>
+<p>Great Britain</p>'
+  },
+  {
+    title: 'email',
+    text: '<a href="mailto:ab@mario.eng">ab@mario.eng</a>'
+  },
+  {
+    title: 'phone',
+    text: '
+      <p><a href="tel:+447871234567">+44-7871234567</a></p>
+      <p><a href="tel:+447671234567">+44-7671234567</a></p>
+    '
+  },
+  {
+    title: 'skype',
+    text: '<a href="mailto:info_vp_mario">info_vp_mario</a>'
+  }
+]
+%}
+
+{# {% extends "layouts/_layout.html" %} #}
+
+<!-- begin section -->
+<section class="section section--full">
+  <!-- begin contacts -->
+  <div class="contacts">
+    <div class="contacts__left">
+      <!-- begin map -->
+      <div class="map">
+        <iframe class="js-lazy" src="" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.6801768932887!2d-0.11806703407364397!3d51.555763314986464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b756b6ed5db%3A0xed4099786a2a2390!2zSG9sbG93YXkgUmQsIExvbmRvbiBONyA2UEEsINCS0LXQu9C40LrQvtCx0YDQuNGC0LDQvdC40Y8!5e0!3m2!1sru!2sua!4v1574264744057!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+      <!-- end map -->
+    </div>
+
+    <div class="contacts__right">
+      <!-- begin contacts-block -->
+      <div class="contacts-block">
+        <div class="contacts-block__title">
+          <h2 class="title">Contacts</h2>
+        </div>
+
+        <div class="contacts-block__contacts">
+          {% for i in contacts %}
+          <!-- begin contacts-meta -->
+          <div class="contacts-meta">
+            <div class="contacts-meta__title">{{ i.title | safe }}</div>
+
+            <div class="contacts-meta__text">{{ i.text | safe }}</div>
+          </div>
+          <!-- end contacts-meta -->
+          {% endfor %}
+        </div>
+
+        <div class="contacts-block__btn">
+          {{ mixins.btn(
+            title = 'Write to us',
+            mod = '',
+            href = false,
+            attributes = { 'data-popup-target': 'contact' }
+          ) }}
+        </div>
+      </div>
+      <!-- end contacts-block -->
+    </div>
+  </div>
+  <!-- end contacts -->
+</section>
+<!-- end section -->

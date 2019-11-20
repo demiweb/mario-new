@@ -1,0 +1,64 @@
+{%set
+products = [
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  },
+  {
+    mod: 'product--sm',
+    bottomHidden: true
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section">
+  <div class="container">
+    <div class="section__title text-left">
+      <h2 class="title">Similar products</h2>
+    </div>
+
+    <!-- begin slider -->
+    <div class="slider__wrap slider--products__wrap">
+      <button class="slider__prev prev-hor js-slider-prev"></button>
+
+      <div class="swiper-container js-slider" data-slider="products">
+        <div class="swiper-wrapper slider slider--products">
+          {% for i in products %}
+          <div class="swiper-slide slide">
+            {% include "partials/_product.html" %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <button class="slider__next next-hor js-slider-next"></button>
+    </div>
+    <!-- end slider -->
+  </div>
+</section>
+<!-- end section -->

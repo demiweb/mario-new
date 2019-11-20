@@ -1,4 +1,5 @@
 import { throttle } from 'throttle-debounce';
+import { IS_FIXED } from '../constants';
 
 const IS_WHITE = 'is-white';
 
@@ -22,11 +23,13 @@ class Header {
   toggleState() {
     if (this.logoSrc.indexOf('logo-white.png') < 0) return;
 
-    if (window.pageYOffset > this.header.offsetHeight) {
+    if (window.pageYOffset > this.header.offsetHeight / 2) {
       this.header.classList.add(IS_WHITE);
+      this.header.classList.add(IS_FIXED);
       this.toggleLogoSrc('white');
     } else {
       this.header.classList.remove(IS_WHITE);
+      this.header.classList.remove(IS_FIXED);
       this.toggleLogoSrc();
     }
   }

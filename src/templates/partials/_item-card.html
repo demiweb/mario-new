@@ -1,0 +1,69 @@
+<!-- begin item-card -->
+<div class="item-card">
+  <div class="item-card__inner">
+    <div class="item-card__gallery">
+      {% include "partials/_item-gallery.html" %}
+    </div>
+
+    <div class="item-card__content">
+      <div class="item-card__title">
+        <h2 class="title">Marsel</h2>
+        <div class="price price--lg"><small>from</small> 120 £ <small>(rrp incl. vat)</small></div>
+      </div>
+
+      <div class="item-card__text text--light text--gray-100">Towel warmer Marsel - created to emphasize your individuality and creativity. Made of stainless steel water heated towel warmer Marsel 
+  from Mario Company - the choice of those who think, act, and do not conform to stereotypes, the choice of real personalities.</div>
+
+      <div class="item-card__list">
+        {{ mixins.list(
+          name = 'items-list',
+          modifications = { wrap: '', item: '', link: '' },
+          list = [
+            { item: '<div><strong>Marsel 700x530</strong> (№2839292930)</div> <div class="price">120 £</div>'},
+            { item: '<div><strong>Marsel 700x530</strong> (№2839292930)</div> <div class="price">120 £</div>'},
+            { item: '<div><strong>Marsel 700x530</strong> (№2839292930)</div> <div class="price">120 £</div>'},
+            { item: '<div><strong>Marsel 700x530</strong> (№2839292930)</div> <div class="price">120 £</div>'},
+            { item: '<div><strong>Marsel 700x530</strong> (№2839292930)</div> <div class="price">120 £</div>'}
+          ]
+        ) }}
+      </div>
+
+      <div class="item-card__btn">
+        {{ mixins.btn(
+          title = 'download pdf' + mixins.icon('pdf'),
+          mod = '',
+          attributes = { download: '' }
+        ) }}
+      </div>
+    </div>
+  </div>
+
+  {% if itemCard.meta %}
+  <div class="item-card__meta">
+    <!-- begin item-card-meta-blocks -->
+    <div class="item-card-meta-blocks">
+      {% for i in itemCard.meta %}
+      <div class="item-card-meta-blocks__item">
+        <!-- begin item-card-meta-block -->
+        <div class="item-card-meta-block">
+          <div class="item-card-meta-block__img">
+            {% if i.icon %}
+            {{ mixins.icon(i.icon) }}
+            {% else %}            
+            <img class="js-lazy" alt="" src="" data-src="./img/steel.jpg"/>
+            {% endif %}
+          </div>
+
+          <div class="item-card-meta-block__title">{{ i.title | safe }}</div>
+
+          <div class="item-card-meta-block__icon"></div>
+        </div>
+        <!-- end item-card-meta-block -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end item-card-meta-blocks -->
+  </div>
+  {% endif %}
+</div>
+<!-- end item-card -->

@@ -1,0 +1,21 @@
+---
+title: technical
+page: technical
+hero: {
+  bg: 'bg-hero-tech.jpg',
+  title: 'Technical',
+  breadcrumbs: {
+    list: [
+      { link: 'Home' },
+      { item: '/' },
+      { link: 'Technical', modLink: 'is-active' }
+    ]
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-tech.html" %}
+{% endblock %}

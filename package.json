@@ -67,8 +67,11 @@
     "core-js": "^3.4.1",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
+    "lightgallery.js": "^1.1.3",
     "lozad": "^1.14.0",
     "masonry-layout": "^4.2.2",
+    "popup-simple": "^1.0.3",
+    "swiper": "^5.2.0",
     "throttle-debounce": "^2.1.0",
     "tiny-slider": "^2.9.2"
   }

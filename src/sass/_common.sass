@@ -19,7 +19,8 @@ body
     animation: fadeIn 1s
 
 .out
-  padding-top: $header-height
+  &.has-fixed-header
+    padding-top: $header-height
 
 .container
   padding-left: 50px
@@ -66,4 +67,15 @@ body
 
 .accent
   color: $accent
+
+.price
+  font-size: $fz-sm
+  font-weight: 700
+  color: $accent
+  small
+    font-weight: 300
+    color: $gray-100
+    font-size: $fz-sm-px
+  &--lg
+    +css-lock(24, 36, 320, 1399, font-size)
     

@@ -1,26 +1,175 @@
+.prev, .next
+  +flex(center, center)
+  background-image: none
+  background-color: hsla(0,0%,100%,.5)
+  box-shadow: 1px 1px 8px rgba(51,51,51,.3)
+  width: 45px
+  height: 45px
+  padding: 5px 0
+  +tr(transform .3s)
+  +before
+    +icon-arrow(20, 20, 1, $c-text, 45)
+    display: block
+    margin-left: .6em
+  +hover
+    transform: translate(-5px, 0)
+  +lg
+    width: 30px
+    height: 30px
+    +before
+      width: 14px
+      height: 14px
+
+.next
+  transform: scaleX(-1)
+  +hover
+    transform: translate(5px, 0) scaleX(-1)
+
+.prev-vert, .next-vert
+  +inline-flex(center, center)
+  background-color: $gray-lightest
+  width: 25px
+  height: 25px
+  +tr(background-color .3s)
+  +hover
+    background-color: #e6e6e6
+  +before
+    +icon-arrow(8, 8, 1, currentColor, 135)
+    display: block
+    margin-top: .3em
+
+.next-vert
+  transform: scaleY(-1)
+
+.prev-hor, .next-hor
+  @extend .prev-vert
+  +before
+    +rotate(45)
+
+.next-hor
+  transform: scaleX(-1)
+  
 .slider
   &__wrap
     position: relative
+    overflow: hidden
+    *
+      box-sizing: border-box
+  &__controls
+    width: 100%
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%)
+    z-index: 1
+  &__prev
+    position: absolute
+    left: 0
+  &__next
+    position: absolute
+    right: 0
 
   &--hero
     &__wrap
-      button[data-action="stop"]
-        display: none
-      .tns-nav
-        @extend .container
-        position: absolute
-        z-index: 1
-        bottom: 50px
-        left: 0
+      .slider
+        &__pagination
+          @extend .container
+          position: absolute
+          z-index: 1
+          bottom: 50px
+          left: 0
+          width: 100%
+          text-align: right
+          .swiper-pagination-bullet
+            cursor: pointer
+            width: 55px
+            height: 25px
+            color: $white            
+            margin-right: 7px
+            margin-left: 7px
+            border-radius: 0
+            background-color: transparent
+            opacity: 1
+            display: inline-block
+            overflow: hidden
+            position: relative
+            +after
+              position: absolute
+              bottom: 0
+              border-bottom: 5px solid $accent
+              left: 0
+              right: 0
+              z-index: 1
+              transform: translate(-100%, 0)
+            +before
+              position: absolute
+              bottom: 0
+              border-bottom: 5px solid $white
+              left: 0
+              right: 0
+              z-index: 0
+            &.swiper-pagination-bullet-active
+              +after
+                animation: progressBar 5s forwards
+  &--thumbs
+    &__wrap
+      +flex(flex-start, normal, column)
+      // height: 100%
+      position: absolute
+      left: 0
+      right: 30px
+      bottom: 0
+      top: 0
+      +lg
+        right: 15px
+      +sm
+        right: 5px
+      .swiper-container
+        flex-grow: 1
+        margin-bottom: 4px
         width: 100%
-        text-align: right
-        button
-          width: 55px
-          height: 25px
-          color: $white
-          border-bottom: 5px solid currentColor
-          margin-right: 7px
-          margin-left: 7px
-          display: inline-block
-          &.tns-nav-active
-            color: $accent
+      .slider
+        &__controls
+          width: 100%
+          position: static
+          transform: translate(0, 0)
+          +flex
+        &__next, &__prev
+          position: static
+          width: calc(50% - 2px)          
+        &__prev
+          margin-right: 2px
+        &__next
+          margin-left: 2px
+
+  &--products
+    &__wrap
+      +flex
+      // padding-left: 35px
+      // padding-right: 35px
+      .swiper-container
+        flex-grow: 1
+      .slider
+        &__prev, &__next
+          height: auto
+          width: 25px
+          flex: 0 0 25px
+          top: 0
+          bottom: 0
+          z-index: 2
+          position: static
+          &.swiper-button-disabled
+            display: none
+        &__next
+          right: 0
+          margin-left: 10px
+        &__prev
+          left: 0
+          margin-right: 10px
+
+
+@keyframes progressBar
+  0%
+    transform: translate(-100%, 0)
+  100%
+    transform: translate(0, 0)
+        

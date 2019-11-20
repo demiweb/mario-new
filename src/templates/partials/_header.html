@@ -3,16 +3,12 @@
 {% endif %}
 
 <!-- begin header -->
-<header class="header{% if header.mod %} {{ header.mod }}{% else %} header--fixed js-header{% endif %}">
+<header class="header{% if header.mod %} {{ header.mod }}{% else %} js-header{% endif %}">
   <div class="container">
     <div class="header__inner">
       <div class="header__logo">
         <a href="/" class="logo">
-          {% if header.transparent %}
-          <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png"/>
-          {% else %}
-          <img class="js-lazy" alt="" src="" data-src="./img/logo.png"/>
-          {% endif %}
+          <img class="js-lazy" alt="" src="" data-src="./img/{% if header.logo %}{{ header.logo }}{% else %}logo-white.png{% endif %}"/>
         </a>
       </div>
 

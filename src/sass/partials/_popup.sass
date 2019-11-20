@@ -1,0 +1,33 @@
+.popup
+  $this: &
+  position: fixed
+  z-index: 15
+  overflow: auto
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  // width: 100vw
+  +ready
+    +tr(opacity .3s, visibility .3s)
+  +hidden
+  &.is-active
+    +visible
+  &__inner
+    position: relative
+    background-color: $white
+    min-height: 100%
+    padding: 50px
+    width: 100%
+    +xl
+      padding: 50px 30px 30px
+    +lg
+      padding: 50px 20px 20px
+    +md
+      padding: 50px 15px 15px
+  &__item-card
+    width: 100%
+    
+  &--item-card
+    #{$this}__inner
+      +flex(center, center)

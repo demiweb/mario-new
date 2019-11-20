@@ -1,20 +1,55 @@
 .header
   $this: &
-  position: relative
-  z-index: 1
-  background-color: $white
-  box-shadow: 0px 0px 12px 0px rgba(1, 0, 0, 0.17)
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  background-color: transparent
+  color: $white
+  +tr(background-color .3s)
   &.is-white
     background-color: $white
     box-shadow: 0px 0px 12px 0px rgba(1, 0, 0, 0.17)
-    color: $c-text
+    color: inherit
+  &.is-fixed
+    position: fixed
+    #{$this}__inner
+      height: $header-height
   &__inner
-    height: $header-height
+    height: $header-transp-height
     +flex(space-between, center)
     padding-top: 10px
     padding-bottom: 10px
+    +lg
+      height: $header-transp-height-lg
   &__nav
     text-align: right
+    +md
+      position: fixed
+      z-index: 10
+      padding: 15px
+      overflow: auto
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background-color: $white
+      +vertical
+      color: $c-text
+      +ready
+        +tr(visibility .3s, opacity .3s)
+      +hidden
+      &.is-active
+        +visible
+    &__nav-in
+      +md
+        display: inline-block
+        vertical-align: middle
+        width: 100%
+        font-size: $fz
+      +sm
+        font-size: $fz-sm-px
   &__burger
     margin-left: 15px
     display: none
@@ -24,61 +59,6 @@
     display: none
     +md
       display: block
-
-  &--transp
-    background-color: transparent
-    box-shadow: none
-    #{$this}__inner
-      height: $header-transp-height
-      +lg
-        height: $header-transp-height-lg
-  &--fixed
-    position: fixed
-    z-index: 10
-    left: 0
-    right: 0
-    top: 0
-    #{$this}__nav
-      +md
-        position: fixed
-        z-index: 10
-        padding: 15px
-        overflow: auto
-        top: 0
-        bottom: 0
-        right: 0
-        left: 0
-        background-color: $white
-        +vertical
-        color: $c-text
-        +ready
-          +tr(visibility .3s, opacity .3s)
-        +hidden
-        &.is-active
-          +visible
-    #{$this}__nav-in
-      +md
-        display: inline-block
-        vertical-align: middle
-        width: 100%
-        font-size: $fz
-      +sm
-        font-size: $fz-sm-px
-          
-  &--content
-    #{$this}__inner
-      +md
-        display: block
-        text-align: center
-        height: auto
-    #{$this}__logo
-      +md
-        margin-bottom: 15px
-    #{$this}__nav
-      +md
-        text-align: center
-
-
 
 .burger 
   display: block

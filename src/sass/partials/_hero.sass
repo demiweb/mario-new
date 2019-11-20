@@ -2,7 +2,7 @@
   color: $white
   +cover
   &__inner
-    padding-top: 10%
+    padding-top: 14%
     padding-bottom: 11%
     text-align: center
   &__title
@@ -27,6 +27,12 @@
     height: 100vh
     height: calc(var(--vh, 1vh) * 100)
     +flex(center, normal, column)
+    +xl
+      padding-left: 20px
+      padding-right: 20px
+    +lg
+      // padding-left: 25px
+      // padding-right: 25px
   &__content
     max-width: 495px
   &__title
