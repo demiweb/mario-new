@@ -22,7 +22,6 @@
               </a>
             </div>
             <div class="header__nav js-menu">
-              <button class="header__close close js-menu-close"></button>
               <div class="header__nav-in">
                 <!-- begin nav -->
                 <nav class="nav">
@@ -335,7 +334,7 @@
               <!-- end social -->
             </div>
             <div class="footer__right">
-              <a href="#" class="btn btn--transp-gray">have a questions?</a>
+              <button class="btn btn--transp-gray js-popup-open" data-popup-target="contact">have a questions?</button>
             </div>
           </div>
         </div>
@@ -347,7 +346,76 @@
     <div class="popup popup--item-card js-popup" data-popup="item-card">
       <div class="popup__inner">
         <button class="popup__close close js-popup-close"></button>
-        <div class="popup__item-card js-popup-inner">
+        <div class="popup__item-card js-popup-content">
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- begin popup -->
+    <div class="popup js-popup" data-popup="contact">
+      <div class="popup__inner">
+        <button class="popup__close close js-popup-close"></button>
+        <div class="popup__form">
+          <!-- begin form -->
+          <div class="form">
+            <form>
+              <div class="form__title">
+                <h2 class="title">Contact us</h2>
+              </div>
+              <div class="form__field">
+                <!-- begin input -->
+                <div class="input">
+                  <label class="input__label">full name</label>
+                  <input class="js-focused-input" type="text">
+                </div>
+                <!-- end input -->
+              </div>
+              <div class="form__field">
+                <!-- begin tel-input -->
+                <div class="tel-input js-tel-input">
+                  <div class="tel-input__select">
+                    <!-- begin select -->
+                    <div class="input input--select">
+                      <label class="input__label">code</label>
+                      <select class="js-select js-focused-input" data-type="tel-code">
+                        <option value="placeholder"></option>
+                      </select>
+                    </div>
+                    <!-- end select -->
+                  </div>
+                  <div class="tel-input__input">
+                    <!-- begin input -->
+                    <div class="input">
+                      <label class="input__label">phone number</label>
+                      <input class="js-focused-input" type="tel">
+                    </div>
+                    <!-- end input -->
+                  </div>
+                </div>
+                <!-- end tel-input -->
+              </div>
+              <div class="form__field">
+                <!-- begin input -->
+                <div class="input">
+                  <label class="input__label">email</label>
+                  <input class="js-focused-input" type="email">
+                </div>
+                <!-- end input -->
+              </div>
+              <div class="form__field">
+                <!-- begin textarea -->
+                <div class="input">
+                  <label class="input__label">Enter your message</label>
+                  <textarea class="js-focused-input js-textarea"></textarea>
+                </div>
+                <!-- end textarea -->
+              </div>
+              <div class="form__field">
+                <button class="btn btn--full">send</button>
+              </div>
+            </form>
+          </div>
+          <!-- end form -->
         </div>
       </div>
     </div>

@@ -2,15 +2,15 @@
 <!-- begin {{ name }} -->
 {% if name === 'checkbox' or name === 'radio' or name === 'attach' %}
 <label
-  class="{{ name }}{% if mod %} {{mod}}{% endif %}"
+  class="input{% if mod %} {{mod}}{% endif %}"
   {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% elseif isInline %}
 <span
-  class="{{ name }}{% if mod %} {{mod}}{% endif %}"
+  class="input{% if mod %} {{mod}}{% endif %}"
   {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% else %}
 <div
-  class="{{ name }}{% if mod %} {{mod}}{% endif %}"
+  class="input{% if mod %} {{mod}}{% endif %}"
   {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% endif %}
 

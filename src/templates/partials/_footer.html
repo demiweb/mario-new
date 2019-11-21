@@ -18,7 +18,9 @@
       <div class="footer__right">
         {{ mixins.btn(
           title = 'have a questions?',
-          mod = 'btn--transp-gray'
+          mod = 'btn--transp-gray js-popup-open',
+          href = false,
+          attributes = { 'data-popup-target': 'contact' }
         ) }}
       </div>
     </div>

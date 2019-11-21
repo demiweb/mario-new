@@ -22,6 +22,7 @@ export const {
   HAS_TEXT,
   IS_VALID,
   IS_FIXED,
+  IS_DISABLED,
 } = {
   // $DOC: $(document),
   // $WIN: $(window),
@@ -44,4 +45,5 @@ export const {
   HAS_TEXT: 'has-text',
   IS_VALID: 'is-valid',
   IS_FIXED: 'is-fixed',
+  IS_DISABLED: 'is-disabled',
 };

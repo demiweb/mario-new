@@ -7,27 +7,50 @@
   bottom: 0
   right: 0
   left: 0
-  // width: 100vw
+  perspective: 1000px
   +ready
-    +tr(opacity .3s, visibility .3s)
+    +tr(opacity .5s $easeCustom, visibility .5s $easeCustom)
   +hidden
+  &:not(.popup--item-card)
+    background-color: rgba($black, .9)
+    padding: 15px
+    +vertical
   &.is-active
     +visible
+    #{$this}__inner
+      transform: translate(0, 0) rotateX(0)
   &__inner
     position: relative
-    background-color: $white
-    min-height: 100%
+    background-color: $white    
     padding: 50px
     width: 100%
+    max-width: 550px
+    display: inline-block
+    vertical-align: middle
+    font-size: $fz
+    transform: translate(0, 100%) rotateX(45deg)
+    +ready
+      +tr(transform .5s $easeCustom)
     +xl
       padding: 50px 30px 30px
     +lg
       padding: 50px 20px 20px
     +md
       padding: 50px 15px 15px
+    +sm
+      font-size: $fz-sm-px
   &__item-card
     width: 100%
+    display: inline-block
+    vertical-align: middle
+    font-size: $fz
+    +sm
+      font-size: $fz-sm-px
     
   &--item-card
     #{$this}__inner
-      +flex(center, center)
+      height: 100%
+      max-width: none
+      // +flex(center, center)
+      +vertical
+      overflow: auto

@@ -1,0 +1,67 @@
+.contacts
+  height: 100%
+  +flex(flex-start, normal, row, wrap)
+
+  &__left, &__right
+    width: 50%
+    +sm
+      width: 100%
+      flex-grow: 1
+      height: 50%
+  &__right
+    background-color: $black
+    +flex(center, center)
+    padding: 15px
+
+
+.map
+  position: relative
+  background-color: $gray
+  height: 100%
+  +sm
+    padding-top: 50%
+  +xs
+    padding-top: 70%
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.contacts-block
+  color: $white
+  width: 100%
+  max-width: 625px
+  // margin-left: auto
+  // margin-right: auto
+  &__title
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__contacts
+    margin-bottom: 35px
+    +flex(flex-start, normal, row, wrap)
+    +md
+      margin-bottom: 20px
+    .contacts-meta
+      width: 50%
+      padding-right: 15px
+      margin-bottom: 45px
+      +xl
+        margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+
+.contacts-meta
+  &__title
+    font-weight: 300
+    text-transform: uppercase
+    color: $gray-100
+    margin-bottom: .5em
+  &__text
+    font-size: em(18)
+    a
+      +tr(color .3s)
+      +hover
+        color: $accent

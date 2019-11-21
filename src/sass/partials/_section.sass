@@ -30,3 +30,29 @@
   &--sm
     padding-top: 25px !important
     padding-bottom: 25px !important
+  &--full
+    padding: 0 !important
+    height: calc(100vh - #{$header-height} - #{$footer-height})
+    height: calc((var(--vh, 1vh) * 100) - #{$header-height} - #{$footer-height})
+    +sm
+      height: auto
+      min-height: calc(100vh - #{$header-height} - #{$footer-height-sm})
+      min-height: calc((var(--vh, 1vh) * 100) - #{$header-height} - #{$footer-height-sm})
+  &--white
+    color: $white
+  &--center
+    text-align: center
+    +flex(center, center)
+  &--bg
+    +cover
+
+.section-block
+  &__title
+    margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+  &__subttl
+    font-size: em(18)
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px

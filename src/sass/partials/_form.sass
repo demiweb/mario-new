@@ -1,0 +1,136 @@
+.form
+  &__title
+    margin-bottom: 35px
+    +lg
+      margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+  &__field
+    +notlast
+      margin-bottom: 20px
+      +md
+        margin-bottom: 15px
+
+.input
+  $this: &
+  text-align: left
+  position: relative
+  input, textarea
+    height: 40px
+    width: 100%
+    padding: .5em 0
+    border-bottom: 1px solid #dcdcdc
+    +tr(border-color .3s)
+    &:focus
+      border-color: $accent
+    +placeholder
+      color: $gray-100
+  textarea
+    min-height: 75px
+  
+  &.has-focus, &.has-text
+    #{$this}__label
+      font-size: .75em
+      transform: translate(0, -1.4em)
+  &.is-disabled
+    pointer-events: none
+
+  &__label
+    &:first-child
+      position: absolute
+      text-transform: uppercase
+      color: $gray-100
+      z-index: 1
+      pointer-events: none
+      left: 0
+      top: .6em
+      +tr(transform .3s)
+
+  &--select
+    &.has-text
+      #{$this}__label
+        font-size: .75em
+        transform: translate(0, -1.4em)
+
+.tel-input
+  text-align: left
+  position: relative
+  +flex
+  &__select
+    width: 20%
+    padding-right: 15px
+    .custom-select, .input
+      position: static
+    +xss
+      width: 25%
+      padding-right: 5px
+  &__input
+    width: 80%
+    +xss
+      width: 75%
+
+
+.custom-select
+  $this: &
+  position: relative
+  select
+    position: absolute
+    width: 0
+    height: 0
+    opacity: 0
+    overflow: hidden
+    z-index: -1
+  &.is-open
+    #{$this}__opener
+      border-color: $accent
+    #{$this}__panel
+      +visible
+  &__opener
+    border-bottom: 1px solid #dcdcdc
+    height: 40px
+    padding: .5em 0px
+    text-transform: uppercase
+    +tr(border-color .3s)
+    +flex(flex-start, center)
+    position: relative
+    padding-right: 12px
+    cursor: pointer
+    +before
+      pointer-events: none
+      +arr(10 , 5, $accent, b)
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+      right: 0
+      z-index: 1
+  &__opener-text
+    +text-overflow
+  &__panel
+    max-height: 300px
+    overflow: auto
+    position: absolute
+    left: 0
+    right: 0
+    top: 100%
+    z-index: 3
+    background-color: $white
+    border: 1px solid #dcdcdc
+    border-top: 0
+    +hidden
+    +ready
+      +tr(visibility .3s, opacity .3s)
+  &__option
+    padding: .5em .2em
+    +flex(flex-start, center)
+    cursor: pointer
+    &[data-value="placeholder"]
+      display: none
+  &__option-text
+    +text-overflow
+    span
+      color: $gray-100
+  &__flag
+    width: 20px
+    flex: 0 0 20px
+    margin-right: .4em
+    +image('flags.png')

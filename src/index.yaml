@@ -7,3 +7,5 @@ PageList:
 - file: item-card.html
 - file: technical.html
 - file: contacts.html
+- file: 404.html
+- file: thanks.html

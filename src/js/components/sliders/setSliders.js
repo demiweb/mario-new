@@ -21,6 +21,7 @@ class MySlider {
         },
         autoplay: {
           delay: 5000,
+          disableOnInteraction: false,
         },
         loop: true,
         on: {
@@ -130,12 +131,13 @@ class MySlider {
             if (mutation.oldValue === 'false') {
               const updateSlider = () => {
                 slider.swiper.update();
+                const timeout = window.setTimeout(() => {
+                  slider.container.removeEventListener('transitionend', updateSlider);
+                  window.clearTimeout(timeout);
+                }, 0);
               };
 
               slider.container.addEventListener('transitionend', updateSlider);
-              setTimeout(() => {
-                slider.container.removeEventListener('transitionend', updateSlider);
-              }, 1000);
             }
           });
         });

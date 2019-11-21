@@ -172,8 +172,11 @@
 =no-scroll
   &.no-scroll
     overflow: hidden
+    .main, .footer
+      filter: blur(10px)
   .no-touch &.no-scroll
     margin-right: 17px
+
 
 // BG-IMAGE
 @function img-url($image)

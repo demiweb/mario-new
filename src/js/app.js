@@ -15,7 +15,10 @@ import handleHeaderOnScroll from './components/handleHeaderOnScroll';
 import setGrid from './components/setGrid';
 import setGallery from './components/setGallery';
 import popup from './components/setPopups';
-
+import toggleInputFocus from './components/toggleInputFocus';
+import setTextareaHeight from './components/setTextareaHeight';
+import customSelects from './components/selects/setSelects';
+import handleTelInput from './components/tel-input/handleTelInput';
 
 document.addEventListener('DOMContentLoaded', () => {
   sayHello();
@@ -29,4 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setGrid();
   setGallery();
   popup.init();
+  toggleInputFocus();
+  setTextareaHeight();
+
+  customSelects.forEach((select) => { select.init(); });
+  handleTelInput();
 });
