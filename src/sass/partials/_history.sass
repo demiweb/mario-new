@@ -1,0 +1,48 @@
+.history
+  &__text
+    max-width: 435px
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 70px
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
+  &__imgs
+    max-width: 935px
+    margin-left: auto
+    margin-right: auto
+    +flex(space-between, normal, row, wrap)
+  &__img
+    width: percentage(364/935)
+    position: relative
+    +cover
+    padding-top: 55%
+    +sm
+      width: calc(50% - 15px)
+    &:nth-child(1)
+      margin-bottom: 0
+      top: 260px
+      +lg
+        top: 200px
+      +md
+        top: 130px
+      +sm
+        top: 80px
+    &:nth-child(2)
+    &:nth-child(3)
+      margin-left: auto
+      margin-right: 50px
+    +notlast
+      margin-bottom: 280px
+      +lg
+        margin-bottom: 220px
+      +md
+        margin-bottom: 150px
+      +sm
+        margin-bottom: 100px

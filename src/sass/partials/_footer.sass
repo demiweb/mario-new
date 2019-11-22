@@ -1,23 +1,72 @@
 .footer
-  color: $gray-light
+  background-color: #3e4043
+  color: #969696
   &__inner
-    +flex(space-between, center)
-    padding-top: 25px
-    padding-bottom: 25px
-    height: $footer-height
-    +sm
-      display: block
-      text-align: center
-      height: $footer-height-sm
-  &__left
-    +flex(flex-start, center)
+    +flex(flex-start, normal, row, wrap)
+    padding-top: 45px
+    padding-bottom: 45px
+    +lg
+      padding-top: 30px
+      padding-bottom: 30px
+  &__left, &__right
+    width: percentage(335/1340)
     +md
-      justify-content: center
-      margin-bottom: 15px
+      width: 100%
+      padding-left: 0
+      padding-right: 0
+      text-align: center
   &__right
-    text-align: right
+    text-align: center
+    padding-left: 15px
+  &__left
+    padding-right: 15px
     +md
+      margin-bottom: 15px
+  &__middle
+    width: calc(#{percentage((1340 - 335 - 335) / 1340)} - 30px)
+    +flex(space-around, normal, row, wrap)
+    margin-left: -15px
+    margin-right: -15px
+    +md
+      width: calc(100% + 30px)
+    +xs
+      justify-content: center
       text-align: center
+  &__col
+    padding-left: 15px
+    padding-right: 15px
+    +md
+      margin-bottom: 15px
+    +xs
+      width: 50%
+  &__text
+    color: #6e6e6e
+    font-size: em(13)
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__logo
+    margin-bottom: 10px
   &__copy
     text-transform: uppercase
-    margin-right: 15px
+  &__title
+    color: $white
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__social
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+
+.footer-contact
+  +flex(center, center)
+  +notlast
+    margin-bottom: 10px
+  .icon
+    font-size: 1.2em
+    margin-right: .5em
+  a
+    +tr(color .3s)
+    +hover
+      color: $accent

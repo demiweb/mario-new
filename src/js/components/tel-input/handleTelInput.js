@@ -9,9 +9,9 @@ class TelInput {
     this.select = wrap.querySelector('select');
     this.input = wrap.querySelector('input');
     this.inputWrap = this.input.closest('.input');
-    this.maskOptions = {
-      mask: '+{38}(000)000-00-00',
-    };
+    // this.maskOptions = {
+    //   mask: '+{38}(000)000-00-00',
+    // };
   }
 
   // _setInputMask() {

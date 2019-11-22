@@ -1,0 +1,75 @@
+{%set
+features = [
+  {
+    icon: 'bracket',
+    text: 'Stainless steel that will impress 
+you through the years'
+  },
+   {
+    icon: 'contract',
+    text: 'The item is insured that will i
+mpress you through the years'
+  },
+   {
+    icon: 'recycle-sign',
+    text: 'Ecological production that will 
+impress you through the years'
+  },
+   {
+    icon: 'renewable-energy',
+    text: 'Power Balance that will impress 
+you through the years'
+  },
+   {
+    icon: 'creative-idea',
+    text: 'Smart control, absolute comfort
+that will impress you through the years'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section">
+  <div class="container">
+    <!-- begin descr -->
+    <div class="about-descr">
+      <div class="about-descr__left">
+        <div class="about-descr__title-block">
+          <div class="about-descr__title">
+            <h2 class="title title--lg">
+              <small>The first <br>
+              step towards</small>
+              a quality life
+            </h2>
+          </div>
+
+          <div class="about-descr__text text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love 
+            and passion. And we know what quality looks like.
+          </div>
+        </div>
+      </div>
+
+      <div class="about-descr__right">
+        <div class="about-descr__features">
+          {% for i in features %}
+          <!-- begin feature -->
+          <div class="feature feature--text">
+            <div class="feature__icon">
+              {{ mixins.icon(i.icon) }}
+            </div>
+
+            <div class="feature__text text--gray-100 text--light">{{ i.text | safe }}</div>
+          </div>
+          <!-- end feature -->
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="about-descr__img">
+        <img class="js-lazy" alt="" src="" data-src="./img/about/01.png"/>
+      </div>
+    </div>
+    <!-- end descr -->
+  </div>
+</section>
+<!-- end section -->

@@ -9,24 +9,30 @@
           <div class="swiper-wrapper slider slider--hero">
             {% for i in range(0, 4) %}
             <!-- begin slide -->
-            <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
+            <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/{{ hero.bg }}">
               <div class="container">
                 <div class="hero-slide__inner">
-                  <div class="hero-slide__content">
+                  <div class="hero-slide__content{% if hero.content.mod %} {{ hero.content.mod }}{% endif %}">
+                    {% if hero.title %}
                     <div class="hero-slide__title">
-                      <h1 class="title">Classic designs</h1>
+                      <h1 class="title{% if hero.titleMod %} {{ hero.titleMod}}{% endif %}">{{ hero.title | safe }}</h1>
                     </div>
+                    {% endif %}
 
+                    {% if hero.subttl %}
                     <div class="hero-slide__subttl">
-                      <div class="title"><small>with beautifully handcrafted details for a touch of luxury...</small></div>
+                      <div class="title">{{ hero.subttl | safe }}</div>
                     </div>
+                    {% endif %}
 
+                    {% if hero.btn %}
                     <div class="hero-slide__btn">
                       {{ mixins.btn(
-                        title = 'view products',
+                        title = hero.btn.title,
                         mod = ''
                         ) }}
                       </div>
+                    {% endif %}
                     </div>
                   </div>
                 </div>

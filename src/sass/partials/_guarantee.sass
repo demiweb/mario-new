@@ -1,0 +1,19 @@
+.guarantee
+  +flex(flex-start, normal, row, wrap)
+  padding-top: 8%
+  +xs
+    padding-bottom: 8%
+  &__left, &__right
+    +flex(center, normal, column)
+    width: 50%
+    +xs
+      width: 100%
+  &__left
+    padding-right: 30px
+    text-align: center
+    +lg
+      padding-right: 15px
+  &__right
+    padding-left: 30px
+    +lg
+      padding-left: 15px

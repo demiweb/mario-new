@@ -41,6 +41,7 @@
       width: 100%
 
 .feature
+  $this: &
   +flex(flex-start, center)
   margin-bottom: 60px
   +xl
@@ -67,4 +68,6 @@
       height: 70px
     .icon
       font-size: 35px
-  &__text
+  &--text
+    #{$this}__icon
+      color: inherit

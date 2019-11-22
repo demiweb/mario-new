@@ -1,12 +1,21 @@
 <!-- begin section -->
-<section class="section pb-0">
+<section class="section">
   <div class="container">
+    {% if sectionProductsLinks.title.md %}
+    <div class="section__title">
+      <h2 class="title title--md">
+        Enjoy the beauty
+        <small>of design radiators</small>
+      </h2>
+    </div>
+    {% else %}    
     <div class="section__title">
       <h2 class="title">
         Manufacturer.  Modern design.
         <small>Enjoy the beauty of design radiators</small>
       </h2>
     </div>
+    {% endif %}
 
     <!-- begin product-links -->
     <div class="product-links">

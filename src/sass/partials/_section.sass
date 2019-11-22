@@ -24,20 +24,43 @@
       margin-bottom: 30px
     +sm
       margin-bottom: 20px
+    .title
+      margin-bottom: 30px
+      +sm
+        margin-bottom: 20px
+  &__img
+    margin-bottom: 30px
+    font-size: 0
+    img
+      display: inline-block
 
   &--gray-lightest
     background-color: $gray-lightest
   &--sm
     padding-top: 25px !important
     padding-bottom: 25px !important
+  &--lg
+    padding-top: 155px
+    +xl
+      padding-top: 80px
   &--full
-    padding: 0 !important
-    height: calc(100vh - #{$header-height} - #{$footer-height})
-    height: calc((var(--vh, 1vh) * 100) - #{$header-height} - #{$footer-height})
-    +sm
+    padding: 0
+    height: 100%
+    +xl
+      padding: 0
+    +lg
+      padding: 0
+    +md
       height: auto
-      min-height: calc(100vh - #{$header-height} - #{$footer-height-sm})
-      min-height: calc((var(--vh, 1vh) * 100) - #{$header-height} - #{$footer-height-sm})
+      padding-top: 20%
+      padding-bottom: 20%
+    +sm
+      padding-top: 30%
+      padding-bottom: 30%
+  &--full-children
+    padding: 0 !important
+    +md
+      height: 100%
   &--white
     color: $white
   &--center
@@ -45,8 +68,22 @@
     +flex(center, center)
   &--bg
     +cover
+  &--overlay
+    position: relative
+    .container
+      z-index: 1
+      position: relative
+    +before
+      +coverdiv
+      z-index: 0
+      background-image: linear-gradient(to right, rgb(0,0,0) 0%, rgba(0,0,0,0) 100%)
+  &--black
+    background-color: $black
+    color: $white
+
 
 .section-block
+  $this: &
   &__title
     margin-bottom: 15px
     +sm
@@ -56,3 +93,38 @@
     margin-bottom: 25px
     +md
       margin-bottom: 15px
+  &--md
+    #{$this}__title
+      margin-bottom: 25px
+      +md
+        margin-bottom: 15px
+    #{$this}__text
+      max-width: 430px
+
+
+
+.section-video
+  color: $white
+  &__text
+    width: 50%
+    padding-right: 15px
+    +sm
+      width: 100%
+      margin-bottom: 15px
+    p
+      max-width: 425px
+      +notlast
+        margin-bottom: 25px
+        +md
+          margin-bottom: 15px
+  &__title
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+  &__content
+    +flex(flex-start, normal, row, wrap)
+  &__btn
+    width: 50%
+    +flex(center, normal, column)
+    +sm
+      width: 100%

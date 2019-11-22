@@ -67,49 +67,50 @@
   &__next
     position: absolute
     right: 0
+  &__pagination
+    @extend .container
+    position: absolute
+    z-index: 1
+    bottom: 50px
+    left: 0
+    width: 100%
+    text-align: right
+    .swiper-pagination-bullet
+      cursor: pointer
+      width: 55px
+      height: 25px
+      color: $white            
+      margin-right: 7px
+      margin-left: 7px
+      border-radius: 0
+      background-color: transparent
+      opacity: 1
+      display: inline-block
+      overflow: hidden
+      position: relative
+      +after
+        position: absolute
+        bottom: 0
+        border-bottom: 5px solid $accent
+        left: 0
+        right: 0
+        z-index: 1
+        transform: translate(-100%, 0)
+      +before
+        position: absolute
+        bottom: 0
+        border-bottom: 5px solid $white
+        left: 0
+        right: 0
+        z-index: 0
+      &.swiper-pagination-bullet-active
+        +after
+          animation: progressBar 5s forwards linear
 
   &--hero
     &__wrap
       .slider
-        &__pagination
-          @extend .container
-          position: absolute
-          z-index: 1
-          bottom: 50px
-          left: 0
-          width: 100%
-          text-align: right
-          .swiper-pagination-bullet
-            cursor: pointer
-            width: 55px
-            height: 25px
-            color: $white            
-            margin-right: 7px
-            margin-left: 7px
-            border-radius: 0
-            background-color: transparent
-            opacity: 1
-            display: inline-block
-            overflow: hidden
-            position: relative
-            +after
-              position: absolute
-              bottom: 0
-              border-bottom: 5px solid $accent
-              left: 0
-              right: 0
-              z-index: 1
-              transform: translate(-100%, 0)
-            +before
-              position: absolute
-              bottom: 0
-              border-bottom: 5px solid $white
-              left: 0
-              right: 0
-              z-index: 0
-            &.swiper-pagination-bullet-active
-              +after
-                animation: progressBar 5s forwards
+        
   &--thumbs
     &__wrap
       +flex(flex-start, normal, column)
@@ -165,6 +166,27 @@
         &__prev
           left: 0
           margin-right: 10px
+
+  &--half
+    &__wrap
+      .slider
+        &__pagination
+          bottom: auto
+          top: 40px
+          padding-left: 0
+          padding-right: 0
+          width: 50%
+          right: 0
+          left: auto
+          text-align: left
+          padding-left: 35px
+          +lg
+            top: 20px
+          +sm
+            padding-left: 15px
+            padding-right: 15px
+            width: 100%
+            text-align: right
 
 
 @keyframes progressBar

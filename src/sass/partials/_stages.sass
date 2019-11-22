@@ -1,0 +1,26 @@
+.stages
+  max-width: 905px
+  margin-left: auto
+  margin-right: auto
+
+
+.stage
+  +cover
+  position: relative
+  color: $white
+  padding: 10% 15px 5% 10%
+  +notlast
+    margin-bottom: 10px
+  &__nmb
+    font-weight: 700
+    color: #5b5b5b
+    +css-lock(60, 150, 320, 1399, font-size)
+    position: absolute
+    z-index: 0
+    top: 50%
+    transform: translate(0, -50%)
+    left: 10%
+    opacity: .15
+  &__title
+    position: relative
+    z-index: 1

@@ -9,3 +9,4 @@ PageList:
 - file: contacts.html
 - file: 404.html
 - file: thanks.html
+- file: about.html

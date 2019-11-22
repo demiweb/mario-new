@@ -1,0 +1,47 @@
+<!-- begin section -->
+<section class="">
+  <!-- begin slider -->
+  <div class="slider__wrap slider--half__wrap">
+    <div class="swiper-container js-slider" data-slider="hero">
+      <div class="swiper-wrapper slider slider--half">
+        {% for i in range(0, 4) %}
+        <div class="swiper-slide slide hero-slide hero-slide--half">
+            <div class="hero-slide__inner">
+              <div class="hero-slide__left">
+                <div class="hero-slide__content">
+                  <div class="hero-slide__title">
+                    <h2 class="title title--lg">Iconic 
+                      progressive 
+                    design</h2>
+                  </div>
+
+                  <div class="hero-slide__subttl text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love 
+                    and passion. And we know what quality looks like.
+                  </div>
+
+                  <div class="hero-slide__btn">
+                    {{ mixins.btn(
+                      title = 'Choose your own rail',
+                      mod = ''
+                    ) }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-slide__right js-lazy" data-background-image="./img/about/bg-design.jpg"> 
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="slider__pagination js-slider-pagination"></div>
+    <div class="slider__controls">
+      <button class="slider__prev prev js-slider-prev"></button>
+      <button class="slider__next next js-slider-next"></button>
+    </div>
+  </div>
+  <!-- end slider -->
+</section>
+<!-- end section -->

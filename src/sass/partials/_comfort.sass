@@ -1,0 +1,65 @@
+.comfort
+  padding-top: 130px
+  padding-bottom: 300px
+  position: relative
+  max-width: 1195px
+  margin-left: auto
+  margin-right: auto
+  +lg
+    padding-top: 100px
+    padding-bottom: 210px
+  +sm
+    padding-top: 70px
+  +xs
+    padding-top: 40px
+    padding-bottom: 100px
+  &__img
+    +coverdiv
+    z-index: 0
+    img
+      +vcenter
+      max-height: 100%
+      +lg
+        transform: translate(0, -50%)
+        left: 0
+        max-width: 470px
+      +sm
+        max-width: 60%
+      +xss
+        max-width: 190px
+  &__content
+    margin-left: auto
+    max-width: 290px
+    position: relative
+    z-index: 1
+    +lg
+      margin-left: 470px + 15px
+    +sm
+      margin-left: 330px
+    +xs
+      margin-left: 200px
+  &__text
+    position: relative
+    +sm
+      font-size: 11px
+    +notlast
+      margin-bottom: 60px
+      +lg
+        margin-bottom: 40px
+      +sm
+        margin-bottom: 0
+    &:nth-child(1)
+
+    &:nth-child(2)
+      +sm
+        top: 30px
+      +xs
+        top: 10px
+    &:nth-child(3)
+      top: 60px
+      +lg
+        top: 30px
+      +sm
+        top: 90px
+      +xs
+        top: 30px

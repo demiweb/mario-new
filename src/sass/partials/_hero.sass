@@ -12,7 +12,9 @@
       margin-bottom: 5px
 
 .hero-slide
+  $this: &
   position: relative
+  color: $white
   +cover 
   +before
     position: absolute
@@ -31,12 +33,58 @@
     +xl
       padding-left: 20px
       padding-right: 20px
-    +lg
-      // padding-left: 25px
-      // padding-right: 25px
   &__content
     max-width: 495px
-  &__title
-    // margin-bottom: 10px
+  &__content-center
+    margin-left: auto
+    margin-right: auto
+    max-width: 545px
+    text-align: center
   &__subttl
     margin-bottom: 15px
+
+  &--half
+    +before
+      display: none
+    #{$this}__inner
+      justify-content: flex-start
+      flex-wrap: wrap
+      flex-direction: row
+      padding-left: 0
+      padding-right: 0
+      +sm
+        height: auto
+    #{$this}__left, #{$this}__right
+      width: 50%
+      background-color: $black
+      +sm
+        width: 100%
+    #{$this}__left
+      +flex(center, normal, column)
+      padding-right: 15px
+      padding-left: 50px + 20px
+      +xl
+        padding-left: 30px + 20px
+      +lg
+        padding-left: 15px + 20px
+      +sm
+        order: 1
+        padding-top: 15px
+        padding-bottom: 15px
+        height: auto
+    #{$this}__right
+      +cover
+      +sm
+        padding-top: 50%
+        order: 0
+      +xs
+        padding-top: 70%
+    #{$this}__title
+      margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+    #{$this}__subttl
+      margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+

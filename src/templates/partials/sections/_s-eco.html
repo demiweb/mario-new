@@ -1,0 +1,58 @@
+{%set
+items = [
+  {
+    icon: 'stopwatch',
+    title: 'Timer controller',
+    text: 'Control the temperature and time
+yourself with new innovation'
+  },
+  {
+    icon: 'stopwatch',
+    title: 'Timer controller',
+    text: 'Control the temperature and time
+yourself with new innovation'
+  },
+  {
+    icon: 'sensor',
+    title: 'Security sensor',
+    text: 'Control the temperature and time
+yourself with new innovation'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--black section--lg">
+  <div class="container">
+    <div class="section__title">
+      <h2 class="title title--lg">Ecological production</h2>
+
+      <div class="text--light text--md">Our products are equipped with all the necessary security systems.</div>
+    </div>
+
+    <div class="section__img text-center">
+      <img class="js-lazy" alt="" src="" data-src="./img/about/eco.png"/>
+    </div>
+
+    <!-- begin eco-items -->
+    <div class="eco-items">
+      {% for i in items %}
+      <div class="eco-items__item">
+        <div class="eco-item">
+          <div class="eco-item__icon">
+            {{ mixins.icon(i.icon) }}
+          </div>
+
+          <div class="eco-item__title">
+            <h5 class="title title--h5">{{ i.title | safe }}</h5>
+          </div>
+
+          <div class="eco-item__text">{{ i.text | safe }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end eco-items -->
+  </div>
+</section>
+<!-- end section -->

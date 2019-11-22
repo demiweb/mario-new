@@ -3,27 +3,98 @@
   <div class="container">
     <div class="footer__inner">
       <div class="footer__left">
+        <div class="footer__logo">
+          <a href="/" class="logo">
+            <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png"/>
+          </a>
+        </div>
+
+        <div class="footer__text">The history of our company begins since 1998 </div>
+
         <div class="footer__copy">© mario radiators 2020</div>
-        {{ mixins.list(
-          name = 'social',
-          modifications = { wrap: '', item: '', link: '' },
-          list = [
-            { link: mixins.icon('facebook-logo') },
-            { link: mixins.icon('instagram-symbol') },
-            { link: mixins.icon('youtube') }
-          ]
-        ) }}
+      </div>
+
+      <div class="footer__middle">
+        <div class="footer__col">
+          <div class="footer__title">
+            <h5 class="title title--h5 title--ttu">Products</h5>
+          </div>
+
+          <div class="footer__nav">
+            {{ mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--footer', item: '', link: '' },
+              list = [
+                { link: 'Water rails' },
+                { link: 'Electric rails' }
+              ]
+            ) }}
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__title">
+            <h5 class="title title--h5 title--ttu">Information</h5>
+          </div>
+
+          <div class="footer__nav">
+            {{ mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--footer', item: '', link: '' },
+              list = [
+                { link: 'why mario?' },
+                { link: 'technical' },
+                { link: 'For partners' },
+                { link: 'have a question?' }
+              ]
+            ) }}
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__title">
+            <h5 class="title title--h5 title--ttu">Contact us</h5>
+          </div>
+
+          {{ mixins.list(
+            name = 'nav',
+            modifications = { wrap: 'nav--footer', item: '', link: '' },
+            list = [
+              { link: '+44-7871234567', href: 'tel:+447871234567' },
+              { link: '+44-7671234567', href: 'tel:+44-7671234567' },
+              { item: '<p>London, N7 6PA</p><p>Great Britain</p>' }
+            ]
+          ) }}
+        </div>
       </div>
 
       <div class="footer__right">
-        {{ mixins.btn(
-          title = 'have a questions?',
-          mod = 'btn--transp-gray js-popup-open',
-          href = false,
-          attributes = { 'data-popup-target': 'contact' }
-        ) }}
+        <div class="footer__social">
+          {{ mixins.list(
+            name = 'social',
+            modifications = { wrap: '', item: '', link: '' },
+            list = [
+              { link: mixins.icon('facebook-logo') },
+              { link: mixins.icon('instagram-symbol') },
+              { link: mixins.icon('youtube') }
+            ]
+          ) }}
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer-contact">
+            {{ mixins.icon('email') }}
+            <a href="mailto:ab@mario.eng">ab@mario.eng</a>
+          </div>
+          <div class="footer-contact">
+            {{ mixins.icon('skype') }}
+            <a href="mailto:info_vp_mario">info_vp_mario</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </footer>
 <!-- end footer -->
+
+

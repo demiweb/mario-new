@@ -1,0 +1,48 @@
+{%set
+numbers = [
+  {
+    icon: 'handshake',
+    title: '1254',
+    text: 'Partner stores throughout Europe'
+  },
+  {
+    icon: 'box',
+    title: '19',
+    text: 'We export products to 19 countries'
+  },
+  {
+    icon: 'goal',
+    title: '20',
+    text: 'Years of experience'
+  },
+  {
+    icon: 'pipe-1',
+    title: '100%',
+    text: 'European stainless steel products'
+  }
+]
+%}
+
+<!-- begin numbers -->
+<section class="numbers">
+  <div class="container">
+    <div class="numbers__inner">
+      {% for i in numbers %}
+      <div class="numbers__item">
+        <!-- begin number -->
+        <div class="number">
+          <div class="number__icon">
+            {{ mixins.icon(i.icon) }}
+          </div>
+
+          <div class="number__title">{{ i.title | safe }}</div>
+
+          <div class="number__text text--light">{{ i.text | safe }}</div>
+        </div>
+        <!-- end number -->
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- end numbers -->

@@ -4,21 +4,21 @@
 
   &__left, &__right
     width: 50%
-    +sm
+    +md
       width: 100%
-      flex-grow: 1
-      height: 50%
   &__right
     background-color: $black
     +flex(center, center)
     padding: 15px
+    +md
+      display: block
 
 
 .map
   position: relative
   background-color: $gray
   height: 100%
-  +sm
+  +md
     padding-top: 50%
   +xs
     padding-top: 70%
@@ -33,8 +33,6 @@
   color: $white
   width: 100%
   max-width: 625px
-  // margin-left: auto
-  // margin-right: auto
   &__title
     margin-bottom: 30px
     +md

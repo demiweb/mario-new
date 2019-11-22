@@ -7,12 +7,17 @@
       margin-bottom: 15px
   &__left, &__right
     width: 50%
-    +flex(center, normal, column)
+    
     +sm
       width: 100%
   &__left
+    font-size: 0
+    img
+      width: 100%
     +sm
       margin-bottom: 15px
+  &__right
+    +flex(center, normal, column)
   &__content
     padding-left: 45px
     padding-right: 45px
@@ -41,3 +46,19 @@
       order: 0
       +sm
         order: 1
+  &--lg
+    #{$this}__content
+      padding-left: 90px
+      max-width: 650px
+      +xl
+        padding-left: 45px
+      +lg
+        padding-left: 15px
+      +sm
+        padding-left: 0
+    #{$this}__title
+      margin-bottom: 40px
+      +lg
+        margin-bottom: 30px
+      +md
+        margin-bottom: 15px

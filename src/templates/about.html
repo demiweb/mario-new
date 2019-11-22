@@ -1,0 +1,36 @@
+---
+title: about
+page: about
+hero: {
+  slider: true,
+  bg: 'bg-hero-about-01.jpg',
+  title: 'Family business',
+  titleMod: 'title--md',
+  subttl: '<small>with beautifully handcrafted details 
+for a touch of luxury...</small>',
+  content: {
+    mod: 'hero-slide__content-center'
+  }
+}
+sectionProductsLinks: {
+  title: {
+    md: true
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-history.html" %}
+  {% include "partials/sections/_s-descr.html" %}
+  {% include "partials/sections/_s-video.html" %}
+  {% include "partials/_numbers.html" %}
+  {% include "partials/sections/_s-guarantee.html" %}
+  {% include "partials/sections/_s-eco.html" %}
+  {% include "partials/sections/_s-production.html" %}
+  {% include "partials/sections/_s-comfort.html" %}
+  {% include "partials/sections/_s-design.html" %}
+  {% include "partials/sections/_s-advantages.html" %}
+  {% include "partials/sections/_s-products-links.html" %}
+{% endblock %}

@@ -1,0 +1,29 @@
+.numbers  
+  background-color: $black
+  padding-top: 10px
+  &__inner
+    +flex(flex-start, normal, row, wrap)
+    margin-left: -15px
+    margin-right: -15px
+  &__item
+    width: 25%
+    padding-left: 15px
+    padding-right: 15px
+    margin-bottom: 65px
+    +xs
+      width: 50%
+
+.number
+  color: $white
+  text-align: center
+  &__icon
+    color: $accent
+    margin-bottom: 15px
+    .icon
+      font-size: em(65)
+  &__title
+    text-transform: uppercase
+    font-weight: 300
+    +css-lock(24, 50, 320, 1399, font-size)
+  &__text
+

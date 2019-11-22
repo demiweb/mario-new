@@ -6,7 +6,7 @@ small
 
 .title
   +css-lock(24, 36, 320, 1399, font-size)
-  line-height: 1.2
+  line-height: 1.1
   display: block
   font-weight: 700
   small
@@ -17,6 +17,8 @@ small
     +css-lock(18, 24, 320, 1399, font-size)
   &--h4
     +css-lock(16, 18, 320, 1399, font-size)
+  &--h5
+    font-size: 1em !important
   &--light
     font-weight: 300
   &--reg
@@ -30,9 +32,19 @@ small
     line-height: 1
     small
       font-size: 1em
+  &--md
+    +css-lock(30, 72, 320, 1399, font-size)
+    line-height: 1
+    small
+      font-size: 1em
+  &--inl
+    small
+      display: inline
 
 .text
   &--light
     font-weight: 300
   &--gray-100
     color: $gray-100
+  &--md
+    font-size: em(18)

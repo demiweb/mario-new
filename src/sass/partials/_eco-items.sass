@@ -1,0 +1,32 @@
+.eco-items
+  +flex(center, normal, row, wrap)
+  margin-left: -15px
+  margin-right: -15px
+  &__item
+    width: 33.33333%
+    padding-left: 15px
+    padding-right: 15px
+    margin-bottom: 15px
+    +xs
+      width: 50%
+
+.eco-item
+  text-align: center
+  color: $gray-100
+  max-width: 245px
+  margin-left: auto
+  margin-right: auto
+  &__icon
+    margin-bottom: 15px
+    border-radius: 50%
+    +flex(center, center)
+    margin-left: auto
+    margin-right: auto
+    border: 1px solid  $gray-100
+    color: $accent
+    width: 85px
+    height: 85px
+    .icon
+      font-size: em(30)
+  &__title
+    margin-bottom: 5px

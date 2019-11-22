@@ -11,7 +11,7 @@
   +ready
     +tr(opacity .5s $easeCustom, visibility .5s $easeCustom)
   +hidden
-  &:not(.popup--item-card)
+  &:not(.popup--full)
     background-color: rgba($black, .9)
     padding: 15px
     +vertical
@@ -44,10 +44,11 @@
     display: inline-block
     vertical-align: middle
     font-size: $fz
+    text-align: left
     +sm
       font-size: $fz-sm-px
     
-  &--item-card
+  &--full
     #{$this}__inner
       height: 100%
       max-width: none

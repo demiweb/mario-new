@@ -1,15 +1,25 @@
 .social
   li
     display: inline-block
-    background-color: currentColor
+    background-color: #2d2d2d
     border-radius: 50%
+    margin-left: 5px
+    margin-right: 5px
     +tr(background-color .3s)
     +hover
       background-color: $accent
+    +md
+      margin-left: 2px
+      margin-right: 2px
   a
     +flex(center, center)
-    color: $white    
-    width: 25px
-    height: 25px
+    color: $white
+    width: 40px
+    height: 40px
     .icon
-      font-size: .8em
+      font-size: em(22)
+    +md
+      width: 30px
+      height: 30px
+      .icon
+        font-size: em(16)

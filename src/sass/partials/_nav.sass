@@ -1,5 +1,5 @@
 .nav
-  text-transform: uppercase
+  
   li
     display: inline-block
     +notfirst
@@ -13,6 +13,7 @@
 
     
   a
+    text-transform: uppercase
     +tr(color .3s)
     &.is-active
       color: $white-dark
@@ -29,3 +30,13 @@
         display: inline-block
         margin-left: 15px
         margin-right: 15px
+  &--footer
+    li
+      display: block
+      +notfirst
+        margin-left: 0
+      +notlast
+        margin-bottom: 10px
+      +md
+        padding-top: 0
+        padding-bottom: 0

@@ -1,0 +1,57 @@
+{%set
+stages = [
+  {
+    bg: '1_03.jpg',
+    title: 'Pipe <small>cutting</small>'
+  },
+  {
+    bg: '1_06.jpg',
+    title: 'Grinding'
+  },
+  {
+    bg: '1_08.jpg',
+    title: 'Welding'
+  },
+  {
+    bg: '1_10.jpg',
+    title: 'Pressure <small>check</small>'
+  },
+  {
+    bg: '1_12.jpg',
+    title: 'Welds <small>cleaning</small>'
+  },
+  {
+    bg: '1_14.jpg',
+    title: 'Electropolishing'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--lg">
+  <div class="container">
+    <!-- begin fancy-title -->
+    <div class="fancy-title">
+      <span>Production</span> 
+<span>stages</span>
+    </div>
+    <!-- end fancy-title -->
+
+    <!-- begin stages -->
+    <div class="stages">
+      {% for i in stages %}
+      <!-- begin stage -->
+      <div class="stage js-lazy" data-background-image="./img/about/{{ i.bg }}">
+        <div class="stage__title">
+          <h3 class="title title--h3 title--inl">{{ i.title | safe }}</h3>
+        </div>
+
+        <div class="stage__nmb">0{{ loop.index }}</div>
+      </div>
+      <!-- end stage -->
+      {% endfor %}
+    </div>
+    <!-- end stages -->
+  </div>
+</section>
+<!-- end section -->
