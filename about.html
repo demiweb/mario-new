@@ -252,13 +252,7 @@
                 <div class="section-video__btn">
                   <!-- begin video-btn -->
                   <div class="video-btn">
-                    <button class="video-btn__btn"></button>
-                    <!-- begin popup -->
-                    <div class="popup popup--full js-popup" data-popup="video">
-                      <div class="popup__inner">
-                        <button class="popup__close close js-popup-close"></button> this is video </div>
-                    </div>
-                    <!-- end popup -->
+                    <button class="video-btn__btn js-popup-open" data-popup-target="video"></button>
                     <div class="video-btn__title">
                       <div class="title">
                         <small>Watch a video</small> about our company </div>
@@ -864,7 +858,7 @@
               </div>
               <div class="form__field">
                 <!-- begin textarea -->
-                <div class="input">
+                <div class="input input--textarea">
                   <label class="input__label">Enter your message</label>
                   <textarea class="js-focused-input js-textarea"></textarea>
                 </div>
@@ -876,6 +870,16 @@
             </form>
           </div>
           <!-- end form -->
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- begin popup -->
+    <div class="popup popup--full js-popup" data-popup="video">
+      <div class="popup__inner">
+        <button class="popup__close close js-popup-close"></button>
+        <div class="popup__video">
+          <video class="js-lazy" controls="" src="" data-src="./video/Vision.mp4"></video>
         </div>
       </div>
     </div>
