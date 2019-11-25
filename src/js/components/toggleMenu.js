@@ -2,9 +2,30 @@ import {
   IS_ACTIVE, NO_SCROLL, IS_HIDDEN,
 } from '../constants';
 
+const HAS_OPEN_MENU = 'has-open-menu';
+
 class Burger {
   init() {
-    document.addEventListener('click', this.toggle.bind(this));
+    this._addListeners();
+  }
+
+  _addListeners() {
+    this.onClick = this.handleClick.bind(this);
+    this.onKeyDown = this.handleKeyDown.bind(this);
+
+    document.addEventListener('click', this.onClick);
+    document.addEventListener('keydown', this.onKeyDown);
+  }
+
+  handleClick(e) {
+    this.toggle(e);
+  }
+
+  handleKeyDown(e) {
+    if (e.keyCode && e.keyCode === 27) {
+      if (!this.target) return;
+      this.close();
+    }
   }
 
   toggle(e) {
@@ -39,7 +60,6 @@ class Burger {
       this.burgers.forEach((btn) => btn.classList.remove(IS_ACTIVE));
       this.targets.forEach((menu) => menu.classList.remove(IS_ACTIVE));
 
-
       if (this.onClose) {
         this.onClose();
       }
@@ -56,9 +76,11 @@ export default function toggleMenu() {
   const burger = new Burger();
   burger.onToggle = () => {
     document.body.classList.toggle(NO_SCROLL);
+    document.body.classList.toggle(HAS_OPEN_MENU);
   };
   burger.onClose = () => {
     document.body.classList.remove(NO_SCROLL);
+    document.body.classList.remove(HAS_OPEN_MENU);
   };
   burger.init();
 

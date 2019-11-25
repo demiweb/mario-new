@@ -1,35 +1,24 @@
 {% macro input(name, mod, type = 'text', placeholder, value, options, fieldClass, fieldAttributes, attributes, label, isInline) %}
 <!-- begin {{ name }} -->
-{% if name === 'checkbox' or name === 'radio' or name === 'attach' %}
+{% if name === 'checkbox' or name === 'radio' or name === 'file' %}
 <label
-  class="input{% if mod %} {{mod}}{% endif %}"
+  class="input{% if name !== 'input' %} input--{{ name }}{% endif %}{% if mod %} {{mod}}{% endif %}"
   {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% elseif isInline %}
 <span
-  class="input{% if mod %} {{mod}}{% endif %}"
+  class="input{% if name !== 'input' %} input--{{ name }}{% endif %}{% if mod %} {{mod}}{% endif %}"
   {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% else %}
 <div
-  class="input{% if mod %} {{mod}}{% endif %}"
+  class="input{% if name !== 'input' %} input--{{ name }}{% endif %}{% if mod %} {{mod}}{% endif %}"
   {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
 {% endif %}
 
   {% if label.first %}
     {{ label.first | safe }}    
-  {% endif %}
+  {% endif %} 
 
-  {% if name === 'input' or name === 'radio' or name === 'checkbox' or name === 'attach' %}
-  <input
-    {% if fieldClass %}class="{{ fieldClass }}"{% endif %}
-    type="{{ type }}"
-    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if value %}value="{{value}}"{% endif %}
-    {% for attr, attrValue in fieldAttributes %}
-      {{ attr }}="{{ attrValue }}"
-    {% endfor %}>
-
-  {% elseif name === 'select' %}
-
+  {% if name === 'select' %}
   <select
     {% if fieldClass %}class="{{ fieldClass }}"{% endif %}
     {% for attr, attrValue in fieldAttributes %}
@@ -52,13 +41,24 @@
     {% for attr, attrValue in fieldAttributes %}
       {{ attr }}="{{ attrValue }}"
     {% endfor %}></textarea>
+
+  {% else %}
+
+  <input
+    {% if fieldClass %}class="{{ fieldClass }}"{% endif %}
+    type="{{ type }}"
+    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+    {% if value %}value="{{value}}"{% endif %}
+    {% for attr, attrValue in fieldAttributes %}
+      {{ attr }}="{{ attrValue }}"
+    {% endfor %}>
   {% endif %}
 
   {% if label.last %}
     {{ label.last | safe }}
   {% endif %}
 
-{% if name === 'checkbox' or name === 'radio' or name === 'attach' %}
+{% if name === 'checkbox' or name === 'radio' or name === 'file' %}
 </label>
 {% elseif isInline %}
 </span>

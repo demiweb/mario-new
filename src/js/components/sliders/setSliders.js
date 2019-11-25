@@ -33,7 +33,6 @@ class MySlider {
         on: {
           init: onInit,
         },
-        // loop: true,
       },
       thumbs: {
         navigation,
@@ -69,10 +68,12 @@ class MySlider {
     });
   }
 
-  _initSliders() {
+  _getSliders() {
     this.productsSliders = this.containers.filter((container) => container.dataset.slider === 'products');
     this.gallerySliders = this.containers.filter((container) => container.dataset.slider === 'gallery');
+  }
 
+  _initSliders() {
     this.containers.forEach((container) => {
       if (container.classList.contains(classNames.plugin.initialized)) return;
 
@@ -93,14 +94,15 @@ class MySlider {
   initGallerySliders() {
     if (!this.gallerySliders.length) return;
 
-    const [thumbsSlider] = this.sliders.filter((slider) => slider.name === 'thumbs');
-    this.thumbsSlider = thumbsSlider.swiper;
-
     this.sliders.forEach((sliderObj) => {
       const slider = sliderObj;
       if (slider.name === 'gallery') {
+        const gallery = slider.container.closest('.js-gallery');
+        const thumbs = gallery.querySelector('.js-slider[data-slider="thumbs"]');
+        const [thumbsSlider] = this.sliders.filter((el) => el.container === thumbs);
+
         slider.options.thumbs = {
-          swiper: this.thumbsSlider,
+          swiper: thumbsSlider.swiper,
         };
         slider.init();
       }
@@ -109,8 +111,7 @@ class MySlider {
 
   updateProductsSliders() {
     if (!this.productsSliders) return;
-    this.sliders.forEach((sliderObj) => {
-      const slider = sliderObj;
+    this.sliders.forEach((slider) => {
       if (slider.name === 'products') {
         slider.swiper.update();
       }
@@ -120,50 +121,46 @@ class MySlider {
   _observeProductsSlider() {
     if (!this.productsSliders.length) return;
 
-    this.sliders.forEach((sliderObj) => {
-      const slider = sliderObj;
+    this.sliders.forEach((slider) => {
+      if (slider.name !== 'products') return;
+      const { prevEl, nextEl } = slider.navigation;
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.oldValue === 'false') {
+            const updateSlider = () => {
+              slider.swiper.update();
+              const timeout = window.setTimeout(() => {
+                slider.container.removeEventListener('transitionend', updateSlider);
+                window.clearTimeout(timeout);
+              }, 0);
+            };
 
-
-      if (slider.name === 'products') {
-        const { prevEl, nextEl } = slider.navigation;
-        const observer = new MutationObserver((mutationsList) => {
-          mutationsList.forEach((mutation) => {
-            if (mutation.oldValue === 'false') {
-              const updateSlider = () => {
-                slider.swiper.update();
-                const timeout = window.setTimeout(() => {
-                  slider.container.removeEventListener('transitionend', updateSlider);
-                  window.clearTimeout(timeout);
-                }, 0);
-              };
-
-              slider.container.addEventListener('transitionend', updateSlider);
-            }
-          });
+            slider.container.addEventListener('transitionend', updateSlider);
+          }
         });
+      });
 
-        [prevEl, nextEl].forEach((button) => {
-          observer.observe(button, {
-            attributes: true,
-            attributeFilter: ['aria-disabled'],
-            attributeOldValue: true,
-          });
+      [prevEl, nextEl].forEach((button) => {
+        observer.observe(button, {
+          attributes: true,
+          attributeFilter: ['aria-disabled'],
+          attributeOldValue: true,
         });
-      }
+      });
     });
   }
-
 
   init() {
     this.containers = [...document.querySelectorAll(this.sliderClass)];
     if (!this.containers.length) return;
 
     this._getOptions();
+    this._getSliders();
     this._initSliders();
     this._observeProductsSlider();
   }
 }
 
-const mySlider = new MySlider('.js-slider');
+const slider = new MySlider('.js-slider');
 
-export default mySlider;
+export default slider;

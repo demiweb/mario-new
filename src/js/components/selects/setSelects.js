@@ -1,4 +1,5 @@
 import Select from 'select-custom';
+import filterSearch from './filterSearch';
 
 class CustomSelect extends Select {
   constructor(select, props) {
@@ -6,28 +7,30 @@ class CustomSelect extends Select {
     this.name = select.dataset.type;
   }
 
-  setTelOpenerInner(e) {
-    const timeout = window.setTimeout(() => {
-      const inner = this.opener.innerHTML;
-      const currentOption = this.el.querySelector(`[value="${e.target.value}"]`);
-      const { iso2 } = currentOption.dataset;
-
-      this.opener.innerHTML = `<div class="custom-select__flag custom-select__flag-${iso2}"></div><div class="custom-select__opener-text">${inner}</div>`;
-      window.clearTimeout(timeout);
-    }, 0);
+  get searchInput() {
+    return this.select.querySelector('.js-search');
   }
 
-  onChange(e) {
-    if (this.name === 'tel-code') this.setTelOpenerInner(e);
+  get panelOptions() {
+    return [...this.select.querySelectorAll('.custom-select__option')];
+  }
+
+  setTelOpenerInner() {
+    const inner = this.opener.innerHTML;
+    const currentOption = this.select.querySelector('.custom-select__option.is-selected');
+    const { iso2 } = currentOption.dataset;
+
+    this.opener.innerHTML = `<div class="custom-select__flag custom-select__flag-${iso2}"></div><div class="custom-select__opener-text">${inner}</div>`;
+  }
+
+  onClose() {
+    if (this.name === 'tel-code') this.setTelOpenerInner();
   }
 
   onOpen() {
     if (this.name === 'tel-code') this.el.focus();
   }
 
-  _addListeners() {
-    this.select.addEventListener('change', this.onChange.bind(this));
-  }
 
   init() {
     if (
@@ -38,7 +41,7 @@ class CustomSelect extends Select {
     }
     super.init();
 
-    this._addListeners();
+    filterSearch.call(this);
   }
 }
 
@@ -53,6 +56,10 @@ const props = {
       const inner = customOption.innerHTML;
       const { iso2 } = customOption.dataset;
       customOption.innerHTML = `<div class="custom-select__flag custom-select__flag-${iso2}"></div><div class="custom-select__option-text">${inner}</div>`;
+    },
+    panelItem: {
+      position: 'top',
+      item: '<input type="text" class="js-search" placeholder="Country code" />',
     },
   },
 };

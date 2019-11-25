@@ -25,6 +25,7 @@
       border-color: $accent
     +placeholder
       color: $gray-100
+      text-transform: uppercase
   textarea
     min-height: 75px
   
@@ -69,7 +70,6 @@
     +xss
       width: 75%
 
-
 .custom-select
   $this: &
   position: relative
@@ -78,7 +78,6 @@
     width: 0
     height: 0
     opacity: 0
-    overflow: hidden
     z-index: -1
   &.is-open
     #{$this}__opener
@@ -106,8 +105,6 @@
   &__opener-text
     +text-overflow
   &__panel
-    max-height: 300px
-    overflow: auto
     position: absolute
     left: 0
     right: 0
@@ -119,10 +116,20 @@
     +hidden
     +ready
       +tr(visibility .3s, opacity .3s)
+  &__panel-item
+    padding: .5em .2em
+  &__options
+    max-height: 260px
+    overflow: auto
   &__option
     padding: .5em .2em
     +flex(flex-start, center)
     cursor: pointer
+    +tr(color .3s, background-color .3s)
+    +hover
+      background-color: $gray-light
+    &.is-selected
+      background-color: $gray-light
     &[data-value="placeholder"]
       display: none
   &__option-text

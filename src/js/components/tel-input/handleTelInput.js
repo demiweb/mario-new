@@ -1,4 +1,3 @@
-// import IMask from 'imask';
 import countriesData from './data';
 import customSelects from '../selects/setSelects';
 import { IS_DISABLED } from '../../constants';
@@ -7,16 +6,9 @@ class TelInput {
   constructor(wrap) {
     this.wrap = wrap;
     this.select = wrap.querySelector('select');
-    this.input = wrap.querySelector('input');
+    this.input = wrap.querySelector('input[type="tel"]');
     this.inputWrap = this.input.closest('.input');
-    // this.maskOptions = {
-    //   mask: '+{38}(000)000-00-00',
-    // };
   }
-
-  // _setInputMask() {
-  //   this.inpMask = IMask(this.input, this.maskOptions);
-  // }
 
   onSelectChange() {
     if (this.select.value) {
@@ -24,10 +16,6 @@ class TelInput {
 
       this.input.value = '';
 
-      // this.inpMask.updateOptions({
-      //   mask: `+{${this.select.value}}(000)000-00-00`,
-      //   lazy: false,
-      // });
       this.input.focus();
     }
   }
@@ -70,7 +58,6 @@ class TelInput {
     this._createSelectList();
     this._initTelInput();
     this._addListeners();
-    // this._setInputMask();
   }
 }
 

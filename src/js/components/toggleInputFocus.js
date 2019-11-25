@@ -31,7 +31,13 @@ class FormInput {
   }
 
   handleBlur() {
-    this.removeFocus();
+    const timeout = window.setTimeout(() => {
+      const customSelect = this.wrap.querySelector('.custom-select');
+      if (customSelect && customSelect.classList.contains('is-open')) return;
+      this.removeFocus();
+
+      window.clearTimeout(timeout);
+    }, 200);
   }
 
   handleInput() {

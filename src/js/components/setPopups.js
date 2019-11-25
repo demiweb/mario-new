@@ -3,6 +3,8 @@ import slider from './sliders/setSliders';
 import setGallery from './setGallery';
 import setLazy from './setLazy';
 
+const HAS_OPEN_POPUP = 'has-open-popup';
+
 class MyPopup extends Popup {
   get content() {
     return this.popup.querySelector('.js-popup-content');
@@ -12,48 +14,55 @@ class MyPopup extends Popup {
     return this.popup.querySelector('.popup__inner');
   }
 
+  get gallery() {
+    return {
+      slider: this.popup.querySelector('.js-slider[data-slider="gallery"]'),
+      thumbs: this.popup.querySelector('.js-slider[data-slider="thumbs"]'),
+    };
+  }
+
   addItemCardContent() {
-    const self = this;
     this.url = this.btn.dataset.url;
 
-    const update = (e) => {
+    const update = () => {
       MyPopup.updatePlugins();
 
       const timeout = window.setTimeout(() => {
-        if (self.inner) self.inner.removeEventListener('transitionend', update);
+        if (this.inner) this.inner.removeEventListener('transitionend', update);
         window.clearTimeout(timeout);
-      }, 66);
+      }, 0);
     };
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', this.url, true);
-    xhr.onreadystatechange = function () {
-      if (this.readyState !== 4) return;
-      if (this.status !== 200) return; // or whatever error handling you want
-
-      if (self.content) self.content.innerHTML = this.responseText;
-
-      if (self.inner) self.inner.addEventListener('transitionend', update);
-    };
-    xhr.send();
-
-    if (self.inner) self.inner.addEventListener('transitionend', update);
+    this.xhr = fetch(this.url)
+      .then((responce) => responce.text())
+      .then((text) => {
+        if (this.content) this.content.innerHTML = text;
+        if (this.inner) this.inner.addEventListener('transitionend', update);
+      });
   }
 
   removeItemCardContent() {
+    slider.sliders = slider.sliders
+      .filter((sliderObj) => sliderObj.container !== this.gallery.slider)
+      .filter((sliderObj) => sliderObj.container !== this.gallery.thumbs);
+
     this.content.innerHTML = '';
   }
 
+  handleVideoClose() {
+    this.video = this.popup.querySelector('video');
+    this.video.pause();
+  }
+
   onOpen() {
-    if (this.name === 'item-card') {
-      this.addItemCardContent();
-    }
+    document.body.classList.add(HAS_OPEN_POPUP);
+    if (this.name === 'item-card') this.addItemCardContent();
   }
 
   onClose() {
-    if (this.name === 'item-card') {
-      this.removeItemCardContent();
-    }
+    document.body.classList.remove(HAS_OPEN_POPUP);
+    if (this.name === 'item-card') this.removeItemCardContent();
+    if (this.name === 'video') this.handleVideoClose();
   }
 
   static updatePlugins() {

@@ -4,7 +4,8 @@
   z-index: 15
   overflow: auto
   top: 0
-  bottom: 0
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
   right: 0
   left: 0
   perspective: 1000px
@@ -19,6 +20,8 @@
     +visible
     #{$this}__inner
       transform: translate(0, 0) rotateX(0)
+    #{$this}__video
+      display: inline-block
   &__inner
     position: relative
     background-color: $white    
@@ -47,11 +50,33 @@
     text-align: left
     +sm
       font-size: $fz-sm-px
+  &__close
+    color: $c-text
+  &__video
+    display: none
+    font-size: 0
+    video
+      width: 100%
+      object-fit: cover
+      max-height: 100vh
+      max-height: calc((var(--vh, 1vh) * 100) - 100px)
+      +xl
+        max-height: 100vh
+        max-height: calc((var(--vh, 1vh) * 100) - 80px)
+      +lg
+        max-height: 100vh
+        max-height: calc((var(--vh, 1vh) * 100) - 70px)
+      +md
+        max-height: 100vh
+        max-height: calc((var(--vh, 1vh) * 100) - 65px)
+
     
   &--full
     #{$this}__inner
+      // background-color: rgba($white, .9)
       height: 100%
       max-width: none
-      // +flex(center, center)
       +vertical
       overflow: auto
+    #{$this}__video
+      vertical-align: middle
