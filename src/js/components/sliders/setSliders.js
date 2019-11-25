@@ -97,8 +97,8 @@ class MySlider {
     this.sliders.forEach((sliderObj) => {
       const slider = sliderObj;
       if (slider.name === 'gallery') {
-        const gallery = slider.container.closest('.js-gallery');
-        const thumbs = gallery.querySelector('.js-slider[data-slider="thumbs"]');
+        const gallery = slider.container.closest(`.${classNames.slider.gallery}`);
+        const thumbs = gallery.querySelector(`.${classNames.slider.container}[data-slider="thumbs"]`);
         const [thumbsSlider] = this.sliders.filter((el) => el.container === thumbs);
 
         slider.options.thumbs = {
@@ -161,6 +161,5 @@ class MySlider {
   }
 }
 
-const slider = new MySlider('.js-slider');
-
+const slider = new MySlider(`.${classNames.slider.container}`);
 export default slider;
