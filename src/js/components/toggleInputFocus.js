@@ -17,7 +17,7 @@ class FormInput {
 
   handleText() {
     if (this.input.value === 'placeholder') return;
-    const valueMinNmb = this.input.value.indexOf('+38') > -1 ? 3 : 0;
+    const valueMinNmb = 0;
 
     if (this.input.value.length > valueMinNmb) {
       this.wrap.classList.add(HAS_TEXT);
