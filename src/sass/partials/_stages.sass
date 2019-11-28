@@ -5,12 +5,26 @@
 
 
 .stage
+  $this: &
   +cover
   position: relative
   color: $white
   padding: 10% 15px 5% 10%
+  cursor: pointer
+  +tr(padding .3s)
   +notlast
     margin-bottom: 10px
+  &:hover
+    padding-top: 5%
+    #{$this}__descr
+      max-height: 7em
+    #{$this}__title
+      +hidden
+      max-height: 0
+      overflow: hidden
+    #{$this}__nmb
+      transform: translate(5%, -50%)
+
   &__nmb
     font-weight: 700
     color: #5b5b5b
@@ -18,9 +32,17 @@
     position: absolute
     z-index: 0
     top: 50%
-    transform: translate(0, -50%)
-    left: 10%
+    transform: translate(50%, -50%)
+    left: 0
     opacity: .15
+    +tr(transform .3s)
   &__title
     position: relative
     z-index: 1
+    max-height: 3em
+    +tr(max-height .3s)
+  &__descr
+    max-width: 450px
+    max-height: 0
+    overflow: hidden
+    +tr(max-height .3s)

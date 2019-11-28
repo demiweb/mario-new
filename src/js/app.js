@@ -20,6 +20,7 @@ import toggleInputFocus from './components/toggleInputFocus';
 import setTextareaHeight from './components/setTextareaHeight';
 import customSelects from './components/selects/setSelects';
 import handleTelInput from './components/tel-input/handleTelInput';
+import animateFrames from './components/animateFrames/animateFrames';
 
 document.addEventListener('DOMContentLoaded', () => {
   sayHello();
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleInputFocus();
   setTextareaHeight();
 
-  customSelects.forEach((select) => { select.init(); });
+  customSelects.forEach((select) => select.init());
   handleTelInput();
+  animateFrames();
 });

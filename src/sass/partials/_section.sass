@@ -128,3 +128,18 @@
     +flex(center, normal, column)
     +sm
       width: 100%
+
+.s-frames
+  .no-touch &
+    height: 300vh
+    +sm
+      height: auto
+  &__inner
+    .no-touch &
+      position: sticky
+      top: $header-height
+      +flex(center, normal, column)
+      +sm
+        position: relative
+        top: auto
+        display: block

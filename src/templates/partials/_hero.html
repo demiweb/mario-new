@@ -1,5 +1,10 @@
 <!-- begin hero -->
-<section class="hero{% if hero.bg %} js-lazy{% endif %}" {% if hero.bg %}data-background-image="./img/hero/{{ hero.bg }}"{% endif %}>
+<section class="hero">
+  {% if hero.bg %}
+  <div class="hero__bg js-lazy" data-background-image="./img/hero/{{ hero.bg }}"></div>
+  {% endif %}
+
+
 
   {% if hero.slider %}
     <div class="hero__slider">
@@ -9,7 +14,18 @@
           <div class="swiper-wrapper slider slider--hero">
             {% for i in range(0, 4) %}
             <!-- begin slide -->
-            <div class="swiper-slide slide hero-slide js-lazy" data-background-image="./img/hero/{{ hero.bg }}">
+            <div class="swiper-slide slide hero-slide" >
+
+              {% if hero.bg %}
+              <div class="hero-slide__bg is-animated no-fade-in js-lazy" data-background-image="./img/hero/{{ hero.bg }}"></div>
+              {% endif %}
+
+              {% if hero.video %}
+              <div class="hero-slide__bg">
+                <video class="js-lazy" src="" data-src="./video/video-bg.mp4" muted="" autoplay="" loop="" playsinline=""></video>
+              </div>
+              {% endif %}
+
               <div class="container">
                 <div class="hero-slide__inner">
                   <div class="hero-slide__content{% if hero.content.mod %} {{ hero.content.mod }}{% endif %}">

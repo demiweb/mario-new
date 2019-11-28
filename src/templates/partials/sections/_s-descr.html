@@ -29,47 +29,55 @@ that will impress you through the years'
 %}
 
 <!-- begin section -->
-<section class="section">
-  <div class="container">
-    <!-- begin descr -->
-    <div class="about-descr">
-      <div class="about-descr__left">
-        <div class="about-descr__title-block">
-          <div class="about-descr__title">
-            <h2 class="title title--lg">
-              <small>The first <br>
-              step towards</small>
-              a quality life
-            </h2>
-          </div>
-
-          <div class="about-descr__text text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love 
-            and passion. And we know what quality looks like.
-          </div>
-        </div>
-      </div>
-
-      <div class="about-descr__right">
-        <div class="about-descr__features">
-          {% for i in features %}
-          <!-- begin feature -->
-          <div class="feature feature--text">
-            <div class="feature__icon">
-              {{ mixins.icon(i.icon) }}
+<section class="section s-frames js-scroll-frames-section">
+  <div class="s-frames__inner">
+    <div class="container">
+      <!-- begin descr -->
+      <div class="about-descr">
+        <div class="about-descr__left js-scroll-frames-block">
+          <div class="about-descr__title-block">
+            <div class="about-descr__title">
+              <h2 class="title title--lg">
+                <small>The first <br>
+                step towards</small>
+                a quality life
+              </h2>
             </div>
 
-            <div class="feature__text text--gray-100 text--light">{{ i.text | safe }}</div>
+            <div class="about-descr__text text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love 
+              and passion. And we know what quality looks like.
+            </div>
           </div>
-          <!-- end feature -->
-          {% endfor %}
+        </div>
+
+        <div class="about-descr__right js-scroll-frames-block">
+          <div class="about-descr__features">
+            {% for i in features %}
+            <!-- begin feature -->
+            <div class="feature feature--text js-scroll-frames-stagger-el">
+              <div class="feature__icon">
+                {{ mixins.icon(i.icon) }}
+              </div>
+
+              <div class="feature__text text--gray-100 text--light">{{ i.text | safe }}</div>
+            </div>
+            <!-- end feature -->
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          class="about-descr__img js-scroll-frames-img"
+          data-frames="98"
+          data-frame-nmb-step="3"
+          data-srcset="./img/frames/scene{frame}-min.jpg"
+        >
+          <img class="js-lazy" alt="" src="" data-src="./img/about/01.png"/>
+
         </div>
       </div>
-
-      <div class="about-descr__img">
-        <img class="js-lazy" alt="" src="" data-src="./img/about/01.png"/>
-      </div>
+      <!-- end descr -->
     </div>
-    <!-- end descr -->
   </div>
 </section>
 <!-- end section -->
