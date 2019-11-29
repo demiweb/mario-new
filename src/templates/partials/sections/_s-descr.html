@@ -34,7 +34,11 @@ that will impress you through the years'
     <div class="container">
       <!-- begin descr -->
       <div class="about-descr">
-        <div class="about-descr__left js-scroll-frames-block">
+        <div
+          class="about-descr__left js-scroll-frames-block js-anim-el"
+          data-anim-name="fadeInUpSmooth"
+          data-anim-duration="1200"
+          >
           <div class="about-descr__title-block">
             <div class="about-descr__title">
               <h2 class="title title--lg">
@@ -54,7 +58,11 @@ that will impress you through the years'
           <div class="about-descr__features">
             {% for i in features %}
             <!-- begin feature -->
-            <div class="feature feature--text js-scroll-frames-stagger-el">
+            <div
+              class="feature feature--text js-scroll-frames-stagger-el js-anim-el"
+              data-anim-delay="500"
+              data-anim-name="fadeInUpSmooth"
+             >
               <div class="feature__icon">
                 {{ mixins.icon(i.icon) }}
               </div>

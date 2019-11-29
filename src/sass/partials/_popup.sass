@@ -69,7 +69,72 @@
       +md
         max-height: calc(100vh - 65px)
         max-height: calc((var(--vh, 1vh) * 100) - 65px)
+  &__left, &__right
+    width: 50%
+    +flex(center, center, column)
 
+  &__right
+    border-left: 1px solid #3b3b3b
+    #{$this}__link-img
+      img
+        width: 130%
+        max-width: none
+        max-height: none
+        transform: translate(0, 0)
+        right: 0
+        left: auto
+    #{$this}__link-title
+      max-width: 80%
+      margin-left: auto
+
+  &__link
+    display: block
+    position: relative
+    width: 180px
+    +md
+      width: 120px
+    +xs
+      width: 100px
+    +xss
+      width: 80px
+    +hover
+      #{$this}__link-title
+        border-bottom-color: $accent
+        +before
+          +visible
+    
+  &__link-title
+    display: block
+    border-bottom: 1px solid transparent
+    +tr(border-color .3s)
+    position: relative
+    padding: .5em 0
+    padding-right: 10px
+    padding-left: 10px
+    width: 100%
+    +before
+      +icon-arrow(8, 8, 1, $accent, 225)
+      right: 0
+      top: 50%
+      transform: translate(0, -50%) rotate(225deg)
+      position: absolute
+      +hidden
+      +tr(opacity, visibility .3s)
+  &__link-img
+    position: relative
+    padding-top: 130%
+    display: block
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+    +xs
+      // padding-top: 150%
+    img
+     position: absolute
+     max-height: 100%
+     top: 0
+     left: 50%
+     transform: translate(-50%, 0)
     
   &--full
     #{$this}__inner
@@ -80,3 +145,18 @@
       overflow: auto
     #{$this}__video
       vertical-align: middle
+  &--dark
+    color: $white
+    #{$this}__inner
+      background-color: rgba($black-light, .95)
+    #{$this}__close
+      color: $white
+  &--half
+    #{$this}__inner
+      font-size: $fz
+      padding-top: 0
+      padding-bottom: 0
+      +flex
+      +sm
+        font-size: $fz-sm-px
+

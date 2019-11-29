@@ -1,0 +1,57 @@
+{%set
+table = [
+  {
+    cols: [
+      { text: 'Phoneix 830x482' },
+      { text: '15' },
+      { text: '217' },
+      { text: '<strong>120</strong>' }
+    ]
+  },
+  {
+    cols: [
+      { text: 'Phoneix 1150x482' },
+      { text: '21' },
+      { text: '311' },
+      { text: '<strong>150</strong>' }
+    ]
+  },
+  {
+    cols: [
+      { text: 'Phoneix 1700x655' },
+      { text: '30' },
+      { text: '217' },
+      { text: '<strong>160</strong>' }
+    ]
+  },
+  {
+    cols: [
+      { text: 'Phoneix 1800x755' },
+      { text: '35' },
+      { text: '210' },
+      { text: '<strong>185</strong>' }
+    ]
+  }
+]
+%}
+
+<!-- begin item-pres-table -->
+<div class="item-pres-table">
+  <table>
+    <tr>
+      <th>Size <small>(mm)</small></th>
+      <th>Quantity of ribs <small>(pcs)</small></th>
+      <th>Heat power <small>(watt)</small></th>
+      <th>Price <small>(£)</small></th>
+    </tr>
+
+    {% for i in table %}
+    <tr>
+      {% for j in i.cols %}
+      <td>{{ j.text | safe }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<!-- end item-pres-table -->

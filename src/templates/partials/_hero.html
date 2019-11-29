@@ -4,23 +4,21 @@
   <div class="hero__bg js-lazy" data-background-image="./img/hero/{{ hero.bg }}"></div>
   {% endif %}
 
-
-
   {% if hero.slider %}
     <div class="hero__slider">
       <!-- begin slider -->
       <div class="slider__wrap slider--hero__wrap">
         <div class="swiper-container js-slider" data-slider="hero">
           <div class="swiper-wrapper slider slider--hero">
-            {% for i in range(0, 4) %}
+            {% for i in hero.slider %}
             <!-- begin slide -->
             <div class="swiper-slide slide hero-slide" >
 
-              {% if hero.bg %}
-              <div class="hero-slide__bg is-animated no-fade-in js-lazy" data-background-image="./img/hero/{{ hero.bg }}"></div>
+              {% if i.bg %}
+              <div class="hero-slide__bg is-animated no-fade-in js-lazy" data-background-image="./img/hero/{{ i.bg }}"></div>
               {% endif %}
 
-              {% if hero.video %}
+              {% if i.video %}
               <div class="hero-slide__bg">
                 <video class="js-lazy" src="" data-src="./video/video-bg.mp4" muted="" autoplay="" loop="" playsinline=""></video>
               </div>

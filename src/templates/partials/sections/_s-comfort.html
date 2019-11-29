@@ -17,7 +17,11 @@
 
       <div class="comfort__content">
         {% for i in range(0, 3) %}
-        <div class="comfort__text text--light text--md">Production as a family business 
+        <div
+          class="comfort__text text--light text--md js-anim-el"
+          data-anim-delay="{{ (i + 1) }}00"
+          data-anim-name="fadeInLeftSmooth">
+          Production as a family business 
           with a lot of years of experience. 
         </div>
         {% endfor %}

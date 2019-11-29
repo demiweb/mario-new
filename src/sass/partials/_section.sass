@@ -1,6 +1,7 @@
 .section
   padding-top: 65px
   padding-bottom: 65px
+  position: relative
   +xl
     padding-top: 50px
     padding-bottom: 50px
@@ -13,6 +14,22 @@
   +sm
     padding-top: 20px
     padding-bottom: 20px
+  &__inner
+    position: relative
+    z-index: 1
+  &__bg
+    +coverdiv
+    z-index: 0
+    +before
+      +coverdiv
+      z-index: 1
+      background-color: rgba($black, .5)
+    video
+      +coverdiv
+      width: 100%
+      height: 100%
+      object-fit: cover
+      z-index: 0
   &__title
     text-align: center
     margin-bottom: 65px
@@ -33,6 +50,20 @@
     font-size: 0
     img
       display: inline-block
+  &__subttl
+    max-width: 450px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 75px
+    text-align: center
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
 
   &--gray-lightest
     background-color: $gray-lightest

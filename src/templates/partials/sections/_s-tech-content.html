@@ -1,0 +1,48 @@
+{%set
+blocks = [
+  {
+    img: '02.jpg',
+    title: '<small>Start your</small> own way',
+    text: "
+      <p>Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
+A successful man is one who can lay a firm foundation with the bricks others have thrown at him.</p>
+      <p>No one can make you feel inferior without your consent. If you don't value your time, neither will others. Stop giving away your time and talents-start charging for it.</p>
+    "
+  },
+  {
+    mod: 'text-block--reverse',
+    title: '<small>Make your</small> life better',
+    img: '3517.jpg',
+    text: '
+      <p>Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
+When you stop chasing the wrong things, you give the right things a chance to catch you.</p>
+      <p>Blessed are those who can give without remembering and take without forgetting. Do one thing every day that scares you. Life is not about finding yourself. Life is about creating yourself.</p>
+    '
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="">
+  <div class="container">
+    {% for i in blocks %}
+    <!-- begin text-block -->
+    <div class="text-block{% if i.mod %} {{ i.mod }}{% endif %}">
+      <div class="text-block__left">
+        <div class="text-block__img js-lazy" data-background-image="./img/tech/{{ i.img }}"></div>
+      </div>
+
+      <div class="text-block__right">
+        <div class="text-block__content">
+          <div class="text-block__title">
+            <h2 class="title title--lg">{{ i.title | safe }}</h2>
+          </div>
+          <div class="text-block__text text--gray-100">{{ i.text | safe }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- end text-block -->
+    {% endfor %}
+  </div>
+</section>
+<!-- end section -->

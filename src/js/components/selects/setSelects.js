@@ -16,11 +16,15 @@ class CustomSelect extends Select {
   }
 
   setTelOpenerInner() {
-    const inner = this.opener.innerHTML;
     const currentOption = this.select.querySelector('.custom-select__option.is-selected');
+    const currentOptionTextEl = currentOption.querySelector('.custom-select__option-text');
+    const inner = currentOptionTextEl ? currentOptionTextEl.innerText : null;
     const { iso2 } = currentOption.dataset;
 
-    this.opener.innerHTML = `<div class="custom-select__flag custom-select__flag-${iso2}"></div><div class="custom-select__opener-text">${inner}</div>`;
+    this.opener.innerHTML = `
+      <div class="custom-select__flag custom-select__flag-${iso2}"></div>
+      <div class="custom-select__opener-text">${inner}</div>
+    `;
   }
 
   onClose() {
@@ -55,7 +59,10 @@ const props = {
       const customOption = customOpt;
       const inner = customOption.innerHTML;
       const { iso2 } = customOption.dataset;
-      customOption.innerHTML = `<div class="custom-select__flag custom-select__flag-${iso2}"></div><div class="custom-select__option-text">${inner}</div>`;
+      customOption.innerHTML = `
+        <div class="custom-select__flag custom-select__flag-${iso2}">
+        </div><div class="custom-select__option-text">${inner}</div>
+      `;
     },
     panelItem: {
       position: 'top',

@@ -44,7 +44,6 @@ class TelInput {
 
     customSelects.forEach((select) => {
       if (select.el === this.select) {
-        select.destroy();
         select.init();
       }
     });

@@ -1,31 +1,52 @@
 <!-- begin section -->
-<section class="section pb-0">
+<section class="section">
   <div class="container">
-    <!-- begin guarantee -->
-    <div class="guarantee">
-      <div class="guarantee__left">
-        <div class="guarantee__img">
-          <img class="js-lazy" alt="" src="" data-src="./img/about/50.png"/>
+    {{ mixins.fancyTitle(
+      id = 'warranty',
+      title = {
+        top: '50 years',
+        bottom: 'guarantee'
+      }
+    ) }}
+
+    <div class="section__subttl text--md text--light">
+      Production as a family business with a lot of years of experience. We produce towel warmers with love 
+and passion. And we know what quality looks like.
+
+    </div>
+
+    <!-- begin text-block -->
+    <div class="text-block">
+      <div class="text-block__left">
+        <div class="text-block__img-wrap">
+          <img class="js-lazy" alt="" src="" data-src="./img/warranty.jpg"/>
         </div>
       </div>
 
-      <div class="guarantee__right">
-        <div class="guarantee__content">
-          <!-- begin section-block -->
-          <div class="section-block section-block--md">
-            <div class="section-block__title">
-              <h2 class="title title--lg">years <br> guarantee</h2>
+      <div class="text-block__right">
+        <div class="text-block__content">
+          <!-- begin quote -->
+          <div class="quote">
+            <div class="quote__title">
+              <h3 class="title title--h3">Mary st.John</h3>
+              <div class="quote__subttl">Deputy Director</div>
+            </div>            
+
+            <div class="quote__text">Innovation distinguishes between a leader and a follower. Things don't have to change the world to be important. You have to trust in something - your gut, destiny, life, karma, whatever.</div>
+
+            <div class="quote__icon">
+              {{ mixins.icon('right-quotation-sign') }}
             </div>
 
-            <div class="section-block__text text--light text--md">Production as a family business with a lot of years 
-              of experience. We produce towel warmers with love and passion. And we know what quality looks like.
+            <div class="quote__sign">
+              <img class="js-lazy" alt="" src="" data-src="./img/Arthur_Miller_signature.png"/>
             </div>
           </div>
-          <!-- end section-block -->
+          <!-- end quote -->
         </div>
       </div>
     </div>
-    <!-- end guarantee -->
+    <!-- end text-block -->
   </div>
 </section>
 <!-- end section -->

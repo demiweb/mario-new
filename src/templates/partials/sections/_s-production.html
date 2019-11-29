@@ -28,20 +28,25 @@ stages = [
 %}
 
 <!-- begin section -->
-<section class="section section--lg">
+<section class="section">
   <div class="container">
-    <!-- begin fancy-title -->
-    <div class="fancy-title">
-      <span>Production</span> 
-<span>stages</span>
-    </div>
-    <!-- end fancy-title -->
+    {{ mixins.fancyTitle(
+      id = 'production',
+      title = {
+        top: 'Production',
+        bottom: 'stages'
+      }
+    ) }}
+
 
     <!-- begin stages -->
     <div class="stages">
       {% for i in stages %}
       <!-- begin stage -->
-      <div class="stage js-lazy" data-background-image="./img/about/{{ i.bg }}">
+      <div
+        class="stage no-fade-in js-lazy js-anim-el"
+        data-background-image="./img/about/{{ i.bg }}"
+        data-anim-name="fadeInUpSmooth">
         <div class="stage__title">
           <h3 class="title title--h3 title--inl">{{ i.title | safe }}</h3>
         </div>

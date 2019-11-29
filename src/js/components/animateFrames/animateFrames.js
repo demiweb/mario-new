@@ -33,7 +33,19 @@ class FramesAnimator {
     this.observer.observe(this.section);
   }
 
+  _disableJsAnimAnimations() {
+    const { blocks } = this.dom;
+    if (!blocks.length) return;
+
+    blocks.forEach((block) => block.classList.remove('js-anim-el'));
+    if (blocks.length === 2) {
+      const staggerEls = [...blocks[1].querySelectorAll('.js-scroll-frames-stagger-el')];
+      staggerEls.forEach((block) => block.classList.remove('js-anim-el'));
+    }
+  }
+
   init() {
+    this._disableJsAnimAnimations();
     this._observeVisibility();
     this.inited = true;
   }

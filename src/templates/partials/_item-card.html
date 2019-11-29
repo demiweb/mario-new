@@ -44,21 +44,7 @@
     <div class="item-card-meta-blocks">
       {% for i in itemCard.meta %}
       <div class="item-card-meta-blocks__item">
-        <!-- begin item-card-meta-block -->
-        <div class="item-card-meta-block">
-          <div class="item-card-meta-block__img">
-            {% if i.icon %}
-            {{ mixins.icon(i.icon) }}
-            {% else %}            
-            <img class="js-lazy" alt="" src="" data-src="./img/steel.jpg"/>
-            {% endif %}
-          </div>
-
-          <div class="item-card-meta-block__title">{{ i.title | safe }}</div>
-
-          <div class="item-card-meta-block__icon"></div>
-        </div>
-        <!-- end item-card-meta-block -->
+        {% include "partials/_item-card-block.html" %}
       </div>
       {% endfor %}
     </div>

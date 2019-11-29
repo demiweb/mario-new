@@ -105,7 +105,12 @@
         z-index: 0
       &.swiper-pagination-bullet-active
         +after
-          animation: progressBar 5s forwards linear
+          transform: translate(0, 0)
+    &:not(.no-autoplay)
+      .swiper-pagination-bullet
+        &.swiper-pagination-bullet-active
+          +after
+            animation: progressBar 5s forwards linear
 
   &--hero
     &__wrap
@@ -187,6 +192,39 @@
             padding-right: 15px
             width: 100%
             text-align: right
+  &--full
+    &__wrap
+      .slide
+        +cover
+        padding-top: 50%
+        +xs
+          padding-top: 70%
+      .slider
+        &__pagination
+          bottom: auto
+          top: 40px
+          width: 100%
+          text-align: left
+          +lg
+            top: 20px
+
+
+  // &--one-third
+  //   &__wrap
+  //     .slider
+  //       &__pagination
+  //         bottom: auto
+  //         top: 40px
+  //         width: percentage(510/1440)
+  //         text-align: left
+  //         padding-left: 50px
+  //         +lg
+  //           top: 20px
+  //         +sm
+  //           padding-left: 15px
+  //           padding-right: 15px
+  //           width: 100%
+  //           text-align: right
 
 
 @keyframes progressBar

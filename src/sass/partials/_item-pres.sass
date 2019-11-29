@@ -1,0 +1,63 @@
+.item-pres
+  &__top
+    +flex(space-between, center)
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__text
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+
+.item-pres-table
+  table
+    font-weight: 300
+    th
+      text-align: left
+      font-weight: 700
+    td, th
+      padding: em(12) em(20)
+      border: 1px solid #e2e2e2
+      vertical-align: middle
+      +notfirst
+        text-align: center
+      +sm
+        padding: 10px
+    th
+      background-color: $accent
+      color: $white
+      small
+        font-weight: 300
+        color: #fdc9a6
+    td
+      padding-top: 1em
+      padding-bottom: 1em
+
+.item-pres-block
+  &__inner
+    +flex(flex-start, normal, row, wrap)
+  &__left
+    width: percentage(510/1440)
+    .slider__wrap, .swiper-container
+      height: 100%
+    +lg
+      width: 40%
+    +md
+      width: 100%
+  &__right
+    width: percentage((1440 - 510)/1440)
+    +flex(center, normal, column)
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 5%
+    padding-bottom: 5%
+    +lg
+      width: 60%
+    +md
+      width: 100%
+  &__content
+    max-width: 665px
+    margin-left: auto
+    margin-right: auto
+    +md
+      max-width: none

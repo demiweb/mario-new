@@ -72,6 +72,9 @@ body
   +tr(color .3s)
   +hover
     color: $accent
+  &--sm
+    width: 15px
+    height: 15px
 
 .contact-man
   text-align: center
@@ -94,6 +97,8 @@ body
     font-size: $fz-sm-px
   &--lg
     +css-lock(24, 36, 320, 1399, font-size)
+    small
+      font-size: $fz
 
 .video-btn
   +flex(flex-start, center)
@@ -126,26 +131,107 @@ body
       z-index: 1
 
 .fancy-title
-  +css-lock(50, 150, 320, 1399, font-size)
+  position: relative
+  padding-top: 17%
   font-weight: 700
-  text-align: center
-  +image('about/maxresdefault-(2).jpg')
-  -webkit-text-fill-color: transparent
-  -webkit-background-clip: text
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: 50% 0%
-  margin-bottom: 100px
-  +xl
-    margin-bottom: 80px
-  +lg
-    margin-bottom: 50px
-  +md
-    margin-bottom: 30px
+  margin-bottom: 20px
+  overflow: hidden
+  +before
+    z-index: 1
+    left: 0
+    right: 0
+    height: 5px
+    background-color: $white
+    bottom: -2px
+    position: absolute
+  svg, video 
+    +coverdiv
+    width: 100%
+    height: 100%
+  svg
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 150%
+    height: 150%
+    z-index: 1
+    
+    rect
+      fill: $white
+    text      
+  video
+    object-fit: cover
+    z-index: 0
   +sm
-    margin-bottom: 20px
-  span
-    display: block
+    padding-top: 0
+    font-size: em(50)
+    font-weight: 700
+    text-align: center
+    +image('about/maxresdefault-(2).jpg')
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50% 0%
+  &__inner-mob
+    display: none
+    +sm
+      display: block
+  &__inner-desc
+    +sm
+      display: none
+  &__text
     +notfirst
       margin-top: -.5em
+  &--production
+    svg
+      > rect
+        mask: url(#production-mask)
+  &--warranty
+    svg
+      > rect
+        mask: url(#warranty-mask)
+
+
+.quote
+  position: relative
+  padding-top: em(22)
+  &__title
+    margin-bottom: 10px
+    padding-bottom: 10px
+    position: relative
+    z-index: 1
+    +before
+      width: 45px
+      border-top: 1px solid currentColor
+      bottom: 0
+      left: 0
+      position: absolute
+  &__text
+    font-style: italic
+    font-size: em(18)
+    font-weight: 300
+    position: relative
+    z-index: 1
+    margin-bottom: 45px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__subttl
+    font-size: 13px
+    color: $gray-100
+    font-weight: 300
+  &__icon
+    opacity: .07
+    position: absolute
+    z-index: 0
+    top: 0
+    right: 20%
+    .icon
+      font-size: em(55)
+  &__sign
+    text-align: right
+    font-size: 0
+
     

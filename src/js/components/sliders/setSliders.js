@@ -28,6 +28,19 @@ class MySlider {
           init: onInit,
         },
       },
+      half: {
+        slidesPerView: 1,
+        navigation,
+        pagination: {
+          el: pagination,
+          type: 'bullets',
+          clickable: true,
+        },
+        loop: true,
+        on: {
+          init: onInit,
+        },
+      },
       gallery: {
         navigation,
         on: {
@@ -63,6 +76,23 @@ class MySlider {
           992: {
             slidesPerView: 4,
           },
+        },
+      },
+      full: {
+        navigation,
+        pagination: {
+          el: pagination,
+          type: 'bullets',
+          clickable: true,
+        },
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        on: {
+          init: onInit,
         },
       },
     });

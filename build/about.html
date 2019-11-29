@@ -26,9 +26,8 @@
                 <!-- begin nav -->
                 <nav class="nav">
                   <ul>
-                    <li><a href="#" class=" is-active">Water</a></li>
-                    <li><a href="#">Electric</a></li>
-                    <li><a href="#">why mario?</a></li>
+                    <li><button class="js-popup-open" data-popup-target="category">Production</button></li>
+                    <li><a href="#" class=" is-active">why mario?</a></li>
                     <li><a href="#">Technical</a></li>
                     <li><a href="#">get Contact</a></li>
                   </ul>
@@ -47,7 +46,6 @@
       <main class="main">
         <!-- begin hero -->
         <section class="hero">
-          <div class="hero__bg js-lazy" data-background-image="./img/hero/bg-hero-about-01.jpg"></div>
           <div class="hero__slider">
             <!-- begin slider -->
             <div class="slider__wrap slider--hero__wrap">
@@ -55,7 +53,9 @@
                 <div class="swiper-wrapper slider slider--hero">
                   <!-- begin slide -->
                   <div class="swiper-slide slide hero-slide">
-                    <div class="hero-slide__bg is-animated no-fade-in js-lazy" data-background-image="./img/hero/bg-hero-about-01.jpg"></div>
+                    <div class="hero-slide__bg">
+                      <video class="js-lazy" src="" data-src="./video/video-bg.mp4" muted="" autoplay="" loop="" playsinline=""></video>
+                    </div>
                     <div class="container">
                       <div class="hero-slide__inner">
                         <div class="hero-slide__content hero-slide__content-center">
@@ -139,7 +139,7 @@
             <div class="container">
               <!-- begin descr -->
               <div class="about-descr">
-                <div class="about-descr__left js-scroll-frames-block">
+                <div class="about-descr__left js-scroll-frames-block js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-duration="1200">
                   <div class="about-descr__title-block">
                     <div class="about-descr__title">
                       <h2 class="title title--lg">
@@ -151,7 +151,7 @@
                 <div class="about-descr__right js-scroll-frames-block">
                   <div class="about-descr__features">
                     <!-- begin feature -->
-                    <div class="feature feature--text js-scroll-frames-stagger-el">
+                    <div class="feature feature--text js-scroll-frames-stagger-el js-anim-el" data-anim-delay="500" data-anim-name="fadeInUpSmooth">
                       <div class="feature__icon">
                         <!-- begin icon-bracket -->
                         <svg viewBox="0 0 512 512" class="icon icon-bracket" width="1.000em" height="1em">
@@ -164,7 +164,7 @@
                     </div>
                     <!-- end feature -->
                     <!-- begin feature -->
-                    <div class="feature feature--text js-scroll-frames-stagger-el">
+                    <div class="feature feature--text js-scroll-frames-stagger-el js-anim-el" data-anim-delay="500" data-anim-name="fadeInUpSmooth">
                       <div class="feature__icon">
                         <!-- begin icon-contract -->
                         <svg height="1em" width="1.000em" viewBox="0 0 512 512" class="icon icon-contract">
@@ -178,7 +178,7 @@
                     </div>
                     <!-- end feature -->
                     <!-- begin feature -->
-                    <div class="feature feature--text js-scroll-frames-stagger-el">
+                    <div class="feature feature--text js-scroll-frames-stagger-el js-anim-el" data-anim-delay="500" data-anim-name="fadeInUpSmooth">
                       <div class="feature__icon">
                         <!-- begin icon-recycle-sign -->
                         <svg viewBox="0 0 480.052 480.052" class="icon icon-recycle-sign" width="1.000em" height="1em">
@@ -190,7 +190,7 @@
                     </div>
                     <!-- end feature -->
                     <!-- begin feature -->
-                    <div class="feature feature--text js-scroll-frames-stagger-el">
+                    <div class="feature feature--text js-scroll-frames-stagger-el js-anim-el" data-anim-delay="500" data-anim-name="fadeInUpSmooth">
                       <div class="feature__icon">
                         <!-- begin icon-renewable-energy -->
                         <svg viewBox="0 0 512 512" class="icon icon-renewable-energy" width="1.000em" height="1em">
@@ -204,7 +204,7 @@
                     </div>
                     <!-- end feature -->
                     <!-- begin feature -->
-                    <div class="feature feature--text js-scroll-frames-stagger-el">
+                    <div class="feature feature--text js-scroll-frames-stagger-el js-anim-el" data-anim-delay="500" data-anim-name="fadeInUpSmooth">
                       <div class="feature__icon">
                         <!-- begin icon-creative-idea -->
                         <svg viewBox="0 0 480.164 480.164" class="icon icon-creative-idea" width="1.000em" height="1em">
@@ -227,33 +227,38 @@
         </section>
         <!-- end section -->
         <!-- begin section -->
-        <section class="section section--bg section--overlay js-lazy" data-background-image="./img/about/bg-video.jpg">
-          <div class="container">
-            <!-- begin section-video -->
-            <div class="section-video">
-              <div class="section-video__title">
-                <h2 class="title title--lg"> Mario. <small>History</small>
-                </h2>
-              </div>
-              <div class="section-video__content">
-                <div class="section-video__text text--light text--md">
-                  <p>On November 21, 1998, the history of the famous Ukrainian brand Mario, the leading manufacturer of stainless steel towel warmers and design radiators, dates back to today.</p>
-                  <p>Starting a family business, a father with two sons created the first stainless steel heated towel rail. The product became the basis of the family business and became the start of the development of the enterprise.</p>
+        <section class="section section--bg section--overlay">
+          <div class="section__bg">
+            <video class="js-lazy" src="" data-src="./video/video-bg.mp4" muted="" autoplay="" loop="" playsinline=""></video>
+          </div>
+          <div class="section__inner">
+            <div class="container">
+              <!-- begin section-video -->
+              <div class="section-video">
+                <div class="section-video__title">
+                  <h2 class="title title--lg"> Mario. <small>History</small>
+                  </h2>
                 </div>
-                <div class="section-video__btn">
-                  <!-- begin video-btn -->
-                  <div class="video-btn">
-                    <button class="video-btn__btn js-popup-open" data-popup-target="video"></button>
-                    <div class="video-btn__title">
-                      <div class="title">
-                        <small>Watch a video</small> about our company </div>
-                    </div>
+                <div class="section-video__content">
+                  <div class="section-video__text text--light text--md">
+                    <p>On November 21, 1998, the history of the famous Ukrainian brand Mario, the leading manufacturer of stainless steel towel warmers and design radiators, dates back to today.</p>
+                    <p>Starting a family business, a father with two sons created the first stainless steel heated towel rail. The product became the basis of the family business and became the start of the development of the enterprise.</p>
                   </div>
-                  <!-- end video-btn -->
+                  <div class="section-video__btn">
+                    <!-- begin video-btn -->
+                    <div class="video-btn">
+                      <button class="video-btn__btn js-popup-open" data-popup-target="video"></button>
+                      <div class="video-btn__title">
+                        <div class="title">
+                          <small>Watch a video</small> about our company </div>
+                      </div>
+                    </div>
+                    <!-- end video-btn -->
+                  </div>
                 </div>
               </div>
+              <!-- end section-video -->
             </div>
-            <!-- end section-video -->
           </div>
         </section>
         <!-- end section -->
@@ -328,18 +333,33 @@
         </section>
         <!-- end numbers -->
         <!-- begin section -->
-        <section class="section section--lg">
+        <section class="section">
           <div class="container">
             <!-- begin fancy-title -->
-            <div class="fancy-title">
-              <span>Production</span>
-              <span>stages</span>
+            <div class="fancy-title fancy-title--production">
+              <div class="fancy-title__inner-mob">
+                <div class="fancy-title__text">Production</div>
+                <div class="fancy-title__text">stages</div>
+              </div>
+              <div class="fancy-title__inner-desc">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 80" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <mask id="production-mask" x="0" y="0" width="100%" height="100%">
+                      <rect x="0" y="0" width="100%" height="100%" />
+                      <text x="50%" y="50%" text-anchor="middle">Production</text>
+                      <text x="50%" y="65%" text-anchor="middle">stages</text>
+                    </mask>
+                  </defs>
+                  <rect x="0" y="0" width="100%" height="100%" />
+                </svg>
+                <video class="js-lazy" src="" data-src="./video/welding.mp4" muted="" autoplay="" loop="" playsinline=""></video>
+              </div>
             </div>
             <!-- end fancy-title -->
             <!-- begin stages -->
             <div class="stages">
               <!-- begin stage -->
-              <div class="stage js-lazy" data-background-image="./img/about/1_03.jpg">
+              <div class="stage no-fade-in js-lazy js-anim-el" data-background-image="./img/about/1_03.jpg" data-anim-name="fadeInUpSmooth">
                 <div class="stage__title">
                   <h3 class="title title--h3 title--inl">Pipe <small>cutting</small></h3>
                 </div>
@@ -348,7 +368,7 @@
               </div>
               <!-- end stage -->
               <!-- begin stage -->
-              <div class="stage js-lazy" data-background-image="./img/about/1_06.jpg">
+              <div class="stage no-fade-in js-lazy js-anim-el" data-background-image="./img/about/1_06.jpg" data-anim-name="fadeInUpSmooth">
                 <div class="stage__title">
                   <h3 class="title title--h3 title--inl">Grinding</h3>
                 </div>
@@ -357,7 +377,7 @@
               </div>
               <!-- end stage -->
               <!-- begin stage -->
-              <div class="stage js-lazy" data-background-image="./img/about/1_08.jpg">
+              <div class="stage no-fade-in js-lazy js-anim-el" data-background-image="./img/about/1_08.jpg" data-anim-name="fadeInUpSmooth">
                 <div class="stage__title">
                   <h3 class="title title--h3 title--inl">Welding</h3>
                 </div>
@@ -366,7 +386,7 @@
               </div>
               <!-- end stage -->
               <!-- begin stage -->
-              <div class="stage js-lazy" data-background-image="./img/about/1_10.jpg">
+              <div class="stage no-fade-in js-lazy js-anim-el" data-background-image="./img/about/1_10.jpg" data-anim-name="fadeInUpSmooth">
                 <div class="stage__title">
                   <h3 class="title title--h3 title--inl">Pressure <small>check</small></h3>
                 </div>
@@ -375,7 +395,7 @@
               </div>
               <!-- end stage -->
               <!-- begin stage -->
-              <div class="stage js-lazy" data-background-image="./img/about/1_12.jpg">
+              <div class="stage no-fade-in js-lazy js-anim-el" data-background-image="./img/about/1_12.jpg" data-anim-name="fadeInUpSmooth">
                 <div class="stage__title">
                   <h3 class="title title--h3 title--inl">Welds <small>cleaning</small></h3>
                 </div>
@@ -384,7 +404,7 @@
               </div>
               <!-- end stage -->
               <!-- begin stage -->
-              <div class="stage js-lazy" data-background-image="./img/about/1_14.jpg">
+              <div class="stage no-fade-in js-lazy js-anim-el" data-background-image="./img/about/1_14.jpg" data-anim-name="fadeInUpSmooth">
                 <div class="stage__title">
                   <h3 class="title title--h3 title--inl">Electropolishing</h3>
                 </div>
@@ -394,6 +414,66 @@
               <!-- end stage -->
             </div>
             <!-- end stages -->
+          </div>
+        </section>
+        <!-- end section -->
+        <!-- begin section -->
+        <section class="section">
+          <div class="container">
+            <!-- begin fancy-title -->
+            <div class="fancy-title fancy-title--warranty">
+              <div class="fancy-title__inner-mob">
+                <div class="fancy-title__text">50 years</div>
+                <div class="fancy-title__text">guarantee</div>
+              </div>
+              <div class="fancy-title__inner-desc">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 80" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <mask id="warranty-mask" x="0" y="0" width="100%" height="100%">
+                      <rect x="0" y="0" width="100%" height="100%" />
+                      <text x="50%" y="50%" text-anchor="middle">50 years</text>
+                      <text x="50%" y="65%" text-anchor="middle">guarantee</text>
+                    </mask>
+                  </defs>
+                  <rect x="0" y="0" width="100%" height="100%" />
+                </svg>
+                <video class="js-lazy" src="" data-src="./video/welding.mp4" muted="" autoplay="" loop="" playsinline=""></video>
+              </div>
+            </div>
+            <!-- end fancy-title -->
+            <div class="section__subttl text--md text--light"> Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
+            <!-- begin text-block -->
+            <div class="text-block">
+              <div class="text-block__left">
+                <div class="text-block__img-wrap">
+                  <img class="js-lazy" alt="" src="" data-src="./img/warranty.jpg" />
+                </div>
+              </div>
+              <div class="text-block__right">
+                <div class="text-block__content">
+                  <!-- begin quote -->
+                  <div class="quote">
+                    <div class="quote__title">
+                      <h3 class="title title--h3">Mary st.John</h3>
+                      <div class="quote__subttl">Deputy Director</div>
+                    </div>
+                    <div class="quote__text">Innovation distinguishes between a leader and a follower. Things don't have to change the world to be important. You have to trust in something - your gut, destiny, life, karma, whatever.</div>
+                    <div class="quote__icon">
+                      <!-- begin icon-right-quotation-sign -->
+                      <svg width="1.000em" height="1em" viewBox="0 0 98.829 98.829" class="icon icon-right-quotation-sign">
+                        <path d="M96.76 41.603C91.511 22.831 78.562 9.204 65.975 9.204c-1.011 0-2.021.088-3.005.262a1.998 1.998 0 00-1.581 2.507l2.591 9.268a2.02 2.02 0 002.01 1.459l.206-.004c4.668 0 13.199 6.996 17.548 22.545.172.617.335 1.248.492 1.906-4.882-2.416-10.706-2.975-15.98-1.506-11.898 3.329-18.868 15.715-15.542 27.611 2.696 9.639 11.563 16.373 21.563 16.373 2.037 0 4.071-.281 6.046-.834 7.846-2.193 13.745-8.707 16.611-18.338 2.587-8.689 2.522-19.204-.174-28.85zM14.088 9.206c-1.009 0-2.02.086-3.003.26a1.998 1.998 0 00-1.581 2.507l2.592 9.268c.25.895 1.097 1.5 2.01 1.459l.204-.004c4.668 0 13.2 6.996 17.549 22.545.173.621.336 1.252.492 1.906-4.884-2.416-10.706-2.975-15.98-1.506C4.475 48.97-2.497 61.356.831 73.252c2.696 9.639 11.563 16.373 21.563 16.373 2.037 0 4.071-.281 6.047-.834 7.845-2.193 13.744-8.707 16.611-18.338 2.586-8.689 2.522-19.205-.175-28.852-5.252-18.77-18.199-32.395-30.789-32.395z" />
+                      </svg>
+                      <!-- end icon-right-quotation-sign -->
+                    </div>
+                    <div class="quote__sign">
+                      <img class="js-lazy" alt="" src="" data-src="./img/Arthur_Miller_signature.png" />
+                    </div>
+                  </div>
+                  <!-- end quote -->
+                </div>
+              </div>
+            </div>
+            <!-- end text-block -->
           </div>
         </section>
         <!-- end section -->
@@ -413,9 +493,9 @@
                 <img class="js-lazy" alt="" src="" data-src="./img/about/comfort.jpg" />
               </div>
               <div class="comfort__content">
-                <div class="comfort__text text--light text--md">Production as a family business with a lot of years of experience. </div>
-                <div class="comfort__text text--light text--md">Production as a family business with a lot of years of experience. </div>
-                <div class="comfort__text text--light text--md">Production as a family business with a lot of years of experience. </div>
+                <div class="comfort__text text--light text--md js-anim-el" data-anim-delay="100" data-anim-name="fadeInLeftSmooth"> Production as a family business with a lot of years of experience. </div>
+                <div class="comfort__text text--light text--md js-anim-el" data-anim-delay="200" data-anim-name="fadeInLeftSmooth"> Production as a family business with a lot of years of experience. </div>
+                <div class="comfort__text text--light text--md js-anim-el" data-anim-delay="300" data-anim-name="fadeInLeftSmooth"> Production as a family business with a lot of years of experience. </div>
               </div>
             </div>
             <!-- end comfort -->
@@ -426,17 +506,17 @@
         <section class="">
           <!-- begin slider -->
           <div class="slider__wrap slider--half__wrap">
-            <div class="swiper-container js-slider" data-slider="hero">
+            <div class="swiper-container js-slider" data-slider="half">
               <div class="swiper-wrapper slider slider--half">
                 <div class="swiper-slide slide hero-slide hero-slide--half">
                   <div class="hero-slide__inner">
                     <div class="hero-slide__left">
                       <div class="hero-slide__content">
-                        <div class="hero-slide__title">
+                        <div class="hero-slide__title js-anim-el" data-anim-name="fadeInUpSmooth">
                           <h2 class="title title--lg">Iconic progressive design</h2>
                         </div>
-                        <div class="hero-slide__subttl text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
-                        <div class="hero-slide__btn">
+                        <div class="hero-slide__subttl text--light text--md js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="150"> Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
+                        <div class="hero-slide__btn js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="300">
                           <a href="#" class="btn">Choose your own rail</a>
                         </div>
                       </div>
@@ -449,11 +529,11 @@
                   <div class="hero-slide__inner">
                     <div class="hero-slide__left">
                       <div class="hero-slide__content">
-                        <div class="hero-slide__title">
+                        <div class="hero-slide__title js-anim-el" data-anim-name="fadeInUpSmooth">
                           <h2 class="title title--lg">Iconic progressive design</h2>
                         </div>
-                        <div class="hero-slide__subttl text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
-                        <div class="hero-slide__btn">
+                        <div class="hero-slide__subttl text--light text--md js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="150"> Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
+                        <div class="hero-slide__btn js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="300">
                           <a href="#" class="btn">Choose your own rail</a>
                         </div>
                       </div>
@@ -466,11 +546,11 @@
                   <div class="hero-slide__inner">
                     <div class="hero-slide__left">
                       <div class="hero-slide__content">
-                        <div class="hero-slide__title">
+                        <div class="hero-slide__title js-anim-el" data-anim-name="fadeInUpSmooth">
                           <h2 class="title title--lg">Iconic progressive design</h2>
                         </div>
-                        <div class="hero-slide__subttl text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
-                        <div class="hero-slide__btn">
+                        <div class="hero-slide__subttl text--light text--md js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="150"> Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
+                        <div class="hero-slide__btn js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="300">
                           <a href="#" class="btn">Choose your own rail</a>
                         </div>
                       </div>
@@ -483,11 +563,11 @@
                   <div class="hero-slide__inner">
                     <div class="hero-slide__left">
                       <div class="hero-slide__content">
-                        <div class="hero-slide__title">
+                        <div class="hero-slide__title js-anim-el" data-anim-name="fadeInUpSmooth">
                           <h2 class="title title--lg">Iconic progressive design</h2>
                         </div>
-                        <div class="hero-slide__subttl text--light text--md">Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
-                        <div class="hero-slide__btn">
+                        <div class="hero-slide__subttl text--light text--md js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="150"> Production as a family business with a lot of years of experience. We produce towel warmers with love and passion. And we know what quality looks like. </div>
+                        <div class="hero-slide__btn js-anim-el" data-anim-name="fadeInUpSmooth" data-anim-delay="300">
                           <a href="#" class="btn">Choose your own rail</a>
                         </div>
                       </div>
@@ -498,7 +578,7 @@
                 </div>
               </div>
             </div>
-            <div class="slider__pagination js-slider-pagination"></div>
+            <div class="slider__pagination no-autoplay js-slider-pagination"></div>
             <div class="slider__controls">
               <button class="slider__prev prev js-slider-prev"></button>
               <button class="slider__next next js-slider-next"></button>
@@ -715,6 +795,29 @@
         <button class="popup__close close js-popup-close"></button>
         <div class="popup__video">
           <video class="js-lazy" controls="" src="" data-src="./video/Vision.mp4"></video>
+        </div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- begin popup -->
+    <div class="popup popup--full popup--dark popup--half js-popup" data-popup="category">
+      <div class="popup__inner">
+        <button class="popup__close close js-popup-close"></button>
+        <div class="popup__left">
+          <a href="#" class="popup__link">
+            <span class="popup__link-img">
+              <img class="js-lazy" alt="" src="" data-src="./img/popup-water.png" />
+            </span>
+            <span class="popup__link-title">Water</span>
+          </a>
+        </div>
+        <div class="popup__right">
+          <a href="#" class="popup__link">
+            <span class="popup__link-img">
+              <img class="js-lazy" alt="" src="" data-src="./img/popup-electr.png" />
+            </span>
+            <span class="popup__link-title">Electric</span>
+          </a>
         </div>
       </div>
     </div>

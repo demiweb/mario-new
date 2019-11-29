@@ -1,0 +1,82 @@
+{%set
+cardsLeft = {
+  meta: [
+    {
+      icon: 'beam',
+      title: '304 grade 
+stainless steel'
+    },
+    {
+      icon: 'water',
+      title: 'Hydronic'
+    },
+    {
+      icon: 'dashboard',
+      title: 'Max. working
+pressure 12 PA'
+    }   
+  ]
+}
+%}
+
+{%set
+cardsRight = {
+  meta: [
+    {
+      icon: 'hot-thermometer',
+      title: 'Heating 
+element'
+    },
+    {
+      icon: 'shield',
+      title: '50 years 
+warranty'
+    } 
+  ]
+}
+%}
+
+<!-- begin section -->
+<section class="section">
+  <div class="container">
+    <!-- begin item-descr -->
+    <div class="item-descr">
+      <div class="item-descr__img">
+        <img class="js-lazy" alt="" src="" data-src="./img/1000х445_T10000.png"/>
+      </div>
+
+      <div class="item-descr__cards">
+        {% for i in cardsLeft.meta %}
+          {% include "partials/_item-card-block.html" %}
+        {% endfor %}
+      </div>
+
+      <div class="item-descr__cards">
+        {% for i in cardsRight.meta %}
+          {% include "partials/_item-card-block.html" %}
+        {% endfor %}
+      </div>
+
+      <div class="item-descr__modal item-descr-modal">
+        <button class="item-descr-modal__close close close--sm"></button>
+
+        <div class="item-descr-modal__title">
+          <h3 class="title title--h3">50 years warranty</h3>
+        </div>
+
+        <div class="item-descr-modal__text text--light text--gray-100">50 years warranty - created to emphasize your individuality and creativity. Made of stainless steel water heated towel warmer Marsel 
+from Mario Company - the choice of those who think, act, and do not conform to stereotypes, the choice of real personalities.</div>
+
+        <div class="item-descr-modal__btn">
+          {{ mixins.btn(
+            title = 'ok',
+            mod = 'btn--transp-gray',
+            href = false
+          ) }}
+        </div>
+      </div>
+    </div>
+    <!-- end item-descr -->
+  </div>
+</section>
+<!-- end section -->

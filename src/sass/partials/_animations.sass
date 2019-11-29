@@ -1,6 +1,18 @@
 .fadeIn
   animation-name: fadeIn
 
+.fadeInUpSmooth
+  animation-name: fadeInUpSmooth
+  animation-timing-function: $easeSmooth
+
+.fadeInUp
+  animation-name: fadeInUp
+  animation-timing-function: $easeSmooth
+
+.fadeInLeftSmooth
+  animation-name: fadeInLeftSmooth
+  animation-timing-function: $easeSmooth
+
 .bounceIn
   animation-duration: 0.75s
   animation-name: bounceIn
@@ -34,6 +46,28 @@
   to
     opacity: 1
     transform: scale3d(1, 1, 1)
+
+@keyframes fadeInUpSmooth 
+  0% 
+    transform: translate(0, 100%) scale(1, 2)
+  100% 
+    transform: translate(0, 0) scale(1, 1)
+
+@keyframes fadeInUp
+  0% 
+    transform: translate(0, 100%)
+    opacity: 0
+  100% 
+    transform: translate(0, 0)
+    opacity: 1
+
+@keyframes fadeInLeftSmooth
+  0% 
+    transform: translate(100%, 0) scale(2, 1)
+    opacity: 0
+  100% 
+    transform: translate(0, 0) scale(1, 1)
+    opacity: 1
 
 
 

@@ -10,3 +10,4 @@ PageList:
 - file: 404.html
 - file: thanks.html
 - file: about.html
+- file: item-presentation.html

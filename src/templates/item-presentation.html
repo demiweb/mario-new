@@ -1,0 +1,22 @@
+---
+title: item-presentation
+page: item-presentation
+outClass: 'out--full has-fixed-header'
+header: {
+  mod: 'is-white is-fixed',
+  logo: 'logo.png'
+}
+sectionProductsLinks: {
+  title: {
+    md: true
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero-item.html" %}
+  {% include "partials/sections/_s-item-presentation.html" %}
+  {% include "partials/sections/_s-item-descr.html" %}
+  {% include "partials/sections/_s-products-links.html" %}
+{% endblock %}
