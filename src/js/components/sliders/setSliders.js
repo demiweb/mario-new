@@ -162,7 +162,7 @@ class MySlider {
               const timeout = window.setTimeout(() => {
                 slider.container.removeEventListener('transitionend', updateSlider);
                 window.clearTimeout(timeout);
-              }, 0);
+              });
             };
 
             slider.container.addEventListener('transitionend', updateSlider);

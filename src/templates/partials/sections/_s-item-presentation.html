@@ -30,13 +30,28 @@
             <div class="item-pres__top">
               <h2 class="title title--md-s">Phoneix</h2>
 
-              <a href="#" class="comb-btn">
+              <div class="item-pres__btns">              
+                {{ mixins.btn(
+                  title = mixins.icon('email') + '<span>contact us</span>',
+                  mod = 'btn--comb js-popup-open',
+                  href = false,
+                  attributes = { 'data-popup-target': 'contact' }
+                ) }}
+
+                {{ mixins.btn(
+                  title = '',
+                  mod = 'btn--comb btn--arrow btn--comb-static',
+                  attributes = { download: '' }
+                ) }}
+              </div>
+
+{#               <a href="#" class="comb-btn">
                 <span class="comb-btn__title">
                   {{ mixins.icon('email') }}
-                  contact us
+                  
                 </span>
                 <span class="comb-btn__arrow"></span>
-              </a>
+              </a> #}
             </div>
 
             <div class="item-pres__text text--light text--md">Towel rail Phoenix. This premium water heated towel rail is ideal choice for a product withmaximum heat output. This premium water heated towel rail is ideal choice for a product withmaximum heat output. This premium water heated towel rail is ideal choice.</div>
@@ -51,54 +66,5 @@
     </div>
   </div>
   <!-- end item-pres-block -->
-
-
-  {# <!-- begin slider -->
-  <div class="slider__wrap slider--one-third__wrap">
-    <div class="swiper-container js-slider" data-slider="hero">
-      <div class="swiper-wrapper slider slider--one-third">
-        {% for i in range(0, 4) %}
-        <div class="swiper-slide slide hero-slide hero-slide--one-third">
-            <div class="hero-slide__inner">
-              <div class="hero-slide__left js-lazy" data-background-image="./img/about/bg-design.jpg"></div>
-
-              <div class="hero-slide__right">
-                <div class="hero-slide__content">
-                  <!-- begin item-pres -->
-                  <div class="item-pres">
-                    <div class="item-pres__top">
-                      <h2 class="title title--md-s">Phoneix</h2>
-
-                      <a href="#" class="comb-btn">
-                        <span class="comb-btn__title">
-                          {{ mixins.icon('email') }}
-                          contact us
-                        </span>
-                        <span class="comb-btn__arrow"></span>
-                      </a>
-                    </div>
-
-                    <div class="item-pres__text text--light text--md">Towel rail Phoenix. This premium water heated towel rail is ideal choice for a product withmaximum heat output. This premium water heated towel rail is ideal choice for a product withmaximum heat output. This premium water heated towel rail is ideal choice.</div>
-
-                    <div class="item-pres__table">
-                      {% include "partials/_item-table.html" %}
-                    </div>
-                  </div>
-                  <!-- end item-pres -->
-                </div>
-              </div>
-            </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="slider__pagination js-slider-pagination"></div>
-    <div class="slider__controls">
-      <button class="slider__prev prev js-slider-prev"></button>
-      <button class="slider__next next js-slider-next"></button>
-    </div>
-  </div>
-  <!-- end slider --> #}
 </section>
 <!-- end section -->

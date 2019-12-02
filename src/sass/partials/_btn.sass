@@ -33,6 +33,55 @@
   &--full
     min-width: 0
     width: 100%
+  &--comb
+    height: 39px
+    min-width: 39px
+    border: 2px solid currentColor
+    color: $accent
+    position: relative
+    border-radius: 25px
+    background-color: $white
+    padding: .6em .5em .5em
+    // padding: .6em .2em .5em
+    font-weight: 700
+    text-transform: none
+    overflow: hidden
+    +xs
+      min-width: 39px
+    +hover
+      span
+        max-height: none
+        max-width: 300px
+        margin-left: 10px
+    span
+      position: relative
+      max-width: 0
+      max-height: 0
+      overflow: hidden
+      display: block
+      top: -.1em
+      +tr(transform .3s, max-width .3s, margin .3s)
+    .icon
+      font-size: 1.2em
+      margin-left: 0
+    +hover
+      background-color: $accent
+      border-color: $accent
+      color: $white
+  &--arrow
+    border-radius: 50%
+    &::before, &::after
+      content: ''
+      +vcenter
+    &::before
+      +icon-arrow(10, 10, 2, currentColor, -45)
+      display: block
+      left: calc(50% - 5px)
+    &::after
+      background-color: currentColor
+      width: 2px
+      height: 18px
+      display: block
 
 
 .comb-btn
@@ -56,27 +105,5 @@
     padding-right: 20px
     margin-right: 10px
     +tr(background-color .3s)
-    .icon
-      font-size: 1.2em
-      margin-right: .5em
-  &__arrow
-    // +flex(center, center)
-    border-radius: 50%
-    height: 39px
-    width: 39px
-    flex: 0 0 39px
-    border: 2px solid currentColor
-    position: relative
-    +tr(background-color .3s)
-    &::before, &::after
-      content: ''
-      +vcenter
-    &::before
-      +icon-arrow(10, 10, 2, currentColor, -45)
-      display: block
-      left: calc(50% - 5px)
-    &::after
-      background-color: currentColor
-      width: 2px
-      height: 18px
-      display: block
+    
+    

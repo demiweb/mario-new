@@ -1,12 +1,4 @@
-// import $ from 'jquery';
-
 export const {
-  // $DOC,
-  // $WIN,
-  // $HTMLBODY,
-  // $HTML,
-  // $BODY,
-
   IS_ACTIVE,
   IS_OPEN,
   IS_VISIBLE,
@@ -23,13 +15,9 @@ export const {
   IS_VALID,
   IS_FIXED,
   IS_DISABLED,
+  HAS_OPEN_MENU,
+  HAS_OPEN_POPUP,
 } = {
-  // $DOC: $(document),
-  // $WIN: $(window),
-  // $HTMLBODY: $('html, body'),
-  // $HTML: $('html'),
-  // $BODY: $('body'),
-
   IS_ACTIVE: 'is-active',
   IS_OPEN: 'is-open',
   IS_VISIBLE: 'is-visible',
@@ -46,4 +34,6 @@ export const {
   IS_VALID: 'is-valid',
   IS_FIXED: 'is-fixed',
   IS_DISABLED: 'is-disabled',
+  HAS_OPEN_MENU: 'has-open-menu',
+  HAS_OPEN_POPUP: 'has-open-popup',
 };

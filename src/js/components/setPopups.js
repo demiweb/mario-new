@@ -2,8 +2,7 @@ import Popup from 'popup-simple';
 import slider from './sliders/setSliders';
 import setGallery from './setGallery';
 import setLazy from './setLazy';
-
-const HAS_OPEN_POPUP = 'has-open-popup';
+import { HAS_OPEN_POPUP, HAS_OPEN_MENU, NO_SCROLL } from '../constants';
 
 class MyPopup extends Popup {
   get content() {
@@ -21,16 +20,18 @@ class MyPopup extends Popup {
     };
   }
 
-  addItemCardContent() {
-    this.url = this.btn.dataset.url;
+  get url() {
+    return this.btn.dataset.url;
+  }
 
+  addItemCardContent() {
     const update = () => {
       MyPopup.updatePlugins();
 
       const timeout = window.setTimeout(() => {
         if (this.inner) this.inner.removeEventListener('transitionend', update);
         window.clearTimeout(timeout);
-      }, 0);
+      });
     };
 
     this.xhr = fetch(this.url)
@@ -41,12 +42,16 @@ class MyPopup extends Popup {
       });
   }
 
+  clearContent() {
+    this.content.innerHTML = '';
+  }
+
   removeItemCardContent() {
     slider.sliders = slider.sliders
       .filter((sliderObj) => sliderObj.container !== this.gallery.slider)
       .filter((sliderObj) => sliderObj.container !== this.gallery.thumbs);
 
-    this.content.innerHTML = '';
+    this.clearContent();
   }
 
   handleVideoClose() {
@@ -54,15 +59,42 @@ class MyPopup extends Popup {
     this.video.pause();
   }
 
+  handleItemModalOpen() {
+    document.body.classList.remove(NO_SCROLL);
+    if (!this.content) return;
+
+    this.xhr = fetch(this.url)
+      .then((responce) => responce.text())
+      .then((text) => {
+        if (this.content) this.content.innerHTML = text;
+      });
+  }
+
+  handleItemModalClose() {
+    this.clearContent();
+  }
+
   onOpen() {
-    document.body.classList.add(HAS_OPEN_POPUP);
+    if (this.name !== 'item-info-modal') {
+      document.body.classList.add(HAS_OPEN_POPUP);
+    }
+
     if (this.name === 'item-card') this.addItemCardContent();
+    if (this.name === 'item-info-modal') this.handleItemModalOpen();
   }
 
   onClose() {
-    document.body.classList.remove(HAS_OPEN_POPUP);
+    if (this.name !== 'item-info-modal') {
+      document.body.classList.remove(HAS_OPEN_POPUP);
+    }
+
     if (this.name === 'item-card') this.removeItemCardContent();
     if (this.name === 'video') this.handleVideoClose();
+    if (this.name === 'item-info-modal') this.handleItemModalClose();
+
+    if (document.body.classList.contains(HAS_OPEN_MENU)) {
+      document.body.classList.add(NO_SCROLL);
+    }
   }
 
   static updatePlugins() {

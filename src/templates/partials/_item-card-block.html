@@ -1,15 +1,19 @@
 <!-- begin item-card-meta-block -->
-<div class="item-card-meta-block">
-  <div class="item-card-meta-block__img">
+<button
+  class="item-card-meta-block js-popup-open"
+  data-popup-target="item-info-modal"
+  data-url="./partials/item-info-modal.html"
+>
+  <span class="item-card-meta-block__img">
     {% if i.icon %}
     {{ mixins.icon(i.icon) }}
     {% else %}            
     <img class="js-lazy" alt="" src="" data-src="./img/steel.jpg"/>
     {% endif %}
-  </div>
+  </span>
 
-  <div class="item-card-meta-block__title">{{ i.title | safe }}</div>
+  <span class="item-card-meta-block__title">{{ i.title | safe }}</span>
 
-  <div class="item-card-meta-block__icon"></div>
-</div>
+  <span class="item-card-meta-block__icon"></span>
+</button>
 <!-- end item-card-meta-block -->

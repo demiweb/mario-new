@@ -1,8 +1,6 @@
 import {
-  IS_ACTIVE, NO_SCROLL, IS_HIDDEN,
+  IS_ACTIVE, NO_SCROLL, IS_HIDDEN, HAS_OPEN_MENU,
 } from '../constants';
-
-const HAS_OPEN_MENU = 'has-open-menu';
 
 class Burger {
   init() {

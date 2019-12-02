@@ -52,9 +52,15 @@
       display: none
 
 .item-descr-modal
-  background-color: $gray-lightest
-  padding: 50px 30px
+  background-color: $gray-lightest  
   border-bottom: 2px solid  $accent
+  +hidden
+  +ready
+    +tr(opacity .3s, visibility .3s)
+  &.is-active
+    +visible
+  &__inner
+    padding: 50px 30px
   &__title, &__text
     margin-bottom: 15px
     +md
