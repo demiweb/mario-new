@@ -1,3 +1,5 @@
+// countries phones data from https://github.com/jackocnr/intl-tel-input
+
 const allCountries = [
   [
     'Afghanistan (‫افغانستان‬‎)',
