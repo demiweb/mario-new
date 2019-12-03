@@ -88,7 +88,12 @@
   +flex(flex-start, normal, column)
   position: relative
   padding: 18px 10px
-    
+  border: 2px solid transparent
+  +tr(border-color .3s)
+  +hover
+    border-color: $accent
+  &.is-active
+    border-color: $accent    
   &__img
     width: 80px
     height: 80px

@@ -2,9 +2,16 @@ import Popup from 'popup-simple';
 import slider from './sliders/setSliders';
 import setGallery from './setGallery';
 import setLazy from './setLazy';
-import { HAS_OPEN_POPUP, HAS_OPEN_MENU, NO_SCROLL } from '../constants';
+import {
+  HAS_OPEN_POPUP, HAS_OPEN_MENU, NO_SCROLL, IS_ACTIVE,
+} from '../constants';
 
 class MyPopup extends Popup {
+  constructor(options) {
+    super(options);
+    this.btns = [...document.querySelectorAll('.js-popup-open')];
+  }
+
   get content() {
     return this.popup.querySelector('.js-popup-content');
   }
@@ -22,6 +29,10 @@ class MyPopup extends Popup {
 
   get url() {
     return this.btn.dataset.url;
+  }
+
+  get isModal() {
+    return this.btn.dataset.popupModal;
   }
 
   addItemCardContent() {
@@ -59,38 +70,33 @@ class MyPopup extends Popup {
     this.video.pause();
   }
 
-  handleItemModalOpen() {
+  handleModalOpen() {
     document.body.classList.remove(NO_SCROLL);
-    if (!this.content) return;
-
-    this.xhr = fetch(this.url)
-      .then((responce) => responce.text())
-      .then((text) => {
-        if (this.content) this.content.innerHTML = text;
-      });
+    this.btn.classList.add(IS_ACTIVE);
   }
 
-  handleItemModalClose() {
-    this.clearContent();
+  handleModalClose() {
+    this.btn.classList.remove(IS_ACTIVE);
   }
 
   onOpen() {
-    if (this.name !== 'item-info-modal') {
+    this.btns.forEach((btn) => btn.classList.remove(IS_ACTIVE));
+
+    if (!this.isModal) {
       document.body.classList.add(HAS_OPEN_POPUP);
     }
 
     if (this.name === 'item-card') this.addItemCardContent();
-    if (this.name === 'item-info-modal') this.handleItemModalOpen();
+    if (this.isModal) this.handleModalOpen();
   }
 
   onClose() {
-    if (this.name !== 'item-info-modal') {
+    if (!this.isModal) {
       document.body.classList.remove(HAS_OPEN_POPUP);
     }
 
-    if (this.name === 'item-card') this.removeItemCardContent();
     if (this.name === 'video') this.handleVideoClose();
-    if (this.name === 'item-info-modal') this.handleItemModalClose();
+    if (this.isModal) this.handleModalClose();
 
     if (document.body.classList.contains(HAS_OPEN_MENU)) {
       document.body.classList.add(NO_SCROLL);

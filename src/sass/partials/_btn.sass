@@ -68,42 +68,42 @@
       background-color: $accent
       border-color: $accent
       color: $white
-  &--arrow
-    border-radius: 50%
-    &::before, &::after
-      content: ''
-      +vcenter
-    &::before
-      +icon-arrow(10, 10, 2, currentColor, -45)
-      display: block
-      left: calc(50% - 5px)
-    &::after
-      background-color: currentColor
-      width: 2px
-      height: 18px
-      display: block
+  // &--arrow
+  //   border-radius: 50%
+  //   &::before, &::after
+  //     content: ''
+  //     +vcenter
+  //   &::before
+  //     +icon-arrow(10, 10, 2, currentColor, -45)
+  //     display: block
+  //     left: calc(50% - 5px)
+  //   &::after
+  //     background-color: currentColor
+  //     width: 2px
+  //     height: 18px
+  //     display: block
 
 
-.comb-btn
-  $this: &
-  +inline-flex(flex-start, center)
-  color: $accent
-  font-weight: 700
-  +tr(color .3s, background-color .3s)
-  +hover
-    color: $white
-    #{$this}__title, #{$this}__arrow
-      background-color: $accent
-      border-color: $accent
-  &__title
-    +flex(center, center)
-    height: 39px
-    text-align: center
-    border: 2px solid currentColor
-    border-radius: 25px
-    padding: 5px 10px
-    padding-right: 20px
-    margin-right: 10px
-    +tr(background-color .3s)
+// .comb-btn
+//   $this: &
+//   +inline-flex(flex-start, center)
+//   color: $accent
+//   font-weight: 700
+//   +tr(color .3s, background-color .3s)
+//   +hover
+//     color: $white
+//     #{$this}__title, #{$this}__arrow
+//       background-color: $accent
+//       border-color: $accent
+//   &__title
+//     +flex(center, center)
+//     height: 39px
+//     text-align: center
+//     border: 2px solid currentColor
+//     border-radius: 25px
+//     padding: 5px 10px
+//     padding-right: 20px
+//     margin-right: 10px
+//     +tr(background-color .3s)
     
     

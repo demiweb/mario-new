@@ -2,15 +2,18 @@
 cardsLeft = {
   meta: [
     {
+      modal: 'item-info-modal-beam',
       icon: 'beam',
       title: '304 grade 
 stainless steel'
     },
     {
+      modal: 'item-info-modal-water',
       icon: 'water',
       title: 'Hydronic'
     },
     {
+      modal: 'item-info-modal-',
       icon: 'dashboard',
       title: 'Max. working
 pressure 12 PA'
@@ -23,11 +26,13 @@ pressure 12 PA'
 cardsRight = {
   meta: [
     {
+      modal: 'item-info-modal-hot-thermometer',
       icon: 'hot-thermometer',
       title: 'Heating 
 element'
     },
     {
+      modal: 'item-info-modal-shield',
       icon: 'shield',
       title: '50 years 
 warranty'
@@ -45,34 +50,27 @@ warranty'
         <img class="js-lazy" alt="" src="" data-src="./img/1000х445_T10000.png"/>
       </div>
 
-      <div class="item-descr__cards">
+      <div class="item-descr__cards item-descr__cards-left">
         {% for i in cardsLeft.meta %}
-          {% include "partials/_item-card-block.html" %}
-        {% endfor %}
-      </div>
-
-      <div class="item-descr__cards">
-        {% for i in cardsRight.meta %}
-          {% include "partials/_item-card-block.html" %}
-        {% endfor %}
-      </div>
-
-      <div class="item-descr__modal item-descr-modal js-popup" data-popup="item-info-modal">
-        <div class="item-descr-modal__inner">         
-        
-          <button class="item-descr-modal__close close close--sm js-popup-close"></button>
-
-          <div class="item-descr-modal__content js-popup-content"></div>
-
-          <div class="item-descr-modal__btn">
-            {{ mixins.btn(
-              title = 'ok',
-              mod = 'btn--transp-gray js-popup-close',
-              href = false
-            ) }}
-          </div>
+        <div class="item-descr__card">
+          {# {% set itemModal = i.modal %} #}
+          {% include "partials/_item-card-block.html" %}          
+          {% include "partials/_item-descr-modal.html" %}
         </div>
+        {% endfor %}
       </div>
+
+      <div class="item-descr__cards item-descr__cards-right">
+        {% for i in cardsRight.meta %}
+          <div class="item-descr__card">
+            {# {% set itemModal = i.modal %} #}
+            {% include "partials/_item-card-block.html" %}            
+            {% include "partials/_item-descr-modal.html" %}
+          </div>
+        {% endfor %}
+      </div>
+
+      
     </div>
     <!-- end item-descr -->
   </div>

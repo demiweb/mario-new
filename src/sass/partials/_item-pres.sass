@@ -15,28 +15,35 @@
         margin-right: 10px
 
 .item-pres-table
+  padding: 15px 25px 25px
+  background-color: $gray-lightest
+  +sm
+    padding: 10px
   table
     font-weight: 300
-    th
-      text-align: left
-      font-weight: 700
+    tr
+      &:nth-child(2)
+        td
+          padding-top: 15px
     td, th
-      padding: em(12) em(20)
-      border: 1px solid #e2e2e2
+      padding: 4px 0
+      // border: 1px solid #e2e2e2
       vertical-align: middle
       +notfirst
         text-align: center
-      +sm
-        padding: 10px
+      // +sm
+      //   padding-: 10px
     th
-      background-color: $accent
-      color: $white
+      text-align: left
+      font-weight: 700
+      padding: 15px 0
+      border-bottom: 1px solid #e2e2e2
       small
         font-weight: 300
-        color: #fdc9a6
-    td
-      padding-top: 1em
-      padding-bottom: 1em
+
+    // td
+    //   padding-top: 1em
+    //   padding-bottom: 1em
 
 .item-pres-block
   &__inner
