@@ -21,15 +21,15 @@ body
 .out
   &.has-fixed-header
     padding-top: $header-height
-  &--full
-    +flex(flex-start, normal, column)
-    height: 100vh
-    height: calc((var(--vh, 1vh) * 100)
-    +md
-      height: auto
-      display: block
-    .main
-      flex-grow: 1
+  // &--full
+  //   +flex(flex-start, normal, column)
+  //   height: 100vh
+  //   height: calc((var(--vh, 1vh) * 100)
+  //   +md
+  //     height: auto
+  //     display: block
+  //   .main
+  //     flex-grow: 1
 
 .main
   // +tr(filter .5s)
@@ -101,7 +101,7 @@ body
       font-size: $fz
 
 .video-btn
-  +flex(flex-start, center)
+  +flex(center, center)
   &__btn
     width: 95px
     height: 95px    
@@ -120,7 +120,7 @@ body
     +before
       +vcenter
       border-radius: 50%
-      background-color: #bcbcbc
+      background-color: $accent
       z-index: 0
       width: 100%
       height: 100%

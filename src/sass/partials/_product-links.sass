@@ -32,10 +32,18 @@
     padding: 25% 15px 15px
 
   +hover
-    .btn
+    .btn--white-hover
       color: $accent
       background-color: $white
       border-color: $white
+      
+  .btn--white-hover
+    +hover
+      color: $white
+      border-color: $accent
+      +before
+        transform: translate(0, 0)
+
   &__content
     display: block
   &__title

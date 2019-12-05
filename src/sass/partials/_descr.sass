@@ -8,6 +8,7 @@
   +sm
     display: block
     height: auto
+    text-align: center
   &__left, &__right
     width: percentage(480/1340)
     z-index: 1
@@ -25,6 +26,7 @@
     padding-right: 15px
     +sm
       margin-bottom: 15px
+      padding-right: 0
   &__right
     padding-left: 30px
     +lg
@@ -52,6 +54,9 @@
       margin-bottom: 15px
   &__text
     max-width: 440px
+    +sm
+      margin-left: auto
+      margin-right: auto
   &__features
     .feature
       .no-touch &

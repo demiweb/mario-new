@@ -61,6 +61,7 @@
     +flex(center, center)
     color: $accent
     margin-right: 20px
+    +tr(color .3s, background-color .3s)
     +md
       margin-right: 10px
       flex: 0 0 70px
@@ -69,5 +70,9 @@
     .icon
       font-size: 35px
   &--text
+    +hover
+      #{$this}__icon
+        background-color: $accent
+        color: $white
     #{$this}__icon
       color: inherit

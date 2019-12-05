@@ -9,6 +9,11 @@
     text-align: center
     position: relative
     z-index: 1
+    +sm
+      // padding-top: 20vh
+      // padding-bottom: 20vh
+      min-height: 50vh
+      +flex(center, normal, column)
   &__title
     margin-bottom: 10px
     +md
@@ -91,18 +96,34 @@
       padding-left: 20px
       padding-right: 20px
   &__content
-    max-width: 495px
-  &__content-center
-    margin-left: auto
-    margin-right: auto
+    // max-width: 495px
     max-width: 545px
-    text-align: center
+  // &__content-center
+  //   margin-left: auto
+  //   margin-right: auto
+  //   max-width: 545px
+  //   text-align: center
   &__subttl
     margin-bottom: 15px
+  &__title
+    margin-bottom: 10px
+
+  &--center
+    #{$this}__content
+      margin-left: auto
+      margin-right: auto
+      text-align: center
+  &--right
+    #{$this}__content
+      margin-left: auto
 
   &--half
     +before
       display: none
+    #{$this}__content
+      // max-width: 50%
+      // margin-left: auto
+      // margin-right: auto
     #{$this}__inner
       justify-content: flex-start
       flex-wrap: wrap
@@ -119,9 +140,9 @@
     #{$this}__left
       +flex(center, normal, column)
       padding-right: 15px
-      padding-left: 50px + 20px
+      padding-left: 80px + 20px
       +xl
-        padding-left: 30px + 20px
+        padding-left: 50px + 20px
       +lg
         padding-left: 15px + 20px
       +sm
@@ -132,10 +153,8 @@
     #{$this}__right
       +cover
       +sm
-        padding-top: 50%
+        padding-top: 90%
         order: 0
-      +xs
-        padding-top: 70%
     #{$this}__title
       margin-bottom: 30px
       +md
@@ -144,31 +163,7 @@
       margin-bottom: 30px
       +md
         margin-bottom: 15px
-  // &--one-third
-  //   color: inherit
-  //   +before
-  //     display: none
-  //   #{$this}__inner
-  //     justify-content: flex-start
-  //     justify-content: flex-start
-  //     flex-wrap: wrap
-  //     flex-direction: row
-  //     padding-left: 0
-  //     padding-right: 0
-  //     +sm
-  //       height: auto
-  //   #{$this}__left
-  //     width: percentage(510/1440)
-  //     +cover
-  //   #{$this}__right
-  //     width: percentage((1440 - 510)/1440)
-  //     +flex(center, normal, column)
-  //     padding-left: 15px
-  //     padding-right: 15px
-  //   #{$this}__content
-  //     max-width: 665px
-  //     margin-left: auto
-  //     margin-right: auto
+
 
 
 @keyframes scale

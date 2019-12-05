@@ -14,11 +14,7 @@ class MySlider {
       hero: {
         slidesPerView: 1,
         navigation,
-        pagination: {
-          el: pagination,
-          type: 'bullets',
-          clickable: true,
-        },
+
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
@@ -27,18 +23,31 @@ class MySlider {
         on: {
           init: onInit,
         },
+        breakpoints: {
+          568: {
+            pagination: {
+              el: pagination,
+              type: 'bullets',
+              clickable: true,
+            },
+          },
+        },
       },
       half: {
         slidesPerView: 1,
         navigation,
-        pagination: {
-          el: pagination,
-          type: 'bullets',
-          clickable: true,
-        },
         loop: true,
         on: {
           init: onInit,
+        },
+        breakpoints: {
+          568: {
+            pagination: {
+              el: pagination,
+              type: 'bullets',
+              clickable: true,
+            },
+          },
         },
       },
       gallery: {
@@ -80,11 +89,6 @@ class MySlider {
       },
       full: {
         navigation,
-        pagination: {
-          el: pagination,
-          type: 'bullets',
-          clickable: true,
-        },
         slidesPerView: 1,
         loop: true,
         autoplay: {
@@ -93,6 +97,15 @@ class MySlider {
         },
         on: {
           init: onInit,
+        },
+        breakpoints: {
+          568: {
+            pagination: {
+              el: pagination,
+              type: 'bullets',
+              clickable: true,
+            },
+          },
         },
       },
     });

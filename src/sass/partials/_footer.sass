@@ -38,7 +38,7 @@
     +md
       margin-bottom: 15px
     +xs
-      width: 50%
+      width: 100%
   &__text
     color: #6e6e6e
     font-size: em(13)
@@ -49,6 +49,12 @@
     margin-bottom: 10px
   &__copy
     text-transform: uppercase
+    +md
+      display: none
+  &__copy-mob
+    display: none
+    +md
+      display: block
   &__title
     color: $white
     margin-bottom: 15px
@@ -58,6 +64,9 @@
     margin-bottom: 15px
     +md
       margin-bottom: 10px
+  &__contacts
+    +md
+      margin-bottom: 15px
 
 .footer-contact
   +flex(center, center)

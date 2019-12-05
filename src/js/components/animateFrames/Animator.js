@@ -89,10 +89,12 @@ export default class Animator {
     const index = this.index * 2;
 
     const animateLeft = () => {
-      this.blocks[0].style.opacity = index / 100;
-      this.blocks[0].style.transform = `translate3d(0px, ${100 - index}%, 0px)`;
+      if (this.blocksState.left.isFinished) return;
 
-      if (index > 100) {
+      this.blocks[0].style.opacity = index / 100;
+      this.blocks[0].style.transform = `translate3d(0px, ${70 - index}%, 0px)`;
+
+      if (index > 70) {
         this.blocks[0].style.opacity = 1;
         this.blocks[0].style.transform = 'translate3d(0px, 0%, 0px)';
 
@@ -101,6 +103,8 @@ export default class Animator {
     };
 
     const animateRight = () => {
+      if (this.blocksState.right.isFinished) return;
+
       this.blocks[1].style.opacity = '1';
       if (!this.staggerEls.length) return;
 
@@ -115,12 +119,14 @@ export default class Animator {
         if (index >= 200) {
           block.style.opacity = 1;
           block.style.transform = 'translate3d(0px, 0%, 0px)';
+          this.blocksState.right.isFinished = true;
         }
 
-        if (index < 100) {
-          block.style.opacity = 0;
-          block.style.transform = 'translate3d(0px, 0%, 0px)';
-        }
+        // if (index < 100) {
+        //   block.style.opacity = 0;
+        //   block.style.transform = 'translate3d(0px, 0%, 0px)';
+        //   this.blocksState.right.isFinished = false;
+        // }
       });
     };
 

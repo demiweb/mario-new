@@ -35,23 +35,23 @@ class MyPopup extends Popup {
     return this.btn.dataset.popupModal;
   }
 
-  addItemCardContent() {
-    const update = () => {
-      MyPopup.updatePlugins();
+  // addItemCardContent() {
+  //   const update = () => {
+  //     MyPopup.updatePlugins();
 
-      const timeout = window.setTimeout(() => {
-        if (this.inner) this.inner.removeEventListener('transitionend', update);
-        window.clearTimeout(timeout);
-      });
-    };
+  //     const timeout = window.setTimeout(() => {
+  //       if (this.inner) this.inner.removeEventListener('transitionend', update);
+  //       window.clearTimeout(timeout);
+  //     });
+  //   };
 
-    this.xhr = fetch(this.url)
-      .then((responce) => responce.text())
-      .then((text) => {
-        if (this.content) this.content.innerHTML = text;
-        if (this.inner) this.inner.addEventListener('transitionend', update);
-      });
-  }
+  //   this.xhr = fetch(this.url)
+  //     .then((responce) => responce.text())
+  //     .then((text) => {
+  //       if (this.content) this.content.innerHTML = text;
+  //       if (this.inner) this.inner.addEventListener('transitionend', update);
+  //     });
+  // }
 
   clearContent() {
     this.content.innerHTML = '';
@@ -80,13 +80,14 @@ class MyPopup extends Popup {
   }
 
   onOpen() {
+    this.duplBtn = this.btn;
     this.btns.forEach((btn) => btn.classList.remove(IS_ACTIVE));
 
     if (!this.isModal) {
       document.body.classList.add(HAS_OPEN_POPUP);
     }
 
-    if (this.name === 'item-card') this.addItemCardContent();
+    // if (this.name === 'item-card') this.addItemCardContent();
     if (this.isModal) this.handleModalOpen();
   }
 
@@ -101,6 +102,23 @@ class MyPopup extends Popup {
     if (document.body.classList.contains(HAS_OPEN_MENU)) {
       document.body.classList.add(NO_SCROLL);
     }
+  }
+
+  addListeners() {
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.js-popup-open') || e.target.closest('.js-popup')) return;
+      // if (e.target.closest('.js-popup-open')) return;
+      if (!this.openPopups.length) return;
+      this.closeTrigger = e.target;
+      this.btn = this.duplBtn;
+      this.closeAll();
+      if (this.onClose) this.onClose();
+    });
+  }
+
+  init() {
+    super.init();
+    this.addListeners();
   }
 
   static updatePlugins() {

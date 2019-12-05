@@ -24,23 +24,29 @@
     +sm
       margin-bottom: 20px
       width: 100%
+    +xss
+      padding-right: 0
     
 
 .tech-item
   +flex
-  +xs
+  +xss
     display: block
   &__img
     font-size: 0
-    +xs
+    +xss
       margin-bottom: 15px
+      img
+        width: 100%
   &__content
     padding-left: 25px
     max-width: 320px
     +md
       padding-left: 10px
-    +xs
+    +xss
       padding-left: 0
+      margin-left: auto
+      margin-right: auto
   &__title
     margin-bottom: 15px
     +md

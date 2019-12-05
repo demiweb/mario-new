@@ -75,19 +75,21 @@
     +xl
       padding-top: 80px
   &--full
-    padding: 0
-    height: 100%
-    +xl
-      padding: 0
-    +lg
-      padding: 0
-    +md
-      height: auto
-      padding-top: 20%
-      padding-bottom: 20%
-    +sm
-      padding-top: 30%
-      padding-bottom: 30%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    // padding: 0
+    // height: 100%
+    // +xl
+    //   padding: 0
+    // +lg
+    //   padding: 0
+    // +md
+    //   height: auto
+    //   padding-top: 20%
+    //   padding-bottom: 20%
+    // +sm
+    //   padding-top: 30%
+    //   padding-bottom: 30%
   &--full-children
     padding: 0 !important
     +md
@@ -111,6 +113,9 @@
   &--black
     background-color: $black
     color: $white
+  &--bdb-mob
+    +sm
+      border-bottom: 1px solid  $gray-light
 
 
 .section-block
@@ -136,24 +141,49 @@
 
 .section-video
   color: $white
+  padding-bottom: 65px
+  padding-left: 50px
+  +xl
+    padding-bottom: 50px
+  +lg
+    padding-bottom: 40px
+    padding-left: 20px
+  +md
+    padding-bottom: 30px
+    padding-left: 0
+  +sm
+    padding-bottom: 20px
   &__text
     width: 50%
     padding-right: 15px
+    // +flex(flex-start, center, column)
     +sm
       width: 100%
       margin-bottom: 15px
+      text-align: center      
     p
+      width: 100%
       max-width: 425px
+      +sm
+        margin-left: auto
+        margin-right: auto
       +notlast
         margin-bottom: 25px
         +md
           margin-bottom: 15px
   &__title
     margin-bottom: 25px
+    padding-right: 15px
+    max-width: 50%
+    // +flex(center, normal)
+    +sm
+      max-width: none
+      text-align: center
     +md
       margin-bottom: 15px
   &__content
     +flex(flex-start, normal, row, wrap)
+
   &__btn
     width: 50%
     +flex(center, normal, column)

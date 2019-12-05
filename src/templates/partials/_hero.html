@@ -12,7 +12,7 @@
           <div class="swiper-wrapper slider slider--hero">
             {% for i in hero.slider %}
             <!-- begin slide -->
-            <div class="swiper-slide slide hero-slide" >
+            <div class="swiper-slide slide hero-slide{% if i.mod %} {{ i.mod}}{% endif %}" >
 
               {% if i.bg %}
               <div class="hero-slide__bg is-animated no-fade-in js-lazy" data-background-image="./img/hero/{{ i.bg }}"></div>
@@ -29,7 +29,7 @@
                   <div class="hero-slide__content{% if hero.content.mod %} {{ hero.content.mod }}{% endif %}">
                     {% if hero.title %}
                     <div class="hero-slide__title">
-                      <h1 class="title{% if hero.titleMod %} {{ hero.titleMod}}{% endif %}">{{ hero.title | safe }}</h1>
+                      <h1 class="title title--md{% if hero.titleMod %} {{ hero.titleMod}}{% endif %}">{{ hero.title | safe }}</h1>
                     </div>
                     {% endif %}
 
