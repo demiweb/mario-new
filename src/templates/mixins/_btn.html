@@ -1,4 +1,4 @@
-{% macro btn(combine, href = "#", title, icon, mod, attributes, isInline) %}
+{% macro btn(combine, href = "#", title, icon, mod, attributes, isInline, isPlain) %}
   {% if combine %}
     {% if href %}
     <a href="{{ href }}" class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>
@@ -20,11 +20,20 @@
   {% else %}
 
     {% if href %}
-    <a href="{{ href }}" class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}><span>{{ title | safe }}</span></a>
+    <a
+      href="{{ href }}" class="btn{% if mod %} {{ mod }}{% endif %}"
+      {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}
+      >{% if not isPlain %}<span>{{ title | safe }}</span>{% else %}{{ title | safe }}{% endif %}</a>
     {% elseif isInline %}
-    <span class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}><span>{{ title | safe }}</span></span>
+    <span
+      class="btn{% if mod %} {{ mod }}{% endif %}"
+      {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}
+      >{% if not isPlain %}<span>{{ title | safe }}</span>{% else %}{{ title | safe }}{% endif %}</span>
     {% else %}
-    <button class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}><span>{{ title | safe }}</span></button>
+    <button
+      class="btn{% if mod %} {{ mod }}{% endif %}"
+      {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}
+      >{% if not isPlain %}<span>{{ title | safe }}</span>{% else %}{{ title | safe }}{% endif %}</button>
     {% endif %}
   {% endif %}
 {% endmacro %}

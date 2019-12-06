@@ -76,6 +76,7 @@
     "masonry-layout": "^4.2.2",
     "popup-simple": "^1.0.3",
     "select-custom": "^1.1.8",
+    "stickyfilljs": "^2.1.0",
     "swiper": "^5.2.0",
     "throttle-debounce": "^2.1.0",
     "whatwg-fetch": "^3.0.0"

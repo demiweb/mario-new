@@ -41,10 +41,6 @@
       background-color: transparent
       color: $accent
       border-color: $accent
-  // &--no-hover
-  //   +hover
-  //     color: $white
-  //     background-color: $accent
   &--full
     min-width: 0
     width: 100%
@@ -61,13 +57,17 @@
     font-weight: 700
     text-transform: none
     overflow: hidden
+    +before
+      display: none
     +xs
       min-width: 39px
     +hover
-      span
-        max-height: none
-        max-width: 300px
-        margin-left: 10px
+      &:not(#{$this}--no-hover)
+        color: $white
+        span
+          max-height: none
+          max-width: 300px
+          margin-left: 10px
     span
       position: relative
       max-width: 0

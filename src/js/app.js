@@ -5,6 +5,7 @@ import 'core-js/features/object/assign'
 import 'intersection-observer'
 import 'whatwg-fetch'
 import './lib/polyfill'
+import Stickyfill from 'stickyfilljs'
 
 import sayHello from './lib/sayHello'
 import setHTMLClassNames from './components/setHTMLClassNames'
@@ -28,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setHTMLClassNames()
   setLazy()
   setVhProperty()
+
+  const stickyEls = document.querySelectorAll('.js-sticky-polyfill')
+  Stickyfill.add(stickyEls)
 
   slider.init()
   toggleMenu()

@@ -46,9 +46,7 @@ warranty'
   <div class="container">
     <!-- begin item-descr -->
     <div class="item-descr">
-      <div class="item-descr__img">
-        <img class="js-lazy" alt="" src="" data-src="./img/1000х445_T10000.png"/>
-      </div>
+      
 
       <div class="item-descr__cards item-descr__cards-left">
         {% for i in cardsLeft.meta %}
@@ -58,6 +56,10 @@ warranty'
           {% include "partials/_item-descr-modal.html" %}
         </div>
         {% endfor %}
+      </div>
+
+      <div class="item-descr__img">
+        <img class="js-lazy" alt="" src="" data-src="./img/1000х445_T10000.png"/>
       </div>
 
       <div class="item-descr__cards item-descr__cards-right">

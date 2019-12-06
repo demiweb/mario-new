@@ -35,13 +35,15 @@
                   title = mixins.icon('email') + '<span>contact us</span>',
                   mod = 'btn--comb js-popup-open',
                   href = false,
-                  attributes = { 'data-popup-target': 'contact' }
+                  attributes = { 'data-popup-target': 'contact' },
+                  isPlain = true
                 ) }}
 
                 {{ mixins.btn(
                   title = mixins.icon('arrow') + '<span>download pdf</span>',
-                  mod = 'btn--comb ',
-                  attributes = { download: '' }
+                  mod = 'btn--comb',
+                  attributes = { download: '' },
+                  isPlain = true
                 ) }}
               </div>
 
