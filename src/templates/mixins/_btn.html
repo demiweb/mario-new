@@ -20,11 +20,11 @@
   {% else %}
 
     {% if href %}
-    <a href="{{ href }}" class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>{{ title | safe }}</a>
+    <a href="{{ href }}" class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}><span>{{ title | safe }}</span></a>
     {% elseif isInline %}
-    <span class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>{{ title | safe }}</span>
+    <span class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}><span>{{ title | safe }}</span></span>
     {% else %}
-    <button class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}>{{ title | safe }}</button>
+    <button class="btn{% if mod %} {{ mod }}{% endif %}" {% for attr, attrValue in attributes %} {{ attr }}="{{ attrValue }}" {% endfor %}><span>{{ title | safe }}</span></button>
     {% endif %}
   {% endif %}
 {% endmacro %}

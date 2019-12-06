@@ -8,11 +8,21 @@
   text-transform: uppercase
   min-width: 180px
   padding: .7em 1em .5em
-  +tr(background-color .3s, color .3s, border-color .3s)
+  position: relative
+  overflow: hidden
+  +tr(background-color .3s, color .5s, border-color .5s)
+  +before
+    +coverdiv
+    z-index: 0
+    background-color: $white
+    transform: translate(100%, 0)
+    +tr(transform .5s $easeCustom)
   +hover
     &:not(#{$this}--no-hover)
-      background-color: $white
+      // background-color: $white
       color: $accent
+      +before
+        transform: translate(0, 0)
   +xs
     min-width: 0
     width: 100%
@@ -74,12 +84,5 @@
       border-color: $accent
       color: $white
   &--white-hover
-    overflow: hidden
-    position: relative
-    +tr(background-color .3s, color .5s, border-color .5s)
     +before
-      +coverdiv
-      z-index: 0
       background-color: $accent
-      transform: translate(100%, 0)
-      +tr(transform .5s $easeCustom)      
