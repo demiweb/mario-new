@@ -44,11 +44,11 @@
       <li
         {% if modifications.item or i.modItem %}class="{{ modifications.item }} {{ i.modItem }}"{% endif %}
         {% for attr, attrValue in i.itemAttributes %} {{ attr }}="{{ attrValue }}" {% endfor %}
-        >{% if i.item %}{{ i.item | safe }}{% endif %}{% if i.link %}<a
+        >{% if i.link %}<a
          href="{% if i.href %}{{ i.href }}{% else %}#{% endif %}"
          {% if modifications.link or i.modLink %}class="{{ modifications.link }} {{ i.modLink }}"{% endif %}
          {% for attr, attrValue in i.linkAttributes %} {{ attr }}="{{ attrValue }}" {% endfor %}
-         >{{ i.link | safe }}</a>{% endif %}</li>
+         >{{ i.link | safe }}</a>{% endif %}{% if i.item %}{{ i.item | safe }}{% endif %}</li>
       {% endfor %}
     </ul>
   {% if name === 'nav' %}
