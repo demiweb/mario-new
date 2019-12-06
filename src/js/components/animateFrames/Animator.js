@@ -30,7 +30,13 @@ export default class Animator {
         isFinished: false,
       },
     };
+
+    this.imgSize = {
+      width: 0,
+      height: 0,
+    };
   }
+
 
   handleScroll() {
     const windowTop = window.pageYOffset;
@@ -66,6 +72,30 @@ export default class Animator {
     }
   }
 
+  drawCanvasImage({ img, translate = true }) {
+    const { width, height } = this.size;
+    const wrapRatio = width / height;
+    const bgRatio = img.width / img.height;
+
+    if (wrapRatio < bgRatio) {
+      this.imgSize.width = width;
+      this.imgSize.height = width / bgRatio;
+    } else {
+      this.imgSize.height = height;
+      this.imgSize.width = height * bgRatio;
+    }
+
+    if (translate) this.ctx.translate(-this.imgSize.width / 2, -this.imgSize.height / 2);
+
+    this.ctx.drawImage(
+      img,
+      width / 2,
+      height / 2,
+      this.imgSize.width,
+      this.imgSize.height,
+    );
+  }
+
   drawFrames() {
     if (!this.allowDrawing) return;
 
@@ -74,13 +104,8 @@ export default class Animator {
     const index = Math.floor(this.scrollPosition / percentage);
 
     const currentImage = this.images[index];
-    this.ctx.drawImage(
-      currentImage,
-      0,
-      0,
-      width,
-      height,
-    );
+
+    this.drawCanvasImage({ img: currentImage, translate: false });
   }
 
   animateBlocks() {
@@ -161,15 +186,8 @@ export default class Animator {
       ? this.images[0]
       : this.images[this.images.length - 1];
 
-    img.onload = () => {
-      this.ctx.drawImage(
-        img,
-        0,
-        0,
-        width,
-        height,
-      );
-    };
+
+    img.onload = this.drawCanvasImage.bind(this, { img });
 
     this.wrap.appendChild(this.canvas);
   }
