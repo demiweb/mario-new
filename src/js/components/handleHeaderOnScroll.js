@@ -7,9 +7,7 @@ class Header {
   constructor(header) {
     this.header = header
     this.logo = header.querySelector('.logo img')
-    this.logoSrc = this.logo
-      ? this.logo.getAttribute('data-src') || this.logo.src
-      : null
+    this.logoSrc = this.logo ? this.logo.getAttribute('data-src') || this.logo.src : null
   }
 
   toggleLogoSrc(state) {

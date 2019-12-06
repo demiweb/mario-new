@@ -11,9 +11,7 @@ export default class Slider {
       prevEl: this.wrap.querySelector(`.${classNames.slider.prev}`),
       nextEl: this.wrap.querySelector(`.${classNames.slider.next}`),
     }
-    this.pagination = this.wrap.querySelector(
-      `.${classNames.slider.pagination}`
-    )
+    this.pagination = this.wrap.querySelector(`.${classNames.slider.pagination}`)
     this.slides = [...container.querySelectorAll(`.${classNames.slider.slide}`)]
 
     this.nameMod = undefined // if need to reinit slider with different options

@@ -2,12 +2,7 @@ import Popup from 'popup-simple'
 import slider from './sliders/setSliders'
 import setGallery from './setGallery'
 import setLazy from './setLazy'
-import {
-  HAS_OPEN_POPUP,
-  HAS_OPEN_MENU,
-  NO_SCROLL,
-  IS_ACTIVE,
-} from '../constants'
+import { HAS_OPEN_POPUP, HAS_OPEN_MENU, NO_SCROLL, IS_ACTIVE } from '../constants'
 
 class MyPopup extends Popup {
   constructor(options) {
@@ -109,8 +104,7 @@ class MyPopup extends Popup {
 
   addListeners() {
     document.addEventListener('click', e => {
-      if (e.target.closest('.js-popup-open') || e.target.closest('.js-popup'))
-        return
+      if (e.target.closest('.js-popup-open') || e.target.closest('.js-popup')) return
       // if (e.target.closest('.js-popup-open')) return;
       if (!this.openPopups.length) return
       this.closeTrigger = e.target

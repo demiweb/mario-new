@@ -33,9 +33,7 @@ class Burger {
 
     this.name = this.btn.getAttribute('data-menu-target')
     this.target = this.name
-      ? document.querySelector(
-          `.${Burger.classNames.menu}[data-menu="${this.name}"]`
-        )
+      ? document.querySelector(`.${Burger.classNames.menu}[data-menu="${this.name}"]`)
       : document.querySelector(`.${Burger.classNames.menu}`)
 
     this.btn.classList.toggle(IS_ACTIVE)
@@ -51,9 +49,7 @@ class Burger {
   }
 
   close() {
-    this.burgers = [
-      ...document.querySelectorAll(`.${Burger.classNames.burger}`),
-    ]
+    this.burgers = [...document.querySelectorAll(`.${Burger.classNames.burger}`)]
     this.targets = [...document.querySelectorAll(`.${Burger.classNames.menu}`)]
 
     if (this.burgers.length > 0 && this.targets.length > 0) {

@@ -142,15 +142,11 @@ class MySlider {
     this.sliders.forEach(sliderObj => {
       const slider = sliderObj
       if (slider.name === 'gallery') {
-        const gallery = slider.container.closest(
-          `.${classNames.slider.gallery}`
-        )
+        const gallery = slider.container.closest(`.${classNames.slider.gallery}`)
         const thumbs = gallery.querySelector(
           `.${classNames.slider.container}[data-slider="thumbs"]`
         )
-        const [thumbsSlider] = this.sliders.filter(
-          el => el.container === thumbs
-        )
+        const [thumbsSlider] = this.sliders.filter(el => el.container === thumbs)
 
         slider.options.thumbs = {
           swiper: thumbsSlider.swiper,
@@ -181,10 +177,7 @@ class MySlider {
             const updateSlider = () => {
               slider.swiper.update()
               const timeout = window.setTimeout(() => {
-                slider.container.removeEventListener(
-                  'transitionend',
-                  updateSlider
-                )
+                slider.container.removeEventListener('transitionend', updateSlider)
                 window.clearTimeout(timeout)
               })
             }

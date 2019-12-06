@@ -16,12 +16,8 @@ class CustomSelect extends Select {
   }
 
   setTelOpenerInner() {
-    const currentOption = this.select.querySelector(
-      '.custom-select__option.is-selected'
-    )
-    const currentOptionTextEl = currentOption.querySelector(
-      '.custom-select__option-text'
-    )
+    const currentOption = this.select.querySelector('.custom-select__option.is-selected')
+    const currentOptionTextEl = currentOption.querySelector('.custom-select__option-text')
     const inner = currentOptionTextEl ? currentOptionTextEl.innerText : null
     const { iso2 } = currentOption.dataset
 
@@ -40,10 +36,7 @@ class CustomSelect extends Select {
   }
 
   init() {
-    if (
-      this.select.classList &&
-      this.select.classList.contains('custom-select')
-    ) {
+    if (this.select.classList && this.select.classList.contains('custom-select')) {
       return
     }
     super.init()
@@ -69,8 +62,7 @@ const props = {
     },
     panelItem: {
       position: 'top',
-      item:
-        '<input type="text" class="js-search" placeholder="Country code" />',
+      item: '<input type="text" class="js-search" placeholder="Country code" />',
     },
   },
 }

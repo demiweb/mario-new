@@ -5,9 +5,7 @@ export default class Animator {
     this.section = dom.section
     this.blocks = dom.blocks
     if (this.blocks[1]) {
-      this.staggerEls = [
-        ...this.blocks[1].querySelectorAll('.js-scroll-frames-stagger-el'),
-      ]
+      this.staggerEls = [...this.blocks[1].querySelectorAll('.js-scroll-frames-stagger-el')]
     }
     this.size = {
       width: this.wrap.offsetWidth,
@@ -51,8 +49,7 @@ export default class Animator {
 
   onSectionScroll() {
     const windowTop = window.pageYOffset
-    const sectionTop =
-      this.section.getBoundingClientRect().top + document.body.scrollTop
+    const sectionTop = this.section.getBoundingClientRect().top + document.body.scrollTop
     const sectionBottom = sectionTop + this.section.offsetHeight
     this.percentage = this.scrollDistance / 100
     this.index = Math.floor(this.scrollPosition / this.percentage)
@@ -87,16 +84,9 @@ export default class Animator {
       this.imgSize.width = height * bgRatio
     }
 
-    if (translate)
-      this.ctx.translate(-this.imgSize.width / 2, -this.imgSize.height / 2)
+    if (translate) this.ctx.translate(-this.imgSize.width / 2, -this.imgSize.height / 2)
 
-    this.ctx.drawImage(
-      img,
-      width / 2,
-      height / 2,
-      this.imgSize.width,
-      this.imgSize.height
-    )
+    this.ctx.drawImage(img, width / 2, height / 2, this.imgSize.width, this.imgSize.height)
   }
 
   drawFrames() {

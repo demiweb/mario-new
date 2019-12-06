@@ -23,12 +23,10 @@ export const {
   isIE: /Trident/.test(navigator.userAgent),
   isIOS: /(iPhone|iPad|iPod)/.test(navigator.platform),
   isOpera: /OPR/.test(navigator.userAgent),
-  isSafari:
-    /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent),
+  isSafari: /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent),
 }
 
-export const isWebkit =
-  isChrome || isChromiumBased || isChromeIOS || isSafari || isAndroid || isIOS
+export const isWebkit = isChrome || isChromiumBased || isChromeIOS || isSafari || isAndroid || isIOS
 
 export const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints
 

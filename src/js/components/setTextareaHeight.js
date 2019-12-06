@@ -17,15 +17,11 @@ class TextareaHeight {
   }
 
   addClassName() {
-    this.options.focusedElement.classList.add(
-      TextareaHeight.constants.HAS_FOCUS
-    )
+    this.options.focusedElement.classList.add(TextareaHeight.constants.HAS_FOCUS)
   }
 
   removeClassName() {
-    this.options.focusedElement.classList.remove(
-      TextareaHeight.constants.HAS_FOCUS
-    )
+    this.options.focusedElement.classList.remove(TextareaHeight.constants.HAS_FOCUS)
   }
 
   init() {
