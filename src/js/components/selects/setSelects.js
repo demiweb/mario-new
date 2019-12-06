@@ -1,82 +1,86 @@
-import Select from 'select-custom';
-import filterSearch from './filterSearch';
+import Select from 'select-custom'
+import filterSearch from './filterSearch'
 
 class CustomSelect extends Select {
   constructor(select, props) {
-    super(select, props);
-    this.name = select.dataset.type;
+    super(select, props)
+    this.name = select.dataset.type
   }
 
   get searchInput() {
-    return this.select.querySelector('.js-search');
+    return this.select.querySelector('.js-search')
   }
 
   get panelOptions() {
-    return [...this.select.querySelectorAll('.custom-select__option')];
+    return [...this.select.querySelectorAll('.custom-select__option')]
   }
 
   setTelOpenerInner() {
-    const currentOption = this.select.querySelector('.custom-select__option.is-selected');
-    const currentOptionTextEl = currentOption.querySelector('.custom-select__option-text');
-    const inner = currentOptionTextEl ? currentOptionTextEl.innerText : null;
-    const { iso2 } = currentOption.dataset;
+    const currentOption = this.select.querySelector(
+      '.custom-select__option.is-selected'
+    )
+    const currentOptionTextEl = currentOption.querySelector(
+      '.custom-select__option-text'
+    )
+    const inner = currentOptionTextEl ? currentOptionTextEl.innerText : null
+    const { iso2 } = currentOption.dataset
 
     this.opener.innerHTML = `
       <div class="custom-select__flag custom-select__flag-${iso2}"></div>
       <div class="custom-select__opener-text">${inner}</div>
-    `;
+    `
   }
 
   onClose() {
-    if (this.name === 'tel-code') this.setTelOpenerInner();
+    if (this.name === 'tel-code') this.setTelOpenerInner()
   }
 
   onOpen() {
-    if (this.name === 'tel-code') this.el.focus();
+    if (this.name === 'tel-code') this.el.focus()
   }
-
 
   init() {
     if (
-      this.select.classList
-      && this.select.classList.contains('custom-select')
+      this.select.classList &&
+      this.select.classList.contains('custom-select')
     ) {
-      return;
+      return
     }
-    super.init();
+    super.init()
 
-    filterSearch.call(this);
+    filterSearch.call(this)
   }
 }
 
-const selects = [...document.querySelectorAll('.js-select')];
+const selects = [...document.querySelectorAll('.js-select')]
 
-const customSelects = [];
+const customSelects = []
 
 const props = {
   'tel-code': {
     optionBuilder(opt, customOpt) {
-      const customOption = customOpt;
-      const inner = customOption.innerHTML;
-      const { iso2 } = customOption.dataset;
+      const customOption = customOpt
+      const inner = customOption.innerHTML
+      const { iso2 } = customOption.dataset
       customOption.innerHTML = `
         <div class="custom-select__flag custom-select__flag-${iso2}">
         </div><div class="custom-select__option-text">${inner}</div>
-      `;
+      `
     },
     panelItem: {
       position: 'top',
-      item: '<input type="text" class="js-search" placeholder="Country code" />',
+      item:
+        '<input type="text" class="js-search" placeholder="Country code" />',
     },
   },
-};
+}
 
-selects.forEach((select) => {
-  if (!select) return;
+selects.forEach(select => {
+  if (!select) return
 
-  const name = select.dataset.type;
-  const customSelect = new CustomSelect(select, props[name]);
-  customSelects.push(customSelect);
-});
+  const name = select.dataset.type
+  const customSelect = new CustomSelect(select, props[name])
+  customSelects.push(customSelect)
+})
 
-export default customSelects;
+export default customSelects

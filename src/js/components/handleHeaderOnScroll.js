@@ -1,58 +1,58 @@
-import { throttle } from 'throttle-debounce';
-import { IS_FIXED } from '../constants';
+import { throttle } from 'throttle-debounce'
+import { IS_FIXED } from '../constants'
 
-const IS_WHITE = 'is-white';
+const IS_WHITE = 'is-white'
 
 class Header {
   constructor(header) {
-    this.header = header;
-    this.logo = header.querySelector('.logo img');
+    this.header = header
+    this.logo = header.querySelector('.logo img')
     this.logoSrc = this.logo
       ? this.logo.getAttribute('data-src') || this.logo.src
-      : null;
+      : null
   }
 
   toggleLogoSrc(state) {
     if (state === 'white') {
-      this.logo.src = this.logoSrc.replace(/logo-white.png/gi, 'logo.png');
+      this.logo.src = this.logoSrc.replace(/logo-white.png/gi, 'logo.png')
     } else {
-      this.logo.src = this.logoSrc.replace(/logo.png/gi, 'logo-white.png');
+      this.logo.src = this.logoSrc.replace(/logo.png/gi, 'logo-white.png')
     }
   }
 
   toggleState() {
-    if (this.logoSrc.indexOf('logo-white.png') < 0) return;
+    if (this.logoSrc.indexOf('logo-white.png') < 0) return
 
     if (window.pageYOffset > this.header.offsetHeight / 2) {
-      this.header.classList.add(IS_WHITE);
-      this.header.classList.add(IS_FIXED);
-      this.toggleLogoSrc('white');
+      this.header.classList.add(IS_WHITE)
+      this.header.classList.add(IS_FIXED)
+      this.toggleLogoSrc('white')
     } else {
-      this.header.classList.remove(IS_WHITE);
-      this.header.classList.remove(IS_FIXED);
-      this.toggleLogoSrc();
+      this.header.classList.remove(IS_WHITE)
+      this.header.classList.remove(IS_FIXED)
+      this.toggleLogoSrc()
     }
   }
 
   _scroll() {
-    this.toggleState();
+    this.toggleState()
   }
 
   _addListeners() {
-    this.onScroll = throttle(66, this._scroll.bind(this));
+    this.onScroll = throttle(66, this._scroll.bind(this))
 
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('scroll', this.onScroll)
   }
 
   init() {
-    this._addListeners();
+    this._addListeners()
   }
 }
 
 export default function handleHeaderOnScroll() {
-  const header = document.querySelector('.js-header');
-  if (!header) return;
+  const header = document.querySelector('.js-header')
+  if (!header) return
 
-  const h = new Header(header);
-  h.init();
+  const h = new Header(header)
+  h.init()
 }

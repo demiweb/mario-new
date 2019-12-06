@@ -29,7 +29,7 @@ function createConfig(env) {
       new webpack.LoaderOptionsPlugin({
         options: {
           eslint: {
-            formatter: require('eslint-formatter-pretty'),
+            // formatter: require('eslint-formatter-pretty'),
           },
         },
       }),

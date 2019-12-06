@@ -1,14 +1,11 @@
 {
   "presets": [
-    ["@babel/preset-env", {
-      "targets": {
-        "browsers": [
-          "last 2 versions",
-          "ie >= 11",
-          "Android > 4",
-          "IOS >= 10"
-        ]
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": { version: 3, proposals: true }
       }
-    }]
+    ]
   ]
 }

@@ -1,16 +1,14 @@
-import Slider from './Slider';
-import classNames from './classNames';
+import Slider from './Slider'
+import classNames from './classNames'
 
 class MySlider {
   constructor(slider) {
-    this.sliderClass = slider;
-    this.sliders = [];
+    this.sliderClass = slider
+    this.sliders = []
   }
 
   _getOptions() {
-    this.getOptions = ({
-      navigation, pagination, onInit,
-    }) => ({
+    this.getOptions = ({ navigation, pagination, onInit }) => ({
       hero: {
         slidesPerView: 1,
         navigation,
@@ -108,101 +106,114 @@ class MySlider {
           },
         },
       },
-    });
+    })
   }
 
   _getSliders() {
-    this.productsSliders = this.containers.filter((container) => container.dataset.slider === 'products');
-    this.gallerySliders = this.containers.filter((container) => container.dataset.slider === 'gallery');
+    this.productsSliders = this.containers.filter(
+      container => container.dataset.slider === 'products'
+    )
+    this.gallerySliders = this.containers.filter(
+      container => container.dataset.slider === 'gallery'
+    )
   }
 
   _initSliders() {
-    this.containers.forEach((container) => {
-      if (container.classList.contains(classNames.plugin.initialized)) return;
+    this.containers.forEach(container => {
+      if (container.classList.contains(classNames.plugin.initialized)) return
 
-      const name = container.dataset.slider;
+      const name = container.dataset.slider
 
-      const slider = new Slider(container, this.getOptions);
+      const slider = new Slider(container, this.getOptions)
       if (name !== 'gallery') {
-        slider.init();
+        slider.init()
       }
 
-      this.sliders = [...this.sliders, slider];
-    });
+      this.sliders = [...this.sliders, slider]
+    })
 
-    this.initGallerySliders();
-    this.updateProductsSliders();
+    this.initGallerySliders()
+    this.updateProductsSliders()
   }
 
   initGallerySliders() {
-    if (!this.gallerySliders.length) return;
+    if (!this.gallerySliders.length) return
 
-    this.sliders.forEach((sliderObj) => {
-      const slider = sliderObj;
+    this.sliders.forEach(sliderObj => {
+      const slider = sliderObj
       if (slider.name === 'gallery') {
-        const gallery = slider.container.closest(`.${classNames.slider.gallery}`);
-        const thumbs = gallery.querySelector(`.${classNames.slider.container}[data-slider="thumbs"]`);
-        const [thumbsSlider] = this.sliders.filter((el) => el.container === thumbs);
+        const gallery = slider.container.closest(
+          `.${classNames.slider.gallery}`
+        )
+        const thumbs = gallery.querySelector(
+          `.${classNames.slider.container}[data-slider="thumbs"]`
+        )
+        const [thumbsSlider] = this.sliders.filter(
+          el => el.container === thumbs
+        )
 
         slider.options.thumbs = {
           swiper: thumbsSlider.swiper,
-        };
-        slider.init();
+        }
+        slider.init()
       }
-    });
+    })
   }
 
   updateProductsSliders() {
-    if (!this.productsSliders) return;
-    this.sliders.forEach((slider) => {
+    if (!this.productsSliders) return
+    this.sliders.forEach(slider => {
       if (slider.name === 'products') {
-        slider.swiper.update();
+        slider.swiper.update()
       }
-    });
+    })
   }
 
   _observeProductsSlider() {
-    if (!this.productsSliders.length) return;
+    if (!this.productsSliders.length) return
 
-    this.sliders.forEach((slider) => {
-      if (slider.name !== 'products') return;
-      const { prevEl, nextEl } = slider.navigation;
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
+    this.sliders.forEach(slider => {
+      if (slider.name !== 'products') return
+      const { prevEl, nextEl } = slider.navigation
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
           if (mutation.oldValue === 'false') {
             const updateSlider = () => {
-              slider.swiper.update();
+              slider.swiper.update()
               const timeout = window.setTimeout(() => {
-                slider.container.removeEventListener('transitionend', updateSlider);
-                window.clearTimeout(timeout);
-              });
-            };
+                slider.container.removeEventListener(
+                  'transitionend',
+                  updateSlider
+                )
+                window.clearTimeout(timeout)
+              })
+            }
 
-            slider.container.addEventListener('transitionend', updateSlider);
+            slider.container.addEventListener('transitionend', updateSlider)
           }
-        });
-      });
+        })
+      })
 
-      [prevEl, nextEl].forEach((button) => {
+      ;[prevEl, nextEl].forEach(button => {
         observer.observe(button, {
           attributes: true,
           attributeFilter: ['aria-disabled'],
           attributeOldValue: true,
-        });
-      });
-    });
+        })
+      })
+    })
   }
 
   init() {
-    this.containers = [...document.querySelectorAll(this.sliderClass)];
-    if (!this.containers.length) return;
+    this.containers = [...document.querySelectorAll(this.sliderClass)]
+    if (!this.containers.length) return
 
-    this._getOptions();
-    this._getSliders();
-    this._initSliders();
-    this._observeProductsSlider();
+    this._getOptions()
+    this._getSliders()
+    this._initSliders()
+    this._observeProductsSlider()
   }
 }
 
-const slider = new MySlider(`.${classNames.slider.container}`);
-export default slider;
+const slider = new MySlider(`.${classNames.slider.container}`)
+export default slider

@@ -13,6 +13,6 @@ const classNames = {
     initialized: 'swiper-container-initialized',
     activeSlide: 'swiper-slide-active',
   },
-};
+}
 
-export default classNames;
+export default classNames

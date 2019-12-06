@@ -4,10 +4,11 @@
     "browser": true,
     "node": true
   },
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "rules": {
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-unused-vars": 1,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "no-param-reassign": 0
   }
 }

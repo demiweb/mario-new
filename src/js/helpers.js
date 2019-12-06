@@ -1,4 +1,4 @@
-import { debounce } from 'throttle-debounce';
+import { debounce } from 'throttle-debounce'
 
 export const {
   isAndroid,
@@ -23,26 +23,23 @@ export const {
   isIE: /Trident/.test(navigator.userAgent),
   isIOS: /(iPhone|iPad|iPod)/.test(navigator.platform),
   isOpera: /OPR/.test(navigator.userAgent),
-  isSafari: /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent),
-};
+  isSafari:
+    /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent),
+}
 
-export const isWebkit = isChrome
-  || isChromiumBased
-  || isChromeIOS
-  || isSafari
-  || isAndroid
-  || isIOS;
+export const isWebkit =
+  isChrome || isChromiumBased || isChromeIOS || isSafari || isAndroid || isIOS
 
-export const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints;
+export const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints
 
 export function setVhProperty() {
   function setProperty() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
   }
 
-  const setPropertyDebounced = debounce(66, setProperty);
+  const setPropertyDebounced = debounce(66, setProperty)
 
-  setProperty();
-  window.addEventListener('resize', setPropertyDebounced);
+  setProperty()
+  window.addEventListener('resize', setPropertyDebounced)
 }

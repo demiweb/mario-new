@@ -36,4 +36,4 @@ export const {
   IS_DISABLED: 'is-disabled',
   HAS_OPEN_MENU: 'has-open-menu',
   HAS_OPEN_POPUP: 'has-open-popup',
-};
+}

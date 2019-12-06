@@ -1,71 +1,69 @@
-import countriesData from './data';
-import customSelects from '../selects/setSelects';
-import { IS_DISABLED } from '../../constants';
+import countriesData from './data'
+import customSelects from '../selects/setSelects'
+import { IS_DISABLED } from '../../constants'
 
 class TelInput {
   constructor(wrap) {
-    this.wrap = wrap;
-    this.select = wrap.querySelector('select');
-    this.input = wrap.querySelector('input[type="tel"]');
-    this.inputWrap = this.input.closest('.input');
+    this.wrap = wrap
+    this.select = wrap.querySelector('select')
+    this.input = wrap.querySelector('input[type="tel"]')
+    this.inputWrap = this.input.closest('.input')
   }
 
   onSelectChange() {
     if (this.select.value) {
-      this.inputWrap.classList.remove(IS_DISABLED);
+      this.inputWrap.classList.remove(IS_DISABLED)
 
-      this.input.value = '';
+      this.input.value = ''
 
-      this.input.focus();
+      this.input.focus()
     }
   }
 
   _createSelectList() {
-    countriesData.forEach((country) => {
-      const option = document.createElement('option');
-      const {
-        name, dialCode, iso2, areaCodes, priority,
-      } = country;
-      option.innerHTML = `<span>+${country.dialCode}</span> ${name}`;
+    countriesData.forEach(country => {
+      const option = document.createElement('option')
+      const { name, dialCode, iso2, areaCodes, priority } = country
+      option.innerHTML = `<span>+${country.dialCode}</span> ${name}`
 
-      option.value = dialCode;
+      option.value = dialCode
 
-      option.setAttribute('data-name', name);
-      option.setAttribute('data-iso2', iso2);
-      option.setAttribute('data-priority', priority);
-      option.setAttribute('data-areaCodes', areaCodes);
+      option.setAttribute('data-name', name)
+      option.setAttribute('data-iso2', iso2)
+      option.setAttribute('data-priority', priority)
+      option.setAttribute('data-areaCodes', areaCodes)
 
-      this.select.appendChild(option);
-    });
+      this.select.appendChild(option)
+    })
   }
 
   _initTelInput() {
-    this.inputWrap.classList.add(IS_DISABLED);
+    this.inputWrap.classList.add(IS_DISABLED)
 
-    customSelects.forEach((select) => {
+    customSelects.forEach(select => {
       if (select.el === this.select) {
-        select.init();
+        select.init()
       }
-    });
+    })
   }
 
   _addListeners() {
-    this.select.addEventListener('change', this.onSelectChange.bind(this));
+    this.select.addEventListener('change', this.onSelectChange.bind(this))
   }
 
   init() {
-    this._createSelectList();
-    this._initTelInput();
-    this._addListeners();
+    this._createSelectList()
+    this._initTelInput()
+    this._addListeners()
   }
 }
 
 export default () => {
-  const inputs = [...document.querySelectorAll('.js-tel-input')];
-  if (!inputs.length) return;
+  const inputs = [...document.querySelectorAll('.js-tel-input')]
+  if (!inputs.length) return
 
-  inputs.forEach((input) => {
-    const telInput = new TelInput(input);
-    telInput.init();
-  });
-};
+  inputs.forEach(input => {
+    const telInput = new TelInput(input)
+    telInput.init()
+  })
+}
