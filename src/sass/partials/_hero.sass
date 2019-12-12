@@ -93,17 +93,12 @@
     height: 100vh
     height: calc(var(--vh, 1vh) * 100)
     +flex(center, normal, column)
-    +xl
+    +xs
       padding-left: 20px
       padding-right: 20px
   &__content
     // max-width: 495px
     max-width: 545px
-  // &__content-center
-  //   margin-left: auto
-  //   margin-right: auto
-  //   max-width: 545px
-  //   text-align: center
   &__subttl
     margin-bottom: 15px
   &__title
@@ -149,6 +144,7 @@
       +sm
         order: 1
         padding-top: 15px
+        padding-left: 15px
         padding-bottom: 15px
         height: auto
     #{$this}__right

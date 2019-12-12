@@ -12,7 +12,6 @@ class MySlider {
       hero: {
         slidesPerView: 1,
         navigation,
-
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
