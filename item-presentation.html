@@ -78,11 +78,11 @@
                 <!-- begin slider -->
                 <div class="slider__wrap slider--full__wrap">
                   <div class="swiper-container js-slider" data-slider="full">
-                    <div class="swiper-wrapper slider slider--full">
-                      <div class="swiper-slide slide js-lazy" data-background-image="./img/about/bg-design.jpg"></div>
-                      <div class="swiper-slide slide js-lazy" data-background-image="./img/about/bg-design.jpg"></div>
-                      <div class="swiper-slide slide js-lazy" data-background-image="./img/about/bg-design.jpg"></div>
-                      <div class="swiper-slide slide js-lazy" data-background-image="./img/about/bg-design.jpg"></div>
+                    <div class="swiper-wrapper slider slider--full js-lightgallery">
+                      <a class="swiper-slide slide js-lazy" href="./img/about/bg-design.jpg" data-background-image="./img/about/bg-design.jpg"></a>
+                      <a class="swiper-slide slide js-lazy" href="./img/about/bg-design.jpg" data-background-image="./img/about/bg-design.jpg"></a>
+                      <a class="swiper-slide slide js-lazy" href="./img/about/bg-design.jpg" data-background-image="./img/about/bg-design.jpg"></a>
+                      <a class="swiper-slide slide js-lazy" href="./img/about/bg-design.jpg" data-background-image="./img/about/bg-design.jpg"></a>
                     </div>
                   </div>
                   <div class="slider__pagination js-slider-pagination"></div>
@@ -124,34 +124,94 @@
                       <div class="item-pres-table">
                         <table>
                           <tr>
-                            <th>Size <small>(mm)</small></th>
+                            <th>Name | Size <small>(mm)</small></th>
                             <th>Quantity of ribs <small>(pcs)</small></th>
                             <th>Heat power <small>(watt)</small></th>
                             <th>Price <small>(£)</small></th>
                           </tr>
                           <tr>
-                            <td>Phoneix 830x482</td>
+                            <td>
+                              <button class="js-lightgallery-trigger" data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg">
+                                <!-- begin icon-picture -->
+                                <svg viewBox="0 0 58 58" class="icon icon-picture" width="1.000em" height="1em">
+                                  <path d="M57 6H1a1 1 0 00-1 1v44a1 1 0 001 1h56a1 1 0 001-1V7a1 1 0 00-1-1zm-1 44H2V8h54v42z" />
+                                  <path d="M16 28.138a5.575 5.575 0 005.569-5.568c0-3.072-2.498-5.57-5.569-5.57s-5.569 2.498-5.569 5.569A5.575 5.575 0 0016 28.138zM16 19c1.968 0 3.569 1.602 3.569 3.569S17.968 26.138 16 26.138s-3.569-1.601-3.569-3.568S14.032 19 16 19zM7 46c.234 0 .47-.082.66-.249l16.313-14.362L34.275 41.69a.999.999 0 101.414-1.414l-4.807-4.807 9.181-10.054 11.261 10.323a1 1 0 001.351-1.475l-12-11a1.031 1.031 0 00-.72-.262 1.002 1.002 0 00-.694.325l-9.794 10.727-4.743-4.743a1 1 0 00-1.368-.044L6.339 44.249A1 1 0 007 46z" />
+                                </svg>
+                                <!-- end icon-picture --> Phoneix 830x482</button></td>
                             <td>15</td>
                             <td>217</td>
-                            <td><strong>120</strong></td>
+                            <td><strong>120</strong>
+                              <a href="#" class="btn btn--comb btn--comb-sm" download="">
+                                <!-- begin icon-arrow -->
+                                <svg viewBox="0 0 447.243 447.243" class="icon icon-arrow" width="1.000em" height="1em">
+                                  <path d="M406.101 232.603a31.842 31.842 0 00-3.116-2.745c-13.381-8.971-31.276-7.013-42.4 4.64l-88.64 88.32a64.002 64.002 0 00-11.68 16l-5.12 9.76v-314.4c.677-16.099-10.332-30.349-26.08-33.76-17.445-2.829-33.881 9.019-36.71 26.465a31.967 31.967 0 00-.41 5.535v315.52l-3.2-6.88a63.998 63.998 0 00-12.8-18.08l-88.64-88.48c-11.124-11.653-29.019-13.611-42.4-4.64-14.259 10.441-17.355 30.464-6.914 44.724a32.018 32.018 0 002.754 3.276l160 160c12.49 12.504 32.751 12.515 45.255.025l.025-.025 160-160c12.517-12.476 12.552-32.737.076-45.255z" />
+                                </svg>
+                                <!-- end icon-arrow -->
+                                <span>download pdf</span></a>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Phoneix 1150x482</td>
+                            <td>
+                              <button class="js-lightgallery-trigger" data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg">
+                                <!-- begin icon-picture -->
+                                <svg viewBox="0 0 58 58" class="icon icon-picture" width="1.000em" height="1em">
+                                  <path d="M57 6H1a1 1 0 00-1 1v44a1 1 0 001 1h56a1 1 0 001-1V7a1 1 0 00-1-1zm-1 44H2V8h54v42z" />
+                                  <path d="M16 28.138a5.575 5.575 0 005.569-5.568c0-3.072-2.498-5.57-5.569-5.57s-5.569 2.498-5.569 5.569A5.575 5.575 0 0016 28.138zM16 19c1.968 0 3.569 1.602 3.569 3.569S17.968 26.138 16 26.138s-3.569-1.601-3.569-3.568S14.032 19 16 19zM7 46c.234 0 .47-.082.66-.249l16.313-14.362L34.275 41.69a.999.999 0 101.414-1.414l-4.807-4.807 9.181-10.054 11.261 10.323a1 1 0 001.351-1.475l-12-11a1.031 1.031 0 00-.72-.262 1.002 1.002 0 00-.694.325l-9.794 10.727-4.743-4.743a1 1 0 00-1.368-.044L6.339 44.249A1 1 0 007 46z" />
+                                </svg>
+                                <!-- end icon-picture --> Phoneix 1150x482</button></td>
                             <td>21</td>
                             <td>311</td>
-                            <td><strong>150</strong></td>
+                            <td><strong>150</strong>
+                              <a href="#" class="btn btn--comb btn--comb-sm" download="">
+                                <!-- begin icon-arrow -->
+                                <svg viewBox="0 0 447.243 447.243" class="icon icon-arrow" width="1.000em" height="1em">
+                                  <path d="M406.101 232.603a31.842 31.842 0 00-3.116-2.745c-13.381-8.971-31.276-7.013-42.4 4.64l-88.64 88.32a64.002 64.002 0 00-11.68 16l-5.12 9.76v-314.4c.677-16.099-10.332-30.349-26.08-33.76-17.445-2.829-33.881 9.019-36.71 26.465a31.967 31.967 0 00-.41 5.535v315.52l-3.2-6.88a63.998 63.998 0 00-12.8-18.08l-88.64-88.48c-11.124-11.653-29.019-13.611-42.4-4.64-14.259 10.441-17.355 30.464-6.914 44.724a32.018 32.018 0 002.754 3.276l160 160c12.49 12.504 32.751 12.515 45.255.025l.025-.025 160-160c12.517-12.476 12.552-32.737.076-45.255z" />
+                                </svg>
+                                <!-- end icon-arrow -->
+                                <span>download pdf</span></a>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Phoneix 1700x655</td>
+                            <td>
+                              <button class="js-lightgallery-trigger" data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg">
+                                <!-- begin icon-picture -->
+                                <svg viewBox="0 0 58 58" class="icon icon-picture" width="1.000em" height="1em">
+                                  <path d="M57 6H1a1 1 0 00-1 1v44a1 1 0 001 1h56a1 1 0 001-1V7a1 1 0 00-1-1zm-1 44H2V8h54v42z" />
+                                  <path d="M16 28.138a5.575 5.575 0 005.569-5.568c0-3.072-2.498-5.57-5.569-5.57s-5.569 2.498-5.569 5.569A5.575 5.575 0 0016 28.138zM16 19c1.968 0 3.569 1.602 3.569 3.569S17.968 26.138 16 26.138s-3.569-1.601-3.569-3.568S14.032 19 16 19zM7 46c.234 0 .47-.082.66-.249l16.313-14.362L34.275 41.69a.999.999 0 101.414-1.414l-4.807-4.807 9.181-10.054 11.261 10.323a1 1 0 001.351-1.475l-12-11a1.031 1.031 0 00-.72-.262 1.002 1.002 0 00-.694.325l-9.794 10.727-4.743-4.743a1 1 0 00-1.368-.044L6.339 44.249A1 1 0 007 46z" />
+                                </svg>
+                                <!-- end icon-picture --> Phoneix 1700x655</button></td>
                             <td>30</td>
                             <td>217</td>
-                            <td><strong>160</strong></td>
+                            <td><strong>160</strong>
+                              <a href="#" class="btn btn--comb btn--comb-sm" download="">
+                                <!-- begin icon-arrow -->
+                                <svg viewBox="0 0 447.243 447.243" class="icon icon-arrow" width="1.000em" height="1em">
+                                  <path d="M406.101 232.603a31.842 31.842 0 00-3.116-2.745c-13.381-8.971-31.276-7.013-42.4 4.64l-88.64 88.32a64.002 64.002 0 00-11.68 16l-5.12 9.76v-314.4c.677-16.099-10.332-30.349-26.08-33.76-17.445-2.829-33.881 9.019-36.71 26.465a31.967 31.967 0 00-.41 5.535v315.52l-3.2-6.88a63.998 63.998 0 00-12.8-18.08l-88.64-88.48c-11.124-11.653-29.019-13.611-42.4-4.64-14.259 10.441-17.355 30.464-6.914 44.724a32.018 32.018 0 002.754 3.276l160 160c12.49 12.504 32.751 12.515 45.255.025l.025-.025 160-160c12.517-12.476 12.552-32.737.076-45.255z" />
+                                </svg>
+                                <!-- end icon-arrow -->
+                                <span>download pdf</span></a>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Phoneix 1800x755</td>
+                            <td>
+                              <button class="js-lightgallery-trigger" data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg">
+                                <!-- begin icon-picture -->
+                                <svg viewBox="0 0 58 58" class="icon icon-picture" width="1.000em" height="1em">
+                                  <path d="M57 6H1a1 1 0 00-1 1v44a1 1 0 001 1h56a1 1 0 001-1V7a1 1 0 00-1-1zm-1 44H2V8h54v42z" />
+                                  <path d="M16 28.138a5.575 5.575 0 005.569-5.568c0-3.072-2.498-5.57-5.569-5.57s-5.569 2.498-5.569 5.569A5.575 5.575 0 0016 28.138zM16 19c1.968 0 3.569 1.602 3.569 3.569S17.968 26.138 16 26.138s-3.569-1.601-3.569-3.568S14.032 19 16 19zM7 46c.234 0 .47-.082.66-.249l16.313-14.362L34.275 41.69a.999.999 0 101.414-1.414l-4.807-4.807 9.181-10.054 11.261 10.323a1 1 0 001.351-1.475l-12-11a1.031 1.031 0 00-.72-.262 1.002 1.002 0 00-.694.325l-9.794 10.727-4.743-4.743a1 1 0 00-1.368-.044L6.339 44.249A1 1 0 007 46z" />
+                                </svg>
+                                <!-- end icon-picture --> Phoneix 1800x755</button></td>
                             <td>35</td>
                             <td>210</td>
-                            <td><strong>185</strong></td>
+                            <td><strong>185</strong>
+                              <a href="#" class="btn btn--comb btn--comb-sm" download="">
+                                <!-- begin icon-arrow -->
+                                <svg viewBox="0 0 447.243 447.243" class="icon icon-arrow" width="1.000em" height="1em">
+                                  <path d="M406.101 232.603a31.842 31.842 0 00-3.116-2.745c-13.381-8.971-31.276-7.013-42.4 4.64l-88.64 88.32a64.002 64.002 0 00-11.68 16l-5.12 9.76v-314.4c.677-16.099-10.332-30.349-26.08-33.76-17.445-2.829-33.881 9.019-36.71 26.465a31.967 31.967 0 00-.41 5.535v315.52l-3.2-6.88a63.998 63.998 0 00-12.8-18.08l-88.64-88.48c-11.124-11.653-29.019-13.611-42.4-4.64-14.259 10.441-17.355 30.464-6.914 44.724a32.018 32.018 0 002.754 3.276l160 160c12.49 12.504 32.751 12.515 45.255.025l.025-.025 160-160c12.517-12.476 12.552-32.737.076-45.255z" />
+                                </svg>
+                                <!-- end icon-arrow -->
+                                <span>download pdf</span></a>
+                            </td>
                           </tr>
                         </table>
                       </div>
