@@ -7,9 +7,12 @@
         <!-- begin slider -->
         <div class="slider__wrap slider--full__wrap">
           <div class="swiper-container js-slider" data-slider="full">
-            <div class="swiper-wrapper slider slider--full">
+            <div class="swiper-wrapper slider slider--full js-lightgallery">
               {% for i in range(0, 4) %}
-              <div class="swiper-slide slide js-lazy" data-background-image="./img/about/bg-design.jpg"></div>
+              <a
+                class="swiper-slide slide js-lazy"
+                href="./img/about/bg-design.jpg"
+                data-background-image="./img/about/bg-design.jpg"></a>
               {% endfor %}
             </div>
           </div>

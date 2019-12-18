@@ -2,34 +2,78 @@
 table = [
   {
     cols: [
-      { text: 'Phoneix 830x482' },
+      { text: '
+        <button
+          class="js-lightgallery-trigger"
+          
+          data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg"
+          >' + mixins.icon('picture') + 'Phoneix 830x482</button>'
+      },
       { text: '15' },
       { text: '217' },
-      { text: '<strong>120</strong>' }
+      { text: '<strong>120</strong>' + mixins.btn(
+                  title = mixins.icon('arrow') + '<span>download pdf</span>',
+                  mod = 'btn--comb btn--comb-sm',
+                  attributes = { download: '' },
+                  isPlain = true
+                ) }
     ]
   },
   {
     cols: [
-      { text: 'Phoneix 1150x482' },
+      { text: '
+        <button
+          class="js-lightgallery-trigger"
+          
+          data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg"
+          >' + mixins.icon('picture') + 'Phoneix 1150x482</button>'
+      },
       { text: '21' },
       { text: '311' },
-      { text: '<strong>150</strong>' }
+      { text: '<strong>150</strong>' + mixins.btn(
+                  title = mixins.icon('arrow') + '<span>download pdf</span>',
+                  mod = 'btn--comb btn--comb-sm',
+                  attributes = { download: '' },
+                  isPlain = true
+                ) }
     ]
   },
   {
     cols: [
-      { text: 'Phoneix 1700x655' },
+      { text: '
+        <button
+          class="js-lightgallery-trigger"
+          
+          data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg"
+          >' + mixins.icon('picture') + 'Phoneix 1700x655</button>'
+      },
       { text: '30' },
       { text: '217' },
-      { text: '<strong>160</strong>' }
+      { text: '<strong>160</strong>' + mixins.btn(
+                  title = mixins.icon('arrow') + '<span>download pdf</span>',
+                  mod = 'btn--comb btn--comb-sm',
+                  attributes = { download: '' },
+                  isPlain = true
+                ) }
     ]
   },
   {
     cols: [
-      { text: 'Phoneix 1800x755' },
+      { text: '
+        <button
+          class="js-lightgallery-trigger"
+          
+          data-images="./img/items/01-lg.jpg, ./img/items/01-lg.jpg, ./img/items/01-lg.jpg"
+          >' + mixins.icon('picture') + 'Phoneix 1800x755</button>'
+      },
       { text: '35' },
       { text: '210' },
-      { text: '<strong>185</strong>' }
+      { text: '<strong>185</strong>' + mixins.btn(
+                  title = mixins.icon('arrow') + '<span>download pdf</span>',
+                  mod = 'btn--comb btn--comb-sm',
+                  attributes = { download: '' },
+                  isPlain = true
+                ) }
     ]
   }
 ]
@@ -39,7 +83,7 @@ table = [
 <div class="item-pres-table">
   <table>
     <tr>
-      <th>Size <small>(mm)</small></th>
+      <th>Name | Size <small>(mm)</small></th>
       <th>Quantity of ribs <small>(pcs)</small></th>
       <th>Heat power <small>(watt)</small></th>
       <th>Price <small>(£)</small></th>

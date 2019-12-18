@@ -21,6 +21,15 @@
     padding: 10px
   table
     font-weight: 300
+    button:not(.btn)
+      text-decoration: underline
+      +inline-flex(flex-start, center)
+      +tr(color .3s)
+      +hover
+        color: $accent
+      .icon
+        font-size: 1.2em
+        margin-right: .3em
     tr
       &:nth-child(2)
         td
@@ -41,9 +50,8 @@
       small
         font-weight: 300
 
-    // td
-    //   padding-top: 1em
-    //   padding-bottom: 1em
+    .btn--comb
+      margin-left: .5em
 
 .item-pres-block
   &__inner
