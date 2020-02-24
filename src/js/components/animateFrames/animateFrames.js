@@ -14,7 +14,7 @@ class FramesAnimator {
     this.inited = false
   }
 
-  handleObserving(entries, observer) {
+  handleObserving(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         if (this.animator.inited) {

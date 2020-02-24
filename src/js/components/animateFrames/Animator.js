@@ -104,7 +104,8 @@ export default class Animator {
   animateBlocks() {
     if (this.blocks.length !== 2) return
 
-    const index = this.index * 2
+    const offset = 20
+    const index = this.index * 2 + offset
 
     const animateLeft = () => {
       if (this.blocksState.left.isFinished) return
@@ -128,7 +129,8 @@ export default class Animator {
 
       this.staggerEls.forEach((el, i) => {
         const block = el
-        const newIndex = index - i * 15
+        const newIndex = index - i * 15 + offset
+        console.log(newIndex)
 
         block.style.opacity = newIndex / 100 - 1
         block.style.transform = `translate3d(0px, ${200 - newIndex}%, 0px)`
@@ -138,12 +140,6 @@ export default class Animator {
           block.style.transform = 'translate3d(0px, 0%, 0px)'
           this.blocksState.right.isFinished = true
         }
-
-        // if (index < 100) {
-        //   block.style.opacity = 0;
-        //   block.style.transform = 'translate3d(0px, 0%, 0px)';
-        //   this.blocksState.right.isFinished = false;
-        // }
       })
     }
 

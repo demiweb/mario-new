@@ -19,7 +19,7 @@ class FormInput {
     if (this.input.value === 'placeholder') return
     const valueMinNmb = 0
 
-    if (this.input.value.length > valueMinNmb) {
+    if (this.input.value.length > valueMinNmb || this.input.tagName.toLowerCase() === 'select') {
       this.wrap.classList.add(HAS_TEXT)
     } else {
       this.wrap.classList.remove(HAS_TEXT)
@@ -61,6 +61,7 @@ class FormInput {
 
   init() {
     if (!this.wrap) return
+    this.handleText()
     this._addListeners()
   }
 }

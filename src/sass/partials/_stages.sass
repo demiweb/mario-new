@@ -17,8 +17,6 @@
     margin-bottom: 10px
   &:hover
     padding-top: 5%
-    #{$this}__descr
-      max-height: 7em
     #{$this}__title
       +hidden
       max-height: 0
@@ -40,7 +38,8 @@
   &__title
     position: relative
     z-index: 1
-    max-height: 3em
+    // max-height: 3em
+
     +tr(max-height .3s)
   &__descr
     max-width: 450px

@@ -36,11 +36,10 @@
   {% elseif name === 'textarea' %}
   <textarea
     {% if fieldClass %}class="{{ fieldClass }}"{% endif %}
-    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
-    {% if value %}value="{{value}}"{% endif %}
+    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}    
     {% for attr, attrValue in fieldAttributes %}
       {{ attr }}="{{ attrValue }}"
-    {% endfor %}></textarea>
+    {% endfor %}>{{ value }}</textarea>
 
   {% else %}
 

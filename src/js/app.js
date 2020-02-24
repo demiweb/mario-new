@@ -23,6 +23,7 @@ import customSelects from './components/selects/setSelects'
 import handleTelInput from './components/tel-input/handleTelInput'
 import animateFrames from './components/animateFrames/animateFrames'
 import animateOnScroll from './components/animateOnScroll'
+import animateBlockOnHover from './components/animateBlockOnHover'
 
 document.addEventListener('DOMContentLoaded', () => {
   sayHello()
@@ -48,4 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
   handleTelInput()
   animateFrames()
   animateOnScroll()
+  animateBlockOnHover()
 })

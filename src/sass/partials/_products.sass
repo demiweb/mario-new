@@ -60,12 +60,18 @@
         +hidden
     #{$this}__img-img
       +visible
+    #{$this}__descr
+      display: block
+  &__descr
+    display: none
+    color: $white
   &__title-block
     display: block
     position: absolute
     z-index: 1
     top: 30px
     left: 30px
+    right: 30px
   &__img
     display: block
     position: relative
@@ -123,6 +129,7 @@
     flex-grow: 1
   &__text
     display: block
+    max-width: 500px
     +notlast
       margin-bottom: 15px
   &__btn
