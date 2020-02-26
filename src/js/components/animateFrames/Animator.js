@@ -23,12 +23,13 @@ export default class Animator {
     this.allowDrawing = false
 
     this.blocksState = {
-      left: {
-        isFinished: false,
-      },
-      right: {
-        isFinished: false,
-      },
+      isFinished: false,
+      // left: {
+      //   isFinished: false,
+      // },
+      // right: {
+      //   isFinished: false,
+      // },
     }
 
     this.imgSize = {
@@ -107,44 +108,57 @@ export default class Animator {
     const offset = 20
     const index = this.index * 2 + offset
 
-    const animateLeft = () => {
-      if (this.blocksState.left.isFinished) return
+    if (this.blocksState.isFinished) return
 
-      this.blocks[0].style.opacity = index / 100
-      this.blocks[0].style.transform = `translate3d(0px, ${70 - index}%, 0px)`
+    this.blocks.forEach(block => {
+      block.style.opacity = index / 100
+      block.style.transform = `translate3d(0px, ${70 - index}%, 0px)`
 
       if (index > 70) {
-        this.blocks[0].style.opacity = 1
-        this.blocks[0].style.transform = 'translate3d(0px, 0%, 0px)'
+        block.style.opacity = 1
+        block.style.transform = 'translate3d(0px, 0%, 0px)'
 
-        this.blocksState.left.isFinished = true
+        this.blocksState.isFinished = true
       }
-    }
+    })
 
-    const animateRight = () => {
-      if (this.blocksState.right.isFinished) return
+    // const animateLeft = () => {
+    //   if (this.blocksState.left.isFinished) return
 
-      this.blocks[1].style.opacity = '1'
-      if (!this.staggerEls.length) return
+    //   this.blocks[0].style.opacity = index / 100
+    //   this.blocks[0].style.transform = `translate3d(0px, ${70 - index}%, 0px)`
 
-      this.staggerEls.forEach((el, i) => {
-        const block = el
-        const newIndex = index - i * 15 + offset
-        console.log(newIndex)
+    //   if (index > 70) {
+    //     this.blocks[0].style.opacity = 1
+    //     this.blocks[0].style.transform = 'translate3d(0px, 0%, 0px)'
 
-        block.style.opacity = newIndex / 100 - 1
-        block.style.transform = `translate3d(0px, ${200 - newIndex}%, 0px)`
+    //     this.blocksState.left.isFinished = true
+    //   }
+    // }
 
-        if (index >= 200) {
-          block.style.opacity = 1
-          block.style.transform = 'translate3d(0px, 0%, 0px)'
-          this.blocksState.right.isFinished = true
-        }
-      })
-    }
+    // const animateRight = () => {
+    //   if (this.blocksState.right.isFinished) return
 
-    animateLeft()
-    animateRight()
+    //   this.blocks[1].style.opacity = '1'
+    //   if (!this.staggerEls.length) return
+
+    //   this.staggerEls.forEach((el, i) => {
+    //     const block = el
+    //     const newIndex = index - i * 15 + offset
+
+    //     block.style.opacity = newIndex / 100 - 1
+    //     block.style.transform = `translate3d(0px, ${200 - newIndex}%, 0px)`
+
+    //     if (index >= 200) {
+    //       block.style.opacity = 1
+    //       block.style.transform = 'translate3d(0px, 0%, 0px)'
+    //       this.blocksState.right.isFinished = true
+    //     }
+    //   })
+    // }
+
+    // animateLeft()
+    // animateRight()
   }
 
   resetBlocksStyles() {
